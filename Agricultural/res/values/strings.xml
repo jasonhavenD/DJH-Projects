@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">专家咨询</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="login_pwd">Password</string>
+    <string name="login_user">Username</string>
+    <string name="login_doctor">&#160;&#160;&#160;农业专家</string>
+    <string name="login_normal">&#160;&#160;&#160;普通用户</string>
+    <string name="remember_text">&#160;&#160;&#160;记住用户名与密码</string>
+    <string name="login_text">登 陆</string>
+    <string name="begin_text">咨询开始</string>
+    <string name="end_text">咨询结束</string>
+    <string name="user_empty_text">用户名不能为空！</string>
+    <string name="pwd_empty_text">密码不能为空！</string>
+    <string name="onlinetalk_switch_voice_text">切换语音</string>
+    <string name="onlinetalk_switch_cap_text">切换摄像头</string>
+    <string name="doctor_title">专家咨询</string>
+    <string name="list_title_info">站点列表</string>
+    <string name="wait_title_text">专家信息</string>
+
+
+</resources>

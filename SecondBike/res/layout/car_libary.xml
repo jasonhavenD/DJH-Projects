@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cdcdcd"
+    android:orientation="vertical"
+    tools:context="com.example.top_listview.MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_4"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="65.83dp"
+            android:layout_height="30.5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn"
+            android:text="@string/back"
+            android:textColor="#ffff" />
+
+        <TextView
+            android:id="@+id/tv_friend_title"
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/carlibary"
+            android:textColor="#ffffff"
+            android:textSize="20dip" />
+
+        <Button
+            android:id="@+id/tv3"
+            android:layout_width="65.83dp"
+            android:layout_height="30.5dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn"
+            android:text="历史"
+            android:textColor="#ffff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="40.5dp"
+            android:layout_marginLeft="60dp"
+            android:layout_weight="1"
+            android:background="#cdcdcd"
+            android:gravity="center"
+            android:popupBackground="#ffffff"
+            android:spinnerMode="dropdown"
+            android:text="@string/brand"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="40.5dp"
+            android:layout_marginLeft="45dp"
+            android:layout_weight="1"
+            android:background="#cdcdcd"
+            android:gravity="center"
+            android:popupBackground="#ffffff"
+            android:spinnerMode="dropdown"
+            android:text="@string/price"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

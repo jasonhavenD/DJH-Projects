@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.secondbike.SecondBike"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="22" />
+    <!-- 添加权限 -->
+
+
+    <!-- 拍照 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 发短信 -->
+    <uses-permission android:name="android.permission.SEND_SMS" >
+    </uses-permission>
+
+    <!-- 收短信 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" >
+    </uses-permission>
+
+    <!-- 获取读取系统权限 -->
+    <uses-permission android:name="READ_PHONE_STATE" />
+
+    <!-- 联网 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WAKE_LOCK" >
+    </uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/tubiao"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- 启动界面 -->
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 登录界面 -->
+        <activity
+            android:name=".DengluActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 主页 -->
+        <activity
+            android:name=".ZhuyeActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 忘记密码 -->
+        <activity
+            android:name="com.secondbike.fogetpwd.FogetPWDActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 注册 -->
+        <activity
+            android:name=".ZhuceActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 车库 -->
+        <activity
+            android:name=".CarLibaryActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 我的 -->
+        <activity
+            android:name=".MineActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 关于 -->
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 修改密码 -->
+        <activity
+            android:name=".ChangePWDActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- next忘记密码 -->
+        <activity
+            android:name="com.secondbike.fogetpwd.NextActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 浏览历史 -->
+        <activity
+            android:name=".BroHistoryActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 分类 -->
+        <activity
+            android:name=".FenleiActivity"
+            android:label="@string/title_activity_fenlei"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 商品详情 -->
+        <activity
+            android:name=".CarDetailActivity"
+            android:label="@string/title_activity_car_detail"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 我的账户 -->
+        <activity
+            android:name=".MyAccountActivity"
+            android:label="@string/title_activity_my_account"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 挂车 -->
+        <activity
+            android:name=".GuacheActivity"
+            android:label="@string/title_activity_guoche"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+
+        <!-- 求车 -->
+        <activity
+            android:name=".QiucheActivity"
+            android:label="@string/title_activity_qiuche"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 皮肤设置 -->
+        <activity
+            android:name=".AppearanceActivity"
+            android:label="@string/title_activity_appearance"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 意见反馈 -->
+        <activity
+            android:name="com.secondbike.about.SuggestActivity"
+            android:label="@string/title_activity_suggest"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 给我打分 -->
+        <activity
+            android:name="com.secondbike.about.ScoreUsActivity"
+            android:label="@string/title_activity_score_us"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 身份验证 -->
+        <activity
+            android:name=".IdentifyActivity"
+            android:label="@string/title_activity_identify"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 安全手机 -->
+        <activity
+            android:name="com.secondbike.secuphone.SecuPhoneActivity"
+            android:label="@string/title_activity_secu_phone"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 修改手密保机 -->
+        <activity
+            android:name="com.secondbike.secuphone.ChangePhoneActivity"
+            android:label="@string/title_activity_change_phone"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 手机验证 -->
+        <activity
+            android:name="com.secondbike.secuphone.YanZhengActivity"
+            android:label="@string/title_activity_yan_zheng"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 验证结果 -->
+        <activity
+            android:name="com.secondbike.secuphone.ResultActivity"
+            android:label="@string/title_activity_result"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 修改账户 -->
+        <activity
+            android:name=".XiugaiAccountActivity"
+            android:label="@string/title_activity_xiugai_account"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 我的收藏 -->
+        <activity
+            android:name=".MyFaovrActivity"
+            android:label="@string/title_activity_my_faovr"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 绑定手机 -->
+        <activity
+            android:name="com.secondbike.blinktophone.BlinkActivity"
+            android:label="@string/title_activity_blink"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 绑定手机验证 -->
+        <activity
+            android:name="com.secondbike.blinktophone.BYanZhengActivity"
+            android:label="@string/title_activity_byan_zheng"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 绑定结果 -->
+        <activity
+            android:name="com.secondbike.blinktophone.BResultActivity"
+            android:label="@string/title_activity_bresult"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+
+        <!-- 忘记密码修改密码 -->
+        <activity
+            android:name="com.secondbike.fogetpwd.ChPWDActivity"
+            android:label="@string/title_activity_ch_pwd"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <!-- 联系卖家 -->
+        <activity
+            android:name=".ContactSolderActivity"
+            android:label="@string/title_activity_contact_solder" 
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@drawable/login_bg"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <EditText 
+        android:id="@+id/password_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="@string/login_pwd"
+        android:background="@drawable/login_inputbg"
+        android:drawableLeft="@drawable/pwd_icon"
+        android:drawablePadding="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerInParent="true"/>
+    <EditText 
+        android:id="@+id/user_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/password_edit"
+        android:drawableLeft="@drawable/user_icon"
+        android:drawablePadding="5dp"
+        android:singleLine="true"
+        android:ems="10"
+        android:hint="@string/login_user"
+        android:background="@drawable/login_inputbg"
+        android:layout_centerInParent="true"/>
+    <RadioGroup 
+        android:id = "@+id/usertype_rg"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/password_edit">
+        <RadioButton 
+            android:id="@+id/doctor"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textColor="#ff000000"
+        	android:textSize="14sp"
+        	android:button = "@drawable/radio"
+        	android:layout_marginRight="20dp"
+        	
+        	android:text= "@string/login_doctor"/>
+        <RadioButton 
+            android:id="@+id/normal"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textColor="#ff000000"
+        	android:textSize="14sp"
+        	android:button = "@drawable/radio"
+        	android:checked="true"
+        	android:text= "@string/login_normal"/>
+        
+    </RadioGroup>
+    <CheckBox 
+        android:id="@+id/remember_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usertype_rg"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:textSize="14sp"
+        android:textColor="#ff000000"
+        android:button = "@drawable/checkbox"
+        android:text= "@string/remember_text"/>
+    <Button 
+        android:id = "@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/remember_checkbox"
+        android:background="@drawable/login_button_bg"
+        android:textColor="#ffffffff"
+        android:textSize="18sp"
+        android:text="@string/login_text"/>
+
+</RelativeLayout>

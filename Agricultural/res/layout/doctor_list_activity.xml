@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/doctor_bg"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/onlinetalk_title_bg" >
+
+        <ImageView
+            android:id="@+id/doctor_back_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:clickable="true"
+            android:src="@drawable/doctor_back" />
+        <TextView 
+            android:id="@+id/docor_icon_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/doctor_back_icon"
+            android:clickable="true"
+            android:background="@drawable/doctor_icon"/>
+        <TextView 
+            android:id="@+id/doctor_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@id/docor_icon_text"
+            android:clickable="true"
+            android:textSize="18sp"
+            android:textColor="#ff3a4446"
+            android:text="@string/doctor_title"/>
+
+        <Button
+            android:id="@+id/doctor_menu_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/doctor_serch_icon" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/doctor_center_icon" />
+        
+    </RelativeLayout>
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/doctor_name_text"
+        android:text=""/>
+    <ListView 
+        android:id="@+id/doctor_list"  
+        android:layout_width="fill_parent"  
+        android:layout_height="fill_parent">
+        
+    </ListView>
+
+</LinearLayout>

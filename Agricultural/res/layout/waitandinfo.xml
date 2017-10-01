@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/doctor_bg"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/onlinetalk_title_bg" >
+
+        <ImageView
+            android:id="@+id/wait_back_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:clickable="true"
+            android:src="@drawable/doctor_back" />
+        <TextView 
+            android:id="@+id/wait_icon_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/wait_back_icon"
+            android:clickable="true"
+            android:background="@drawable/doctor_icon"/>
+        <TextView 
+            android:id="@+id/wait_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@id/wait_icon_text"
+            android:clickable="true"
+            android:textSize="18sp"
+            android:textColor="#ff3a4446"
+            android:text="@string/wait_title_text"/>
+
+        <Button
+            android:id="@+id/wait_menu_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/doctor_serch_icon" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/doctor_center_icon" />
+        
+    </RelativeLayout>
+    
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/wait_info_image"/>
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:textColor="#ff000000"
+        android:text="赵政阳教授"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+	    <TextView 
+	        android:id="@+id/wait_info_text_title"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="1dp"
+	        android:layout_marginLeft="15dp"
+	        android:textSize="12sp"
+	        android:textColor="#ff000000"
+	        android:text="您前面还有："/>
+	    <ImageView 
+	        android:id="@+id/wait_number"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/wait_info_text_title"
+	        android:layout_below="@id/wait_info_text_title"
+	        android:background="@drawable/wait_number"/>
+	    <ImageView 
+	        android:id="@+id/wait_per_person"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:layout_toRightOf="@id/wait_number"
+	        android:layout_alignBottom="@id/wait_number"
+	        android:background="@drawable/wait_per_person"/>
+	    
+	    <Button
+            android:id="@+id/wait_express_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/wait_number"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/wait_express_button" />
+	    
+    </RelativeLayout>
+    
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center"
+        android:src="@drawable/wait_line"/>
+    
+
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/wait_doctor_introduce"/>
+
+</LinearLayout>

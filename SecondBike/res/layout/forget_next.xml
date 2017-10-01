@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_4"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_friend_title"
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="忘记密码"
+            android:textColor="#ffffff"
+            android:textSize="20dip" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/editRel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="为保证账号安全，请完成验证："
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imagecode"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/tv"
+            android:layout_margin="5dp"
+            android:background="@drawable/code1" />
+
+        <RelativeLayout
+            android:id="@+id/accountRel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imagecode"
+            android:background="#cedded"
+            android:clickable="true"
+            android:gravity="center_vertical" >
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imagecode"
+            android:layout_toRightOf="@+id/imagecode"
+            android:text="换一张"
+            android:background="#ffcc00"
+            android:textColor="#c84a36"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/codeEdittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:hint="输入验证码"
+        android:singleLine="true"
+        android:maxLength="7"
+        android:inputType="number"
+        android:textSize="18sp" />
+    <requestFocus />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="确定"
+        android:textColor="#2b86e3"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:textColor="#2b86e3"
+        android:textSize="20sp" />
+
+</LinearLayout>

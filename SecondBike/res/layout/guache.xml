@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="5dp"
+        android:background="#aec7e1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/title"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="65.83dp"
+                android:layout_height="30.5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/btn"
+                android:text="@string/back"
+                android:textColor="#ffff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_friend_title"
+                android:layout_width="wrap_content"
+                android:layout_height="50dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="我要挂车"
+                android:textColor="#ffffff"
+                android:textSize="20dip" />
+
+            <Button
+                android:layout_width="65.83dp"
+                android:layout_height="30.5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_4"
+                android:focusable="false"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#d5d5d8"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="#ffffff"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/namelabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#ffffff"
+                            android:singleLine="true"
+                            android:text="车名:"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:background="#ffffff"
+                            android:ems="14"
+                            android:gravity="right"
+                            android:hint="必填"
+                            android:singleLine="true"
+                            android:textColor="#969696"
+                            android:textSize="18sp" />
+
+                        <requestFocus />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/unamelabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#ffffff"
+                            android:singleLine="true"
+                            android:text="价格/元:"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/price"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:background="#ffffff"
+                            android:ems="14"
+                            android:gravity="right"
+                            android:hint="必填"
+                            android:singleLine="true"
+                            android:textColor="#969696"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/rentlabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#ffffff"
+                            android:singleLine="true"
+                            android:text="租金(元/月):"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/rent"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#ffffff"
+                            android:gravity="right"
+                            android:hint="选填"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textColor="#969696"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp" >
+
+                        <TextView
+                            android:id="@+id/genderlabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#ffffff"
+                            android:singleLine="true"
+                            android:text="颜色:"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#ffffff"
+                            android:ems="14"
+                            android:gravity="right"
+                            android:hint="选填"
+                            android:singleLine="true"
+                            android:textColor="#969696"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/QQlabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#ffffff"
+                            android:singleLine="true"
+                            android:text="QQ:"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/QQ"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:background="#ffffff"
+                            android:ems="14"
+                            android:gravity="right"
+                            android:hint="选填"
+                            android:singleLine="true"
+                            android:textColor="#969696"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/linklabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#ffffff"
+                            android:singleLine="true"
+                            android:text="联系电话:"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/contact"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:background="#ffffff"
+                            android:ems="14"
+                            android:gravity="right"
+                            android:hint="必填"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textColor="#969696"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#ffffff"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:background="#d5d5d8" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/addresslabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="#ffffff"
+                                android:singleLine="true"
+                                android:text="地址:"
+                                android:textSize="20sp" />
+
+                            <EditText
+                                android:id="@+id/address"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:background="#ffffff"
+                                android:ems="14"
+                                android:gravity="right"
+                                android:hint="选填:例:10#225"
+                                android:singleLine="true"
+                                android:textColor="#969696"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/motolabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#ffffff"
+                                android:singleLine="true"
+                                android:text="卖家描述:"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/moto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="#ffffff"
+                            android:ems="14"
+                            android:hint="选填：一句话"
+                            android:maxLines="2"
+                            android:singleLine="true"
+                            android:textColor="#969696"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="#ffffff"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <GridLayout
+                            android:id="@+id/gridlayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:columnCount="4"
+                            android:orientation="horizontal"
+                            >
+                        </GridLayout>
+
+                        <ImageView
+                            android:id="@+id/loadimage"
+                            android:layout_width="85dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/loadimage" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="提交"
+                        android:textColor="#2b86e3"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

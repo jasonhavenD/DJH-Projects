@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#aec7e1"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_4"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="65.83dp"
+            android:layout_height="30.5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn"
+            android:text="@string/back"
+            android:textColor="#ffff" />
+
+        <TextView
+            android:id="@+id/tv_friend_title"
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/changepwd"
+            android:textColor="#ffffff"
+            android:textSize="20dip" />
+
+        <Button
+            android:id="@+id/login_in"
+            android:layout_width="65.83dp"
+            android:layout_height="30.5dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn"
+            android:text="@string/certain"
+            android:textColor="#ffff" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/editRel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/accountRel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="#cedded"
+            android:clickable="true"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/textview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="5px"
+                android:paddingTop="5px"
+                android:text="新密码（密码长度为6~14位字符）" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pwdRel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/accountRel"
+            android:background="#cedded"
+            android:clickable="true"
+            android:gravity="center_vertical" >
+
+            <EditText
+                android:id="@+id/pwdEdittext1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/newpwd"
+                android:inputType="textPassword"
+                android:maxLength="14"
+                android:singleLine="true"
+                android:textSize="18sp" />
+
+            <requestFocus />
+
+            <EditText
+                android:id="@+id/pwdEdittext2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/pwdEdittext1"
+                android:ems="10"
+                android:hint="@string/againpwd"
+                android:inputType="textPassword"
+                android:maxLength="14"
+                android:singleLine="true"
+                android:textSize="18sp" >
+            </EditText>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dip"
+        android:editable="false"
+        android:visibility="invisible" />
+
+</LinearLayout>

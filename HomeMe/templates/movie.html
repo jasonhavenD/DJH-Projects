@@ -1,0 +1,153 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jasonhaven's Home</title>
+    <!--========Logo==========-->
+    <!--标题栏：-->
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <!--收藏夹：-->
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+
+    <!--==== bootstrap ====-->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!--==== font-awesome ====-->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <!--==== owl-carousel ====-->
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+    <!--==== magnific-popup ====-->
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+    <!--==== animate css ====-->
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+
+    <!--==== style css ====-->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!--==== responsive css ====-->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+    <!--==== jquery ====-->
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+
+    <!--[if lt IE 9]>
+<script src="{% static 'js/html5shiv/3.7.2/html5shiv.min.js' %}"></script>
+<script src="{% static 'js/respond/1.4.2/respond.min.js' %}"></script>
+<![endif]-->
+</head>
+<body>
+
+<!--BGM-->
+<audio autoplay controls hidden="true" src="{% static '/bgm/wings.mp3'%}" loop="loop"></audio>
+<!--BGM-->
+
+
+<!--==== DEMO COLOR PANEL =====-->
+<div class="demo_panel_box">
+    <div class="color_panel_box">
+        <div class="spiner_button slide_in_out"><i class="fa fa-cog fa-spin"></i></div>
+        <span class="red_color"></span>
+        <span class="blue_color"></span>
+        <span class="yellow_color"></span>
+        <span class="purple_color"></span>
+        <span class="pink_color"></span>
+        <span class="green_color"></span>
+    </div>
+</div>
+<!--==== DEMO COLOR PANEL ===-->
+
+
+<!--===== Preloader ====-->
+<div class="preloader">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+
+
+<!--=====****************** INTRO SECTION ****************************=====-->
+<!--===== HEADER AREA =====-->
+<header class="navbar custom-navbar" style="background: rgba(0, 0, 0, 0.75);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="logo">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
+                        </button>
+                    </div>
+                    <a href="/HomeMe">Jasonhaven' Home</a> <!--== logo ==-->
+                </div>
+            </div>
+
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                <nav class="main-menu">
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav"> <!--== manin menu ==-->
+                            <li class="active smooth-scroll"><a class="theme-color" href="/HomeMe">Back To Home</a></li>
+                            <li class="smooth-scroll"><a class="theme-color" href="#introduction">introduction</a></li>
+                            <li class="smooth-scroll"><a class="theme-color" href="#contact">contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+
+    </div>
+</header>
+<!--===== END HEADER AREA ======-->
+<!--=====***************** END INTRO SECTION ***********************=====-->
+
+<!--======********** PORTFOLIO SECTION *********======-->
+<section id="introduction" class="services-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <br/>
+                    <h2>《{{ movie.name }}》<span class="theme-color"><br/>{{ movie.director }}</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="section-title" style="text-align: justify">
+                <h2><span class="theme-color">电影简介：</span></h2>
+                <h4 style="text-indent: 2em;line-height: 2em;font-weight: normal">
+                    {{ movie.introduction }}
+                </h4>
+                <hr/>
+                <h2><span class="theme-color">导    演：</span></h2>
+                <h4 style="text-indent: 2em;line-height: 2em;font-weight: normal">{{ movie.director }}</h4>
+                <hr/>
+                <h2><span class="theme-color">电影类型：</span></h2>
+                <h4 style="text-indent: 2em;line-height: 2em;font-weight: normal">{{ movie.type }}</h4>
+                <hr/>
+                <h2><span class="theme-color">上映时间：</span></h2>
+                <h4 style="text-indent: 2em;line-height: 2em;font-weight: normal">{{ movie.release_time }}</h4>
+                <hr/>
+                <h2><span class="theme-color">主    演：</span></h2>
+                <h4 style="text-indent: 2em;line-height: 2em;font-weight: normal">
+                    {{ movie.starring }}</h4>
+                <hr/>
+                <h2><span class="theme-color">制片成本：</span></h2>
+                <h4 style="text-indent: 2em;line-height: 2em;font-weight: normal">{{ movie.production_cost }}</h4>
+                <hr/>
+                <h2><span class="theme-color">拍摄地点：</span></h2>
+                <h4 style="text-indent: 2em;line-height: 2em;font-weight: normal">{{ movie.filming_location }}</h4>
+                <hr/>
+                <h2><span class="theme-color">片    长：</span></h2>
+                <h4 style="text-indent: 2em;line-height: 2em;font-weight: normal">{{ movie.film_length }}</h4>
+                <hr/>
+                <h2><span class="theme-color">个人评论：</span></h2>
+                <h4 style="text-indent: 2em;line-height: 2em;font-weight: normal">
+                    {{ movie.comment }}</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<!--======************ END PORTFOLIO SECTION **************======-->
+{% include 'footer.html' %}

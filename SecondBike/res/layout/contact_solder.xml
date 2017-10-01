@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+            android:id="@+id/chat_title"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="65.83dp"
+                android:layout_height="30.5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/btn"
+                android:text="返回"
+                android:textColor="#ffff" />
+
+            <TextView
+                android:id="@+id/tv_friend_title"
+                android:layout_width="wrap_content"
+                android:layout_height="50dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="联系卖家"
+                android:textColor="#ffffff"
+                android:textSize="20dip" />
+
+            <Button
+                android:id="@+id/fankui"
+                android:layout_width="65.83dp"
+                android:layout_height="30.5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn"
+                android:text="反馈"
+                android:textColor="#ffff"
+                />
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/chat_bottom_linear"
+        android:layout_width="match_parent"
+        android:layout_height="42dip"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:paddingBottom="3dip"
+        android:paddingTop="7dip" >
+
+        <ImageButton
+            android:id="@+id/chat_bottom_look"
+            android:layout_width="match_parent"
+            android:layout_height="26dip"
+            android:layout_marginLeft="7dip"
+            android:layout_marginTop="3dip"
+            android:layout_weight="3.5"
+            android:background="@drawable/nim_emoji_icon" />
+
+        <ImageButton
+            android:id="@+id/chat_bottom_add"
+            android:layout_width="match_parent"
+            android:layout_height="26dip"
+            android:layout_marginLeft="7dip"
+            android:layout_marginTop="3dip"
+            android:layout_weight="3.5"
+            android:background="@drawable/nim_message_input_plus_pressed" />
+
+        <EditText
+            android:id="@+id/chat_bottom_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="32dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="7dip"
+            android:layout_weight="1.5"
+            android:background="@drawable/nim_picker_preview_normal" />
+
+        <Button
+            android:id="@+id/chat_bottom_sendbutton"
+            android:layout_width="match_parent"
+            android:layout_height="26dip"
+            android:layout_marginBottom="3dip"
+            android:layout_marginRight="4dip"
+            android:layout_weight="3.2"
+            android:background="@drawable/nim_slide_toggle_on"
+            android:text="发送"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/chat_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/chat_bottom_linear"
+        android:layout_below="@id/chat_title"
+        android:background="#f0f0f0"
+        android:divider="#aaaaaa"
+        android:dividerHeight="0px"
+        android:fadingEdge="none" >
+    </ListView>
+
+</RelativeLayout>

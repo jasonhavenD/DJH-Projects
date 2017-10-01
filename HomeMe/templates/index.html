@@ -1,0 +1,315 @@
+﻿{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_content %}
+    <!--BGM-->
+    <audio autoplay controls hidden="true" src="{% static '/bgm/wings.mp3' %}"
+           loop="loop"></audio>
+    <!--BGM-->
+
+    <!--==== DEMO COLOR PANEL =====-->
+    <div class="demo_panel_box">
+        <div class="color_panel_box">
+            <div class="spiner_button slide_in_out"><i class="fa fa-cog fa-spin"></i></div>
+            <span class="red_color"></span>
+            <span class="blue_color"></span>
+            <span class="yellow_color"></span>
+            <span class="purple_color"></span>
+            <span class="pink_color"></span>
+            <span class="green_color"></span>
+        </div>
+    </div>
+    <!--==== DEMO COLOR PANEL ===-->
+
+    <!--===== Preloader ====-->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+
+    <!--=====****************** INTRO SECTION ****************************=====-->
+    <div id="home" class="intro-section">
+        <!--===== HEADER AREA =====-->
+        <header class="navbar custom-navbar" style="background: rgba(0, 0, 0, 0.75);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="logo">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                        data-target=".navbar-collapse">
+                                </button>
+                            </div>
+                            <a href="/HomeMe">Jasonhaven' Home</a> <!--== logo ==-->
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <nav class="main-menu">
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav"> <!--== manin menu ==-->
+                                    <li class="active smooth-scroll"><a class="theme-color" href="#home">Home</a></li>
+                                    <li class="smooth-scroll"><a class="theme-color" href="#about">About</a></li>
+                                    <li class="smooth-scroll"><a class="theme-color" href="#hobbies">Hobbies</a></li>
+                                    <li class="smooth-scroll"><a class="theme-color" href="#portfolio">Movies &
+                                        Musics</a>
+                                    </li>
+                                    <li class="smooth-scroll"><a class="theme-color" href="#blogs">Blogs</a></li>
+                                    <li class="smooth-scroll"><a class="theme-color" href="#contact">contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+
+                </div>
+
+            </div>
+        </header>
+        <!--===== END HEADER AREA ======-->
+
+        <!--======= WELCOME AREA =======-->
+        <div class="welcome-area">
+            <div id="particles-js"></div>
+            <div class="welcome-table">
+                <div class="welcome-cell">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="welcome-text text-center">
+                                    <h4>I am jasonhaven D</h4>
+                                    <h1>Welcome To The Home Of <span class="theme-color">DJH</span></h1>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#about" class="scroll-btn banner-icon theme-color"><i class="fa fa-angle-double-down"></i></a>
+        </div>
+        <!--===== END WELCOME AREA =====-->
+
+    </div>
+    <!--=====***************** END INTRO SECTION ***********************=====-->
+    <!--=====************** ABOUT SECTION ***************=====-->
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="author-image wow fadeInLeft" data-wow-delay="0.4s">
+                        <img src="{% static 'images/author.jpg' %}" alt="Author Image"> <!--=== author image ===-->
+                        <div class="social-icon theme-color"> <!--=== author social icons ===-->
+                            <a href="resume" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="resume" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="resume" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="resume" target="_blank"><i class="fa fa-git"></i></a>
+                            <a href="resume" target="_blank"><i class="fa fa-weibo"></i></a>
+                            <a href="resume" target="_blank"><i class="fa fa-qq"></i></a>
+                            <a href="resume" target="_blank"><i class="fa fa-wechat"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="about-text wow fadeInRight" data-wow-delay="0.4s">
+                        <h3>Hello!About me...</h3>
+                        <ul style="font-size: 1.5em;">
+                            <li><b>D.O.B</b></li>
+                            <li>16-12-1994</li>
+                            <br/>
+                            <li><b>QQ </b></li>
+                            <li>951771966</li>
+                            <br/>
+                            <li><b>ADDRESS </b></li>
+                            <li>Handan City, Hebei Province, People 's Republic of China</li>
+                            <br/>
+                            <li><b>E-MAIL </b></li>
+                            <li><a href="mailto:jasonhaven@163.com"> jasonhaven@163.com</a></li>
+                            <br/>
+                        </ul>
+                        <a class="btn theme-color" href="/HomeMe/resume"><i class="fa fa-download"></i> watch resume</a> <a
+                            class="scroll-btn btn extra" href="#portfolio">go enjoyment</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--=====*********** END ABOUT SECTION **************=====-->
+
+    <!--======**************** SERVICES SECTION ******************=======-->
+    <section id="hobbies" class="services-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2><span class="theme-color">Here is My </span>Hobbies</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-services text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="servise-icon">
+                            <i class="fa fa-laptop"></i>
+                        </div>
+                        <h4>Movies</h4>
+                        <div class="section-title">
+                            <h2><span class="theme-color" style="text-align: justify;text-indent:2em;line-height: 2em">
+                            喜欢看电影，也是我们对现实生活的补充和调剂，电影作为“脱离现实”，又无时无刻不在映照生活的精神产品，世界如巨大的“放映厅”，每个人是演员，演绎着自己的故事</span>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-services text-center wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="servise-icon">
+                            <i class="fa fa-codepen"></i>
+                        </div>
+                        <h4>Sports&Exercise</h4>
+                        <div class="section-title">
+                            <h2><span class="theme-color" style="text-indent:2em;line-height: 2em"><span
+                                    class="theme-color">生命在于运动，健康在于锻炼 </span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-services last-service text-center wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="servise-icon">
+                            <i class="fa fa-camera"></i>
+                        </div>
+                        <h4>Musics</h4>
+                        <div class="section-title">
+                            <h2><span class="theme-color" style="text-align: justify;text-indent:2em;line-height: 2em">
+                            没有音乐的世界是荒芜的世界，没有音乐的人生是平庸的人生。音乐具有解除烦恼、美化生活、净化心灵、给人灵感、修身养性等魔力
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--======*************** END SERVICES SECTION ****************=======-->
+
+
+    <!--QUOTES AREA-->
+    <div id="quotes" class="quotes-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="quotes-content text-center">
+                        <h3>Concat Me?</h3>
+                        <p>It is my pleasure to be able to serve you</p>
+                        <a class="scroll-btn btn theme-color" href="#contact">Go Concat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END QUOTES AREA-->
+
+
+    <!--======********** PORTFOLIO SECTION *********======-->
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2><span class="theme-color">My recent enjoyment</span> Movies</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                {% for movie in movies %}
+                    <div class="col-md-4 col-sm-6 single-work">
+                        <!--<a href="/static/{{ movie.cover_image }}" class="image-popup">-->
+                        <a href="/HomeMe/movie/{{ movie.id }}">
+                            <img src="/static/{{ movie.cover_image }}" alt="">
+                            <div class="itemHover">
+                                <div class="work-table">
+                                    <div class="table-cell">
+                                        <div class="hover-content">
+                                            <p><h6>影音简介：</h6>
+                                            {{ movie.introduction }}
+                                            </p>
+                                            <p><h6>欣赏评论：</h6>
+                                            {{ movie.comment }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div><!--/.row-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2><span class="theme-color">Here are melodious</span>Musics</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for music in musics %}
+                    <div class="col-md-4 col-sm-6 single-work">
+                        <!--<a href="/static/{{ music.cover_image }}" class="image-popup">-->
+                        <a href="/HomeMe/music/{{ music.id }}">
+                            <img src="/static/{{ music.cover_image }}" alt="">
+                            <div class="itemHover">
+                                <div class="work-table">
+                                    <div class="table-cell">
+                                        <div class="hover-content">
+                                            <p><h6>歌曲名字：</h6>
+                                            {{ music.name }}
+                                            </p>
+                                            <p><h6>原唱歌手：</h6>
+                                            {{ music.original_author }}
+                                            </p>
+                                            <p><h6>精彩歌词：</h6>
+                                            {{ music.wonderful_lyrics }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section>
+    <!--======************ END PORTFOLIO SECTION **************======-->
+
+    <!--==============Blog==================-->
+    <div id="blogs" class="quotes-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2><span class="theme-color">To know more about me </span> Blogs</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="quotes-content text-center">
+                        <a class="scroll-btn btn theme-color" href="http://blog.csdn.net/a_little_snail"
+                           target="_blank">&nbsp;&nbsp;&nbsp;CSDN&nbsp;&nbsp;&nbsp;</a>
+                        <a class="scroll-btn btn theme-color" href="http://www.cnblogs.com/jasonhaven/"
+                           target="_blank">CNBLOGS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==========Blog======================-->
+{% endblock %}

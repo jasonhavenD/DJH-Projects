@@ -1,0 +1,157 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#aec7e1"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/title"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="65.83dp"
+                android:layout_height="30.5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/btn"
+                android:text="@string/back"
+                android:textColor="#ffff" />
+
+            <TextView
+                android:id="@+id/tv_friend_title"
+                android:layout_width="wrap_content"
+                android:layout_height="50dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="皮肤设置"
+                android:textColor="#ffffff"
+                android:textSize="20dip" />
+
+            <Button
+                android:layout_width="65.83dp"
+                android:layout_height="30.5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_4"
+                android:focusable="false"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RadioGroup
+                    android:id="@+id/rbtn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@+id/sixth" >
+
+                    <RadioButton
+                        android:id="@+id/sixth"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="#d8d8d8"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/sixth"
+                        android:drawableRight="@android:drawable/btn_radio"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text=" 默认颜色"
+                        android:textColor="#66849e"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/first"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="#d8d8d8"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/first"
+                        android:drawableRight="@android:drawable/btn_radio"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text=" 深海之蓝"
+                        android:textColor="#0c476f"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/second"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="#d8d8d8"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/second"
+                        android:drawableRight="@android:drawable/btn_radio"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text=" 炫酷之黑"
+                        android:textColor="#1d1c21"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/third"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="#d8d8d8"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/third"
+                        android:drawableRight="@android:drawable/btn_radio"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text=" 金属之灰"
+                        android:textColor="#878787"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/fourth"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="#d8d8d8"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/fourth"
+                        android:drawableRight="@android:drawable/btn_radio"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text=" 青葱岁月"
+                        android:textColor="#16a203"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/fifth"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="#d8d8d8"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/fifth"
+                        android:drawableRight="@android:drawable/btn_radio"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="蔚蓝天空"
+                        android:textColor="#1568d2"
+                        android:textSize="15sp" />
+                </RadioGroup>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

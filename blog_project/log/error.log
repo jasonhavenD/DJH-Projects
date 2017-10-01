@@ -1,0 +1,78 @@
+2015-06-02 18:19:36,690 [Thread-2:5904] [blog.views:11] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-02 18:21:20,237 [Thread-8:5784] [blog.views:11] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-02 18:30:50,698 [Thread-2:2752] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-02 18:31:07,993 [Thread-2:5660] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-02 18:31:31,128 [Thread-2:3356] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 15:27:40,071 [Thread-2:5952] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 17:32:38,887 [Thread-41:2620] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 17:36:14,733 [Thread-45:3460] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 17:46:34,191 [Thread-58:5928] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 17:53:13,569 [Thread-72:3516] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 17:56:15,328 [Thread-84:7484] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 17:58:08,994 [Thread-96:6528] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 18:02:55,747 [Thread-110:4912] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 18:03:11,200 [Thread-2:6748] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 18:04:51,278 [Thread-12:6604] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 18:06:37,188 [Thread-2:5020] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 18:07:20,618 [Thread-8:3636] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 18:07:37,653 [Thread-10:6280] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-08 18:11:09,709 [Thread-22:2620] [blog.views:16] [views:index] [ERROR]- [Errno 2] No such file or directory: 'sss.txt'
+2015-06-09 17:20:24,430 [Thread-22:8000] [blog.views:29] [views:index] [ERROR]- invalid literal for int() with base 10: 'ddd'
+2015-06-10 15:04:49,648 [Thread-2:10096] [blog.views:31] [views:index] [ERROR]- DISTINCT ON fields is not supported by this database backend
+2015-06-10 15:05:03,825 [Thread-14:7208] [blog.views:31] [views:index] [ERROR]- DISTINCT ON fields is not supported by this database backend
+2015-06-10 15:05:47,466 [Thread-2:6892] [blog.views:31] [views:index] [ERROR]- DISTINCT ON fields is not supported by this database backend
+2015-06-10 15:06:00,331 [Thread-15:3192] [blog.views:31] [views:index] [ERROR]- DISTINCT ON fields is not supported by this database backend
+2015-06-10 15:09:13,878 [Thread-2:6428] [blog.views:31] [views:index] [ERROR]- 'date_publish' is a DateTimeField, not a DateField.
+2015-06-10 15:09:28,397 [Thread-2:6696] [blog.views:32] [views:index] [ERROR]- 'date_publish' is a DateTimeField, not a DateField.
+2015-06-10 15:09:54,683 [Thread-2:4812] [blog.views:32] [views:index] [ERROR]- Database returned an invalid value in QuerySet.datetimes(). Are time zone definitions for your database and pytz installed?
+2015-06-10 15:13:30,331 [Thread-2:3964] [blog.views:32] [views:index] [ERROR]- DISTINCT ON fields is not supported by this database backend
+2015-06-10 15:13:51,769 [Thread-2:8844] [blog.views:32] [views:index] [ERROR]- DISTINCT ON fields is not supported by this database backend
+2015-06-10 15:14:21,881 [Thread-2:6284] [blog.views:32] [views:index] [ERROR]- DISTINCT ON fields is not supported by this database backend
+2015-06-10 15:37:20,263 [Thread-2:6908] [blog.views:36] [views:index] [ERROR]- Raw query must include the primary key
+2015-06-10 15:38:56,917 [Thread-2:4312] [blog.views:36] [views:index] [ERROR]- (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'DISTINCT DATE_FORMAT(date_publish, "%Y-%m") as col_date FROM blog_article ORDER \' at line 1')
+2015-06-10 16:15:22,463 [Thread-50:9076] [blog.views:62] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2015-06-10 16:15:27,243 [Thread-54:4968] [blog.views:62] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2015-06-10 16:42:10,993 [Thread-2:7752] [blog.views:46] [views:index] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2015-06-10 16:42:32,805 [Thread-14:9384] [blog.views:46] [views:index] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2015-06-10 16:42:36,690 [Thread-26:9012] [blog.views:57] [views:archive] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2015-06-10 16:42:42,789 [Thread-30:8640] [blog.views:46] [views:index] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2015-06-10 16:43:02,029 [Thread-2:9124] [blog.views:47] [views:index] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2015-06-10 16:43:09,953 [Thread-14:8276] [blog.views:47] [views:index] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2015-06-10 16:44:01,450 [Thread-26:9760] [blog.views:47] [views:index] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2015-06-10 16:45:45,793 [Thread-46:2744] [blog.views:58] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2015-06-10 16:47:17,980 [Thread-88:7388] [blog.views:58] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2015-06-16 14:51:41,684 [Thread-2:20204] [blog.views:100] [views:article] [ERROR]- 'int' object has no attribute 'upper'
+2015-06-16 14:52:01,048 [Thread-2:18372] [blog.views:101] [views:article] [ERROR]- 'int' object has no attribute 'upper'
+2015-06-16 16:24:47,555 [Thread-2:39780] [blog.views:113] [views:article] [ERROR]- 'Comment' object has no attribute 'children_comment'
+2015-06-16 16:25:30,266 [Thread-2:39348] [blog.views:113] [views:article] [ERROR]- 'Comment' object has no attribute 'children_comment'
+2015-06-16 16:34:43,289 [Thread-2:39948] [blog.views:110] [views:article] [ERROR]- 'Comment' object has no attribute 'children_comment'
+2015-06-18 11:53:57,273 [Thread-23:11016] [blog.views:116] [views:article] [ERROR]- 'AnonymousUser' object has no attribute 'email'
+2015-06-18 11:54:13,278 [Thread-27:7988] [blog.views:116] [views:article] [ERROR]- 'AnonymousUser' object has no attribute 'email'
+2015-06-18 11:54:51,447 [Thread-2:11068] [blog.views:116] [views:article] [ERROR]- 'AnonymousUser' object has no attribute 'email'
+2015-06-18 11:56:02,858 [Thread-2:10792] [blog.views:117] [views:article] [ERROR]- 'AnonymousUser' object has no attribute 'email'
+2015-06-18 11:57:20,801 [Thread-2:11624] [blog.views:116] [views:article] [ERROR]- 'AnonymousUser' object has no attribute 'email'
+2015-06-18 13:44:34,516 [Thread-2:28676] [blog.views:136] [views:comment_post] [ERROR]- dumps() takes at least 1 argument (0 given)
+2015-06-18 13:46:34,177 [Thread-16:30264] [blog.views:136] [views:comment_post] [ERROR]- dumps() takes at least 1 argument (0 given)
+2015-06-18 13:54:02,503 [Thread-7:30780] [blog.views:134] [views:comment_post] [ERROR]- dumps() takes at least 1 argument (0 given)
+2015-06-18 15:22:51,171 [Thread-16:46820] [blog.views:173] [views:do_reg] [ERROR]- 'User' object has no attribute 'backend'
+2015-06-18 15:26:17,615 [Thread-2:1308] [blog.views:174] [views:do_reg] [ERROR]- (1062, "Duplicate entry '5566' for key 'username'")
+2015-06-18 15:52:41,315 [Thread-5:52768] [blog.views:173] [views:do_reg] [ERROR]- 'password1'
+2015-06-18 15:52:49,421 [Thread-6:52772] [blog.views:173] [views:do_reg] [ERROR]- 'password1'
+2015-06-18 15:52:52,585 [Thread-7:52796] [blog.views:173] [views:do_reg] [ERROR]- 'password1'
+2015-06-18 15:52:58,059 [Thread-9:52804] [blog.views:173] [views:do_reg] [ERROR]- 'password1'
+2015-06-18 16:21:52,552 [Thread-18:54640] [blog.views:206] [views:category] [ERROR]- Cannot resolve keyword 'categroy_id' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2015-06-18 16:23:43,878 [Thread-10:57512] [blog.views:210] [views:category] [ERROR]- Cannot resolve keyword 'categroy' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2015-06-18 16:23:46,529 [Thread-11:57520] [blog.views:210] [views:category] [ERROR]- Cannot resolve keyword 'categroy' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2015-06-18 16:23:49,391 [Thread-12:57544] [blog.views:210] [views:category] [ERROR]- Cannot resolve keyword 'categroy' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2015-06-18 16:23:50,260 [Thread-13:57560] [blog.views:210] [views:category] [ERROR]- Cannot resolve keyword 'categroy' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2015-06-18 16:24:06,690 [Thread-14:57788] [blog.views:210] [views:category] [ERROR]- Cannot resolve keyword 'categroy' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2015-06-18 16:24:44,395 [Thread-39:58268] [blog.views:210] [views:category] [ERROR]- Cannot resolve keyword 'categroy' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2015-06-18 16:24:58,700 [Thread-2:57468] [blog.views:211] [views:category] [ERROR]- Cannot resolve keyword 'categroy' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2015-06-18 16:25:11,709 [Thread-2:54640] [blog.views:212] [views:category] [ERROR]- Cannot resolve keyword 'categroy' into field. Choices are: category, category_id, click_count, comment, content, date_publish, desc, id, is_recommend, tag, title, user, user_id
+2015-06-19 13:21:17,970 [Thread-2:5552] [blog.views:58] [views:index] [ERROR]- 'WSGIRequest' object has no attribute 'args'
+2015-06-19 13:21:19,151 [Thread-5:7992] [blog.views:58] [views:index] [ERROR]- 'WSGIRequest' object has no attribute 'args'
+2015-06-19 13:22:00,430 [Thread-2:7968] [blog.views:58] [views:index] [ERROR]- 'WSGIRequest' object has no attribute 'args'
+2017-09-13 20:41:39,653 [Thread-36:6576] [blog.views:197] [views:do_login] [ERROR]- Reverse for '' not found. '' is not a valid view function or pattern name.
+2017-09-13 20:42:14,737 [Thread-43:11044] [blog.views:173] [views:do_reg] [ERROR]- Reverse for '' not found. '' is not a valid view function or pattern name.
+2017-09-13 20:42:59,815 [Thread-50:15320] [blog.views:173] [views:do_reg] [ERROR]- Reverse for '' not found. '' is not a valid view function or pattern name.
+2017-09-13 20:43:11,048 [Thread-53:3460] [blog.views:197] [views:do_login] [ERROR]- Reverse for '' not found. '' is not a valid view function or pattern name.
