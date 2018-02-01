@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <title>后台管理系统</title>
+  <meta name="description" content="">
+
+  <link href="css/templatemo-style.css" rel="stylesheet">
+  <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+ <script type="text/javascript" src="../admin/js/wallet.js"></script>
+
+
+  
+</head>
+<body onload="getAllInfo()" >  
+  <!-- Left column -->
+  <div class="templatemo-flex-row">
+    <div class="templatemo-sidebar">
+      <header class="templatemo-site-header">
+        <div class="square"></div>
+        <h5>后台管理</h5>
+      </header>
+      <div class="profile-photo-container">
+        <img src="images/lightlogo.png" alt="Profile Photo" class="img-responsive">  
+        <div class="profile-photo-overlay"></div>
+      </div>      
+      <!-- Search box -->
+      <form class="templatemo-search-form" role="search">
+        <div class="input-group">
+        
+        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">    
+        <button type="submit" class="fa fa-search"></button>       
+        </div>
+      </form>
+      <div class="mobile-menu-icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <nav class="templatemo-left-nav">          
+         <ul>
+            <li><a href="showproduct.html" class="active" ><i class="glyphicon glyphicon-lamp" ></i>产品中心</a></li>
+            <li><a href="order.html" ><i class="glyphicon glyphicon-duplicate"></i>订单管理</a></li>
+            <!-- <li><a href="inventory.html"><i class="fa fa-bar-chart fa-fw"></i>库存管理</a></li> -->
+            <li><a href="region.html" ><i class="glyphicon glyphicon-globe"></i>地区分布</a></li>
+            <li><a href="company.html" ><i class="glyphicon glyphicon-user"></i>会员管理</a></li>
+            <li><a href="comment.html" ><i class="glyphicon glyphicon-leaf"></i>评价管理</a></li>
+             <li><a href="cash.html" ><i class="glyphicon glyphicon-jpy"></i>资金管理</a></li>
+            <li><a href="#" ><i class="glyphicon glyphicon-tasks"></i>控制面板</a></li>
+            <li><a href="login.html" ><i class="glyphicon glyphicon-log-out"></i>退出登录</a></li>
+          </ul>  
+      </nav>
+    </div>
+    <!-- Main content --> 
+    
+    <div class="templatemo-content col-1 light-gray-bg">
+      <div class="templatemo-top-nav-container">
+        <div class="row">
+          <nav class="templatemo-top-nav col-lg-12 col-md-12">
+            <ul class="text-uppercase">
+              <li><a href="" class="active">权限管理</a></li>
+              <li><a href="">基本设置</a></li>
+              <li><a href="">页面设置</a></li>
+              <li><a href="login.html">注册</a></li>
+            </ul>  
+          </nav> 
+        </div>
+      </div>
+      
+      <div class="templatemo-content-container">
+        <div class="templatemo-content-widget white-bg">
+          需要搜索，不需要进行操作！
+          <ul id="myTab" class="nav nav-tabs">
+            <li class="dropdown active">
+              <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown"> 
+                普通会员<b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                <li><a href="#companyinfo" tabindex="-1" data-toggle="tab">基本信息</a></li>
+                <li><a href="#companyorder" tabindex="-1" data-toggle="tab">订单信息</a></li>
+                <li><a href="#companyserial" tabindex="-1" data-toggle="tab" >流水信息</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" id="myTabDrop2" class="dropdown-toggle" data-toggle="dropdown"> 
+                认证代理商<b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop2">
+                <li><a href="#companycertifiedinfo" tabindex="-1" data-toggle="tab">基本信息</a></li>
+                <li><a href="#companycertifiedorder" tabindex="-1" data-toggle="tab">订单信息</a></li>
+                <li><a href="#companycertifiedserial" tabindex="-1" data-toggle="tab" >流水信息</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#certified" data-toggle="tab">认证申请</a>
+            </li>
+          </ul>
+
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="companyinfo">
+              <div class="panel panel-default table-responsive">
+                <table class="table table-striped table-bordered templatemo-user-table">
+                  <thead>
+                    <tr>
+                      <td><a href="" class="white-text templatemo-sort-by">会员状态</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">用户名</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">姓名</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">地址</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">店名</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">手机号</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">邮箱</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">固话</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">邮编</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">出生日期</a></td>
+                      <td>编辑</td> 
+                      <td>删除</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><a href="" class="templatemo-edit-btn">修改</a></td>
+                      <td><a href="" class="templatemo-link">删除</a></td>
+                    </tr>
+                    
+                  </tbody>
+                </table> 
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="companyorder">
+              <div class="templatemo-content-widget white-bg">
+                <ul id="myTab2" class="nav nav-tabs">
+                  <li class="active">
+                    <a href="#companyorderone"  data-toggle="tab"> 
+                      待付款
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#companyordertwo" data-toggle="tab"> 
+                      待发货
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#companyorderthree" data-toggle="tab"> 
+                      待评价
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#companyorderfour" data-toggle="tab"> 
+                      已完成
+                    </a>
+                  </li>
+                </ul>
+                <div id="myTabContent2" class="tab-content">
+                  <div class="tab-pane fade in active" id="companyorderone">
+                    <div class="panel panel-default table-responsive">
+                      <table class="table table-striped table-bordered templatemo-user-table">
+                        <thead>
+                          <tr>
+                            <td><a href="" class="white-text templatemo-sort-by">物流单号</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">客户名</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">地址</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">总价</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">发票抬头</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">创建日期</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">产品价格</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">产品名称 </a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">数量</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">促销类别</a></td>
+                            <td>编辑</td>
+                            <td>删除</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>  
+                            <td><a href="" class="templatemo-edit-btn">修改</a></td>
+                            <td><a href="" class="templatemo-link">删除</a></td>
+                          </tr>
+                        </tbody>
+                      </table>    
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="companyordertwo">
+                    这是待发货
+                  </div>
+                  <div class="tab-pane fade" id="companyordertwo">
+                    这是待发货
+                  </div>
+                  <div class="tab-pane fade" id="companyordertwo">
+                    这是待发货
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="companyserial">
+              <div class="panel panel-default table-responsive">
+                <table class="table table-striped table-bordered templatemo-user-table">
+                  <thead>
+                    <tr>
+                      <td><a href="" class="white-text templatemo-sort-by">用户名</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">用户手机号</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">订单确立时间</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">产品名称</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">数量</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">金额</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">类型(充值1提现2支付3)</a></td>                     
+                      <td>编辑</td>
+                      <td>删除</td>
+                    </tr>
+                  </thead>
+                  <tbody id="showOrdinaryWallet">
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>  
+                      <td><a href="" class="templatemo-edit-btn">修改</a></td>
+                      <td><a href="" class="templatemo-link">删除</a></td>
+                    </tr>
+                  </tbody>
+                </table>    
+              </div>
+            </div>
+            <!---->
+            <div class="tab-pane fade in" id="companycertifiedinfo">
+              <div class="panel panel-default table-responsive">
+                <table class="table table-striped table-bordered templatemo-user-table">
+                  <thead>
+                    <tr>
+                      <td><a href="" class="white-text templatemo-sort-by">会员状态</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">用户名</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">姓名</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">地址</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">店名</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">手机号</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">身份证</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">营业执照</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">门头照片</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">邮箱</a></td> 
+                      <td><a href="" class="white-text templatemo-sort-by">固话</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">邮编</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">出生日期</a></td>
+                      <td>编辑</td> 
+                      <td>删除</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><a href="" class="white-text templatemo-sort-by">门头照片</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">门头照片</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">门头照片</a></td>
+                      <td><a href="" class="templatemo-edit-btn">修改</a></td>
+                      <td><a href="" class="templatemo-link">删除</a></td>
+                    </tr>
+                  </tbody>
+                </table> 
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="companycertifiedorder">
+              <div class="templatemo-content-widget white-bg">
+                <ul id="myTab3" class="nav nav-tabs">
+                  <li class="active">
+                    <a href="#companycertifiedorderone"  data-toggle="tab"> 
+                      待付款
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#companycertifiedordertwo" data-toggle="tab"> 
+                      待发货
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#companycertifiedorderthree" data-toggle="tab"> 
+                      待评价
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#companycertifiedorderfour" data-toggle="tab"> 
+                      已完成
+                    </a>
+                  </li>
+                </ul>
+                <div id="myTabContent3" class="tab-content">
+                  <div class="tab-pane fade in active" id="companycertifiedorderone">
+                    <div class="panel panel-default table-responsive">
+                      <table class="table table-striped table-bordered templatemo-user-table">
+                        <thead>
+                          <tr>
+                            <td><a href="" class="white-text templatemo-sort-by">物流单号</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">客户名</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">地址</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">总价</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">发票抬头</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">创建日期</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">产品价格</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">产品名称 </a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">数量</a></td>
+                            <td><a href="" class="white-text templatemo-sort-by">促销类别</a></td>
+                            <td>编辑</td>
+                            <td>删除</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>  
+                            <td><a href="" class="templatemo-edit-btn">修改</a></td>
+                            <td><a href="" class="templatemo-link">删除</a></td>
+                          </tr>
+                        </tbody>
+                      </table>    
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="companycertifiedordertwo">
+                    这是待发货
+                  </div>
+                  <div class="tab-pane fade" id="companycertifiedordertwo">
+                    这是待发货
+                  </div>
+                  <div class="tab-pane fade" id="companycertifiedordertwo">
+                    这是待发货
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="companycertifiedserial">
+              <div class="panel panel-default table-responsive">
+                <table class="table table-striped table-bordered templatemo-user-table">
+                  <thead>
+                    <tr>
+                      <td><a href="" class="white-text templatemo-sort-by">用户名</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">用户手机号</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">订单确立时间</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">产品名称</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">数量</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">金额</a></td>
+                      <td><a href="" class="white-text templatemo-sort-by">类型(充值1提现2支付3)</a></td>                     
+                      <td>编辑</td>
+                      <td>删除</td>
+                    </tr>
+                  </thead>
+                  <tbody id="showAuthenticateWallet">
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>  
+                      <td><a href="" class="templatemo-edit-btn">修改</a></td>
+                      <td><a href="" class="templatemo-link">删除</a></td>
+                    </tr>
+                  </tbody>
+                </table>    
+              </div>
+            </div>    
+            <div class="tab-pane fade" id="certified">
+              <div class="templatemo-content-widget white-bg">
+                <div class="panel panel-default table-responsive">
+                <table class="table table-striped table-bordered templatemo-user-table">
+                  <thead>
+                    <tr>
+                      <td><a href="" class="white-text templatemo-sort-by">经销商名</a></td>                     
+                      <td>查看</td>
+                      <td>是否通过</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td> 
+                      <td><a href="iscertified.html" class="templatemo-edit-btn" >查看</a></td>
+                      <td>
+                          <input type="radio" name="" id="">
+                      </td> 
+                    </tr>
+                  </tbody>
+                </table>    
+                
+              </div>
+              </div>
+
+            </div>     
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

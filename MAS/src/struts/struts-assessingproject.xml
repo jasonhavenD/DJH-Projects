@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+<package name="aproject" extends="struts-default" namespace="/Aproject">
+	
+	<!-- 初始化查询页面 -->
+		<action name="initSearch" class="aprojectAction" method="initSearch">
+        	<result name="success">/page/assessingproject/assessingproject-list.jsp</result>
+        </action>
+        <!--查询信息  -->
+         <action name="findAproject" class="aprojectAction" method="findAproject">  
+            <result name="success">/page/assessingproject/assessingproject-list.jsp</result>
+        </action>
+        <!-- 跳转到修改页面 -->
+        <action name="editToAproject" class="aprojectAction" method="initEdit">  
+            <result name="success">/page/assessingproject/assessingproject-edit.jsp</result>
+        </action>
+        <!-- 保存 -->
+        <action name="editAproject" class="aprojectAction" method="modifiAproject" >  
+           <result name="success" type="redirectAction">initSearch</result>
+        </action>
+        <!-- 开启计算 -->
+        <action name="openAproject" class="aprojectAction" method="openAproject" >    
+           <result name="success" type="redirectAction">initSearch</result>
+        </action>
+        <!-- 关闭计算 -->
+        <action name="closeAproject" class="aprojectAction" method="closeAproject" >  
+           <result name="success" type="redirectAction">initSearch</result>
+        </action>
+        <!-- 删除 -->
+        <action name="deleteAproject" class="aprojectAction" method="deleteAproject" >  
+            <result name="success" type="redirectAction">initSearch</result>
+        </action>
+	</package>
+</struts>    

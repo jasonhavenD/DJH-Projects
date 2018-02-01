@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>确认订单</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+  <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <link href="css/buynow.css" rel='stylesheet' type='text/css' />
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      var main = 1;//参照列 从0开始
+      var td = [2,3];//根据参照列合并的列 从0开始
+      window.onload=function()
+      {
+        var table = document.getElementById("tab"); 
+        var name=""; 
+        for(var i=0,j=0;i <table.rows.length;i++,j++) 
+        {
+          if(name==table.rows[i].cells[main].innerHTML) 
+          {
+            table.rows[i].deleteCell(main);
+            for(var h=0;h<td.length;h++)
+            {
+              table.rows[i].deleteCell(td[i]);
+            }
+          }
+          else
+          {
+            name=table.rows[i].cells[main].innerHTML; 
+            if(i>0)
+            {
+              table.rows[i-j].cells[main].rowSpan=j; 
+              for(var h=0;h<td.length;h++)
+              {
+                table.rows[i-j].cells[td[h]].rowSpan=j; 
+              }
+            }
+            j=0; 
+          }
+        }
+      }
+    </script>
+</head>
+<body>
+  
+    
+
+<table border="1" id="tab">
+  <tr>
+    <td>编号</td>
+    <td>姓名</td>
+    <td>性别</td>
+    <td>年龄</td>
+    <td>科目</td>
+    <td>分数</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>高高</td>
+    <td>男</td>
+    <td>12</td>
+    <td>数学</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>高高</td>
+    <td>男</td>
+    <td>12</td>
+    <td>语文</td>
+    <td>90</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>王帅</td>
+    <td>男</td>
+    <td>23</td>
+    <td>物理</td>
+    <td>0</td>
+  </tr>
+</table>
+</body>
+</html>
+<body>
+</html>

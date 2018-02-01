@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="stup6" location="301,10" size="1015,420">
+    <action name="initSearch-Com" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="International-in-list.jsp" />
+      </result>
+    </action>
+    <action name="findCommunicationsitu" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="International-in-list.jsp" />
+      </result>
+    </action>
+    <action name="findMajorByDno" location="310,162" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="editToCommunicationsitu" location="310,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="International-in-edit.jsp" />
+      </result>
+    </action>
+    <action name="editCommunicationsitu" location="800,337" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteCommunicationsitu" location="800,232" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcel" location="555,232" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="International-in-list.jsp" path="/page/lab/International-in-list.jsp" location="18,135" size="150,55" />
+  <webResource name="International-in-edit.jsp" path="/page/lab/International-in-edit.jsp" location="15,310" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+  <include file="struts.xml" location="10,520" size="150,30" />
+  <include file="struts-default.xml" location="255,520" size="150,30" />
+</Struts2Diagram>
+

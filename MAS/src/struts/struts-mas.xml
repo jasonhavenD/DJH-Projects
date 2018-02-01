@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+<package name="mas" extends="struts-default" namespace="/Mas">
+	
+	<!-- 初始化查询页面 -->
+		<action name="initSearch" class="masAction" method="initSearch">
+        	<result name="success">/page/mas/mas-list.jsp</result>
+        	<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!--查询信息  -->
+         <action name="findMas" class="masAction" method="findMas">  
+            <result name="success">/page/mas/mas-list.jsp</result>
+            <result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!-- 跳转到修改页面 -->
+        <action name="editToMas" class="masAction" method="initEdit">  
+            <result name="success">/page/mas/mas-edit.jsp</result>
+        </action>
+        <!-- 保存 -->
+        <action name="editMas" class="masAction" method="modifiMas" >  
+           <result name="success" type="redirectAction">initSearch</result>
+        </action>
+        <!-- 删除 -->
+        <action name="deleteMas" class="masAction" method="deleteMas" >  
+            <result name="success" type="redirectAction">initSearch</result>
+        </action>
+        <!-- 导出 -->
+		<action name="exportMas" class="exportAction" method="export">
+			<result name="success" type="redirectAction">initSearch</result>
+		</action>
+		
+	</package>
+</struts>    

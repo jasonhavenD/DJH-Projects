@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="major" extends="commons" namespace="/major">
+		<!-- 初始化查询页面 -->
+		<action name="initSearch" class="majorAction" method="initSearch">
+			<result name="success">/page/major/major-list.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--查询课程信息  -->
+		<action name="findMajor" class="majorAction" method="findMajor">
+			<result name="success">/page/major/major-list.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		
+		<!-- 跳转到查看页面 -->
+		<action name="initInfo" class="majorAction" method="initInfo">
+			<result name="success">/page/major/major-info.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!-- 跳转到修改页面 -->
+		<action name="editToMajor" class="majorAction" method="initEdit">
+			<result name="success">/page/major/major-edit.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!--保存修改信息  -->
+		<action name="editMajor" class="majorAction" method="modifiMajor">
+			<result name="success" type="redirectAction">findMajor</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!-- 跳转到添加页面 -->
+		<action name="addToMajor" class="majorAction" method="initAdd">
+			<result name="success">/page/major/major-add.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!--保存添加信息  -->
+		<action name="addMajor" class="majorAction" method="insertMajor">
+			<result name="success" type="redirectAction">initSearch</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!-- 删除记录 -->
+		<action name="deleteMajor" class="majorAction" method="deleteMajor">
+			<result name="success" type="redirectAction">findMajor</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!-- 导出 -->
+        <action name="exportExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">initSearch</result>
+        	<result name="error">/page/common/doOperationerror.jsp</result>
+        </action> 
+		<!-- 导入 -->
+		<!-- 弹出上传提示框 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!-- 上传附件 -->
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+
+	</package>
+</struts>

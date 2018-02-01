@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="mail" location="0,0" size="0,0">
+    <action name="mailSendMail" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="result-list.jsp" path="/page/Result/result-list.jsp" location="1835,135" size="150,55" />
+  <webResource name="error.jsp" path="../error.jsp" location="63,1255" size="150,55" />
+  <webResource name="errorstring.jsp" path="../errorstring.jsp" location="1550,240" size="150,55" />
+  <webResource name="Result-in-edit.jsp" path="/page/Result/Result-in-edit.jsp" location="1581,415" size="150,55" />
+  <webResource name="teacher-Result-information.jsp" path="/page/Result/teacher-Result-information.jsp" location="1580,835" size="150,55" />
+  <webResource name="teacher-result-edit.jsp" path="/page/Result/teacher-result-edit.jsp" location="1566,1675" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="800,1885" size="150,55" />
+  <webResource name="importerror.jsp" path="/page/common/importerror.jsp" location="225,1360" size="150,55" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="184,1570" size="150,55" />
+  <webResource name="importmajorerror.jsp" path="/page/common/importmajorerror.jsp" location="175,1745" size="150,55" />
+  <webResource name="importStyleerror.jsp" path="/page/common/importStyleerror.jsp" location="490,1885" size="150,55" />
+  <webResource name="success.jsp" path="/mail/success.jsp" location="0,0" size="0,0" />
+  <webResource name="error.jsp" path="/mail/error.jsp" location="0,0" size="0,0" />
+  <webResource name="success.jsp" path="/page/mail/success.jsp" location="0,0" size="0,0" />
+  <webResource name="error.jsp" path="/page/mail/error.jsp" location="0,0" size="0,0" />
+  <webResource name="login.jsp" path="/login.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

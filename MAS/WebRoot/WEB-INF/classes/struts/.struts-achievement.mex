@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="achievements" location="675,10" size="1820,700">
+    <action name="findAchievements" location="1605,117" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="result-list.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="initSearchAchieve" location="1605,617" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="result-list.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="editToAchievements" location="1220,617" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="Result-in-edit.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="editAchievements" location="1220,337" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="addAchievements" location="1465,337" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="deleteAchievements" location="1465,232" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="findTeachAchieves" location="940,232" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="teacher-Result-information.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="editToTeacherachievements" location="555,232" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="teacher-result-edit.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="modifiTeacherachievements" location="555,337" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="addTeacherachievements" location="800,337" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="deleteTeacherachievements" location="800,617" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="addToAchievements" location="555,617" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="teacher-result-edit.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="exportSubContestTExcel" location="555,512" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcel_1" location="310,512" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="65,512" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="65,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="result-list.jsp" path="/page/Result/result-list.jsp" location="2266,870" size="150,55" />
+  <webResource name="error.jsp" path="error.jsp" location="520,100" size="150,55" />
+  <webResource name="Result-in-edit.jsp" path="/page/Result/Result-in-edit.jsp" location="1869,765" size="150,55" />
+  <webResource name="teacher-Result-information.jsp" path="/page/Result/teacher-Result-information.jsp" location="1550,765" size="150,55" />
+  <webResource name="teacher-result-edit.jsp" path="/page/Result/teacher-result-edit.jsp" location="69,205" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="445,485" size="150,55" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="388,310" size="150,55" />
+  <webResource name="error.jsp" path="../error.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

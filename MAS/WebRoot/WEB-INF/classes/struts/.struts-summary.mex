@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="summary" location="1515,220" size="945,1435">
+    <action name="summary_*" location="730,106" size="150,293">
+      <result name="TeacherinfosummaryList">
+        <resourceEdge source="TeacherinfosummaryList" routing="0" target="TeacherInfoSummary-list.jsp" />
+      </result>
+      <result name="findSTeacherinfosummaryList">
+        <resourceEdge source="findSTeacherinfosummaryList" routing="0" target="TeacherInfoSummary-list.jsp" />
+      </result>
+      <result name="TeacherresearchsummaryList">
+        <resourceEdge source="TeacherresearchsummaryList" routing="0" target="TeacherResearchSummary-list.jsp" />
+      </result>
+      <result name="findSTeacherresearchsummaryList">
+        <resourceEdge source="findSTeacherresearchsummaryList" routing="0" target="TeacherResearchSummary-list.jsp" />
+      </result>
+      <result name="StudentculturesummaryList">
+        <resourceEdge source="StudentculturesummaryList" routing="0" target="StudentCultureSummary-list.jsp" />
+      </result>
+      <result name="findSStudentculturesummaryList">
+        <resourceEdge source="findSStudentculturesummaryList" routing="0" target="StudentCultureSummary-list.jsp" />
+      </result>
+      <result name="PracticecoursesummaryList">
+        <resourceEdge source="PracticecoursesummaryList" routing="0" target="Practicecoursesummary-list.jsp" />
+      </result>
+      <result name="findSPracticecoursesummaryList">
+        <resourceEdge source="findSPracticecoursesummaryList" routing="0" target="Practicecoursesummary-list.jsp" />
+      </result>
+      <result name="ExpertsummaryList">
+        <resourceEdge source="ExpertsummaryList" routing="0" target="ExpertSummary-list.jsp" />
+      </result>
+      <result name="findSExpertsummaryList">
+        <resourceEdge source="findSExpertsummaryList" routing="0" target="ExpertSummary-list.jsp" />
+      </result>
+      <result name="summary">
+        <resourceEdge source="summary" routing="0" target="updatesummary.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcelexpert" location="310,1247" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcelpracticecourse" location="310,1142" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcelStudentculture" location="555,1142" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcelTeacherinfo" location="555,1037" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcelTeacherresearch" location="310,1037" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="findSTeacherresearchsummaryCountList" location="65,1037" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="TeacherResearchGraph-list.jsp" />
+      </result>
+    </action>
+    <action name="findSTeacherresearchsummaryCount" location="65,932" size="150,41">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="TeacherInfoSummary-list.jsp" path="/page/summary/TeacherInfoSummary-list.jsp" location="2177,1710" size="150,55" />
+  <webResource name="TeacherResearchSummary-list.jsp" path="/page/summary/TeacherResearchSummary-list.jsp" location="1147,940" size="150,55" />
+  <webResource name="StudentCultureSummary-list.jsp" path="/page/summary/StudentCultureSummary-list.jsp" location="769,835" size="150,55" />
+  <webResource name="Practicecoursesummary-list.jsp" path="/page/summary/Practicecoursesummary-list.jsp" location="385,730" size="150,55" />
+  <webResource name="ExpertSummary-list.jsp" path="/page/summary/ExpertSummary-list.jsp" location="58,625" size="150,55" />
+  <webResource name="updatesummary.jsp" path="../updatesummary.jsp" location="1300,415" size="150,55" />
+  <webResource name="error.jsp" path="../error.jsp" location="2270,65" size="150,55" />
+  <webResource name="errorstring.jsp" path="../errorstring.jsp" location="2506,205" size="150,55" />
+  <webResource name="TeacherResearchGraph-list.jsp" path="/page/summary/TeacherResearchGraph-list.jsp" location="1156,1220" size="150,55" />
+</Struts2Diagram>
+

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<title>资讯文章内容页——厦门光服科技有限公司</title>
+		<meta name="keywords" content="HTML5,CSS3,Template" />
+		<meta name="description" content="" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- WEB FONTS : use %7C instead of | (pipe) >
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" /-->
+
+		<!-- CORE CSS -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		
+		<!-- THEME CSS -->
+		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+		<!-- PAGE LEVEL SCRIPTS -->
+		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout-shop.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+	</head>
+
+	<!--
+		AVAILABLE BODY CLASSES:
+		
+		smoothscroll 			= create a browser smooth scroll
+		enable-animation		= enable WOW animations
+
+		bg-grey					= grey background
+		grain-grey				= grey grain background
+		grain-blue				= blue grain background
+		grain-green				= green grain background
+		grain-blue				= blue grain background
+		grain-orange			= orange grain background
+		grain-yellow			= yellow grain background
+		
+		boxed 					= boxed layout
+		pattern1 ... patern11	= pattern background
+		menu-vertical-hide		= hidden, open on click
+		
+		BACKGROUND IMAGE [together with .boxed class]
+		data-background="assets/images/boxed_background/1.jpg"
+	-->
+	<body class="smoothscroll enable-animation">
+
+
+		<!-- wrapper -->
+		<div id="wrapper">
+
+			<!-- Top Bar -->
+			<div id="topBar" class="dark">
+				<div class="container">
+
+					<!-- right -->
+					<ul class="top-links list-inline pull-right">
+						<li class="text-welcome hidden-xs">Welcome to goofoo, <strong>会员姓名</strong></li>
+						<li><a class="dropdown-toggle no-text-underline" data-toggle="dropdown" href="#"><i class="fa fa-user hidden-xs"></i> 会员中心</a></li>
+						<li class="dropdown-toggle no-text-underline"><a href="9.html">登陆</a></li>
+						<li class="dropdown-toggle no-text-underline"><a href="8.html">注册</a></li>
+					</ul>
+
+					<!-- left -->
+					<ul class="top-links list-inline">
+						<li class="dropdown-toggle no-text-underline"><a href="#">光服水电  未来无限</a></li>				  					
+					</ul>
+				</div>
+			</div>
+			<!-- /Top Bar -->
+
+			<!-- 
+				AVAILABLE HEADER CLASSES
+
+				Default nav height: 96px
+				.header-md 		= 70px nav height
+				.header-sm 		= 60px nav height
+
+				.noborder 		= remove bottom border (only with transparent use)
+				.transparent	= transparent header
+				.translucent	= translucent header
+				.sticky			= sticky header
+				.static			= static header
+				.dark			= dark header
+				.bottom			= header on bottom
+				
+				shadow-before-1 = shadow 1 header top
+				shadow-after-1 	= shadow 1 header bottom
+				shadow-before-2 = shadow 2 header top
+				shadow-after-2 	= shadow 2 header bottom
+				shadow-before-3 = shadow 3 header top
+				shadow-after-3 	= shadow 3 header bottom
+
+				.clearfix		= required for mobile menu, do not remove!
+
+				Example Usage:  class="clearfix sticky header-sm transparent noborder"
+			-->
+				<div id="header" class="sticky shadow-after-3 clearfix">
+
+				<!-- TOP NAV -->
+				<header id="topNav">
+					<div class="container">
+
+						<!-- Mobile Menu Button -->
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+
+						<!-- BUTTONS -->
+						
+
+						
+						<ul class="pull-right nav nav-pills nav-second-main">
+						<!-- SEARCH -->
+							<li class="search">
+								<a href="javascript:;">
+									<i class="fa fa-search"></i>
+								</a>
+								<div class="search-box">
+									<form action="page-search-result-1.html" method="get">
+										<div class="input-group">
+											<input type="text" name="src" placeholder="请输入关键词" class="form-control" />
+											<span class="input-group-btn">
+												<button class="btn btn-primary" type="submit">搜 索</button>
+											</span>
+										</div>
+									</form>
+								</div> 
+							</li>
+							<!-- /SEARCH -->
+
+							<!-- QUICK SHOP CART -->
+							<li class="quick-cart">
+								<a href="#">
+									<span class="badge badge-aqua btn-xs badge-corner">3</span>
+									<i class="fa fa-shopping-cart"></i> 
+								</a>
+								<div class="quick-cart-box">
+									<h4>我的购物车</h4>
+
+									<div class="quick-cart-wrapper">
+
+										<a href="#"><!-- cart item -->
+											<img src="assets/images/demo/people/300x300/4-min.jpg" width="45" height="45" alt="" />
+											<h6> 照明产品名称标题</h6>
+											<h6>¥ 6.50 <span>x2</span>   <small>删除</small></h6>
+										</a><!-- /cart item -->
+
+										<a href="#"><!-- cart item -->
+											<img src="assets/images/demo/people/300x300/5-min.jpg" width="45" height="45" alt="" />
+											<h6> 电工产品名称标题</h6>
+											<h6>¥ 12.50 <span>x1</span>   <small>删除</small></h6>
+										</a><!-- /cart item -->
+
+										<!-- cart no items example -->
+										
+										<a class="text-center" href="#">
+												共3件商品  &nbsp;   共计:<strong>¥ 25.50</strong>
+										</a>
+									
+
+									</div>
+
+									<!-- quick cart footer -->
+									<div class="quick-cart-footer clearfix">
+										<a href="4.html" class="btn btn-primary btn-xs pull-right">去购物车查看详情</a>
+										<!--span class="pull-left"><small>共3件商品    共计:<strong>￥25.50</strong></samll></span-->
+									</div>
+									<!-- /quick cart footer -->
+
+								</div>
+							</li>
+							<!-- /QUICK SHOP CART -->
+
+						</ul>
+						<!-- /BUTTONS -->
+
+						<!-- Logo -->
+						<a class="logo pull-left" href="index.html">
+							<img src="assets/images/logo_dark.png" alt="" /> 
+						</a>
+						<a class="logo pull-left" href="#">
+                         <img src="assets/images/gf_50px.png" alt="" />	
+						 </a>
+						<!-- 
+							Top Nav 
+							
+							AVAILABLE CLASSES:
+							submenu-dark = dark sub menu
+						-->
+						<div class="navbar-collapse pull-right nav-main-collapse collapse">
+							<nav class="nav-main">
+
+								<ul id="topMain" class="nav nav-pills nav-main">
+									<li class="dropdown"><!-- HOME --><a  href="1.html">首  页</a></li>
+									<li class="dropdown"><!-- PAGES -->	<a class="dropdown-toggle" href="#">关于我们	</a>
+										<ul class="dropdown-menu">
+											<li class="dropdown"><a href="#">公司简介</a></li>
+											<li class="dropdown"><a href="#">招商政策</a></li>
+											<li class="dropdown"><a href="#">发展愿景</a></li>
+										</ul>
+									</li>
+									<li class="dropdown"><!-- FEATURES --><a class="dropdown-toggle" href="2.html">产品中心</a>
+										<ul class="dropdown-menu">
+											<li class="dropdown"><a class="dropdown-toggle" href="2.html"><i class="et-browser"></i> 照明产品</a>
+												<ul class="dropdown-menu">
+													<li><a href="2.html">照明产品二级分类</a></li>
+													<li><a href="2.html">照明产品二级分类</a></li>
+													<li><a href="2.html">照明产品二级分类</a></li>
+													<li><a href="2.html">照明产品二级分类</a></li>
+													<li><a href="2.html">照明产品二级分类</a></li>
+												</ul>
+											</li>
+											<li class="dropdown"><a class="dropdown-toggle" href="#"><i class="et-hotairballoon"></i> 电工产品</a>
+												<ul class="dropdown-menu">
+													<li><a href="2.html">电工产品二级分类</a></li>
+													<li><a href="2.html">电工产品二级分类</a></li>
+													<li><a href="2.html">电工产品二级分类</a></li>
+													<li><a href="2.html">电工产品二级分类</a></li>
+													<li><a href="2.html">电工产品二级分类</a></li>
+												</ul>
+											</li>
+											<li class="dropdown"><a class="dropdown-toggle" href="#"><i class="et-anchor"></i> 水暖产品</a>
+												<ul class="dropdown-menu">
+													<li><a href="2.html">水暖产品二级分类</a></li>
+													<li><a href="2.html">水暖产品二级分类</a></li>
+													<li><a href="2.html">水暖产品二级分类</a></li>
+													<li><a href="2.html">水暖产品二级分类</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+
+									<li class="dropdown"><!-- BLOG --><a class="dropdown-toggle" href="#">资源资讯</a>
+										<ul class="dropdown-menu">
+											<li class="dropdown"><a href="#">资源下载</a></li>
+											<li class="dropdown"><a href="#">新闻公告</a></li>
+											<li class="dropdown"><a href="#">行业资讯</a></li>
+											<li class="dropdown"><a href="#">帮助中心</a></li>
+										</ul>
+									</li>
+									<li class="dropdown"><!-- SHOP --><a href="#">联系我们</a></li>
+
+								</ul>
+
+							</nav>
+						</div>
+
+					</div>
+				</header>
+				<!-- /Top Nav -->
+
+			</div>
+
+<!----------------------------------------------------------中间内容开始，以上是顶部内容---------------------------------------------------------------------------------------->	
+
+
+			<!-- 
+				PAGE HEADER 
+				
+				CLASSES:
+					.page-header-xs	= 20px margins
+					.page-header-md	= 50px margins
+					.page-header-lg	= 80px margins
+					.page-header-xlg= 130px margins
+					.dark			= dark page header
+
+					.shadow-before-1 	= shadow 1 header top
+					.shadow-after-1 	= shadow 1 header bottom
+					.shadow-before-2 	= shadow 2 header top
+					.shadow-after-2 	= shadow 2 header bottom
+					.shadow-before-3 	= shadow 3 header top
+					.shadow-after-3 	= shadow 3 header bottom
+			-->
+			<section class="page-header page-header-xs">
+				<div class="container">
+
+					<h1>公司简介</h1>
+
+					<!-- breadcrumbs -->
+					<ol class="breadcrumb">
+						<li><a href="1.html">首 页</a></li>
+						<li><a href="10.html">关于我们</a></li>
+						<li class="active">公司简介</li>
+					</ol><!-- /breadcrumbs -->
+
+				</div>
+			</section>
+			<!-- /PAGE HEADER -->
+
+
+
+
+			<!-- -->
+	
+	
+	
+	
+				<div class="container padding-top-40 padding-bottom-40 ">
+					<div class="row">
+
+						<!-- RIGHT -->
+						
+						<div class="col-lg-9 col-md-9 col-sm-9 col-lg-push-3 col-md-push-3 col-sm-push-3">
+			
+
+					<div class="text-center margin-top-10 clearfix">
+						<h1 class="font-cinzel-decorative size-25 weight-300 nomargin-bottom">公司简介 或其他文章资讯标题</h1>
+						
+						
+						<hr />
+					</div>
+
+
+
+							<div class="tab-content padding-top-20">
+								<div role="tabpanel" class="tab-pane fade in active" id="description">
+	     							<div style="text-indent:2em;line-height:2">
+									<p>这是公司简介、行业资讯、帮助中心等文章发布系统的内容页面，“关于我们”栏目的公司简介、招商政策、发展远景、联系我们 等是单页内容，栏目分类需可在后台添加、删除、修改。“资源资讯”栏目的资源下载、新闻公告、行业资讯、帮助中心等是列表页内容，栏目分类同样需可在后台添加、删除、修改。</p>
+									
+									<p><img class="pull-left img-responsive" src="assets/images/demo/content_slider/10-min.jpg" alt="">	</p>							
+									<p>文章资讯内容，支持图文混排</p>
+									<p>这是公司简介、行业资讯、帮助中心等文章发布系统的内容页面，“关于我们”栏目的公司简介、招商政策、发展远景、联系我们是单页内容，栏目分类需可在后台添加、删除、修改。“资源资讯”栏目的资源下载、新闻公告、行业资讯、帮助中心是列表页内容，栏目分类同样需可在后台添加、删除、修改。</p>
+					
+	
+									
+									</div>
+								</div>
+							</div>
+
+			
+			</div>
+
+
+						<!-- LEFT -->
+						<div class="col-lg-3 col-md-3 col-sm-3 col-lg-pull-9 col-md-pull-9 col-sm-pull-9">
+
+							<!-- CATEGORIES -->
+							<div class="side-nav margin-bottom-40">
+								<div class="side-nav-head">
+									<button class="fa fa-bars"></button>
+									<h4>关于我们</h4>
+								</div>
+								<ul class="list-group list-group-bordered list-group-noicon uppercase">
+									<li class="list-group-item "><a  href="10.html">公司简介</a></li>
+									<li class="list-group-item "><a  href="10.html">招商政策</a></li>
+									<li class="list-group-item "><a  href="10.html">发展愿景</a></li>
+									<li class="list-group-item "><a  href="10.html">联系我们</a></li>
+								</ul>
+							</div>
+							
+							
+							<div class="side-nav margin-bottom-40">
+								<div class="side-nav-head">
+									<button class="fa fa-bars"></button>
+									<h4>资源资讯</h4>
+								</div>
+
+								<ul class="list-group list-group-bordered list-group-noicon uppercase">
+									<li class="list-group-item "><a  href="11.html">资源下载</a></li>
+									<li class="list-group-item "><a  href="11.html">新闻公告</a></li>
+									<li class="list-group-item "><a  href="11.html">行业资讯</a></li>
+									<li class="list-group-item "><a  href="11.html">帮助中心</a></li>
+								</ul>
+							</div>							
+							<!-- /CATEGORIES -->
+
+
+
+
+
+								<!-- BANNER ROTATOR --------------------------->
+							<div class="owl-carousel buttons-autohide controlls-over margin-bottom-10 text-center" data-plugin-options='{"singleItem": true,  "transitionStyle":"fadeUp"}'>
+								<a href="#">
+									<img class="img-responsive" src="assets/images/demo/shop/banners/sq_1.png" width="270" height="200" alt="">
+								</a>
+
+							</div>
+
+
+							<!-- /BANNER ROTATOR -->
+							
+							
+							<!-- HTML BLOCK -------------------------------
+							<div class="margin-bottom-60">
+								<h4>HTML BLOCK</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non placerat mi. Etiam non tellus eunit.</p>
+
+								<form action="#" role="form" method="post">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+										<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+										<span class="input-group-btn">
+											<button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-send"></i></button>
+										</span>
+									</div>
+								</form>
+
+							</div>
+							<!-- /HTML BLOCK -->
+
+						</div>
+
+					</div>
+					
+				</div>
+	
+			<!-- / -->
+
+
+
+<!----------------------------------------------------------中间内容结束，以下是底部内容---------------------------------------------------------------------------------------->	
+			<!-- FOOTER -->
+			<footer id="footer">
+
+				<div class="copyright">
+				  <div class="container">
+						<ul class="pull-right nomargin list-inline mobile-block">
+						
+	<a href="http://www.miitbeian.gov.cn" target="_blank">闽ICP备16014139号</a>
+						</ul>
+						
+					      厦门光服科技有限公司 &copy;  <a href="#"> 照明 </a>&bull;<a href="#"> 电工 </a>&bull;<a href="#"> 水暖 </a>					</div>
+				</div>
+
+			</footer>
+			<!-- /FOOTER -->
+
+
+		</div>
+		<!-- /wrapper -->
+
+
+		<!-- SCROLL TO TOP -->
+		<a href="#" id="toTop"></a>
+
+
+		<!-- PRELOADER -->
+		<div id="preloader">
+			<div class="inner">
+				<span class="loader"></span>
+			</div>
+		</div><!-- /PRELOADER -->
+
+
+		<!-- JAVASCRIPT FILES -->
+		<script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
+		<script type="text/javascript" src="assets/plugins/jquery/jquery-2.1.4.min.js"></script>
+
+		<script type="text/javascript" src="assets/js/scripts.js"></script>
+
+
+		<!-- PAGE LEVEL SCRIPTS -->
+		<script type="text/javascript" src="assets/js/view/demo.shop.js"></script>
+	</body>
+</html>

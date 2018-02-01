@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="course" location="247,10" size="1015,420">
+    <action name="courseInitSearch" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="course-list.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+    </action>
+    <action name="findCourse" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="course-list.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+    </action>
+    <action name="findMajorByDno" location="310,162" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+    </action>
+    <action name="editToCourse" location="310,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="course-edit.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+    </action>
+    <action name="editCourse" location="800,337" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+    </action>
+    <action name="deleteCourse" location="800,162" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+    </action>
+    <action name="exportExcel" location="555,162" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+      <result name="majorerror">
+        <resourceEdge source="majorerror" routing="0" target="importmajorerror.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="importerror.jsp" />
+      </result>
+      <result name="majorStyleerror">
+        <resourceEdge source="majorStyleerror" routing="0" target="importStyleerror.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="course-list.jsp" path="/page/course/course-list.jsp" location="13,135" size="150,55" />
+  <webResource name="course-edit.jsp" path="/page/course/course-edit.jsp" location="10,310" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="importmajorerror.jsp" path="/page/common/importmajorerror.jsp" location="0,0" size="0,0" />
+  <webResource name="importerror.jsp" path="/page/common/importerror.jsp" location="0,0" size="0,0" />
+  <webResource name="doOperationerror.jsp" path="/page/common/doOperationerror.jsp" location="0,0" size="0,0" />
+  <webResource name="importStyleerror.jsp" path="/page/common/importStyleerror.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

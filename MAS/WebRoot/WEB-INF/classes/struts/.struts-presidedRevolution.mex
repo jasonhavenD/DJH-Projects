@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="prer" location="373,10" size="770,420">
+    <action name="prerInitSearch" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="presidedRevolut-list.jsp" />
+      </result>
+    </action>
+    <action name="findPrer" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="presidedRevolut-list.jsp" />
+      </result>
+    </action>
+    <action name="editToPrer" location="65,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="presidedRevolut-edit.jsp" />
+      </result>
+    </action>
+    <action name="addPrer" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="presidedRevolut-add.jsp" />
+      </result>
+    </action>
+    <action name="editPrer" location="555,337" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deletePrer" location="555,232" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportExcel" location="310,232" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+      <result name="majorerror">
+        <resourceEdge source="majorerror" routing="0" target="importmajorerror.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="importerror.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="presidedRevolut-list.jsp" path="/page/presidedRevolut/presidedRevolut-list.jsp" location="13,135" size="150,55" />
+  <webResource name="presidedRevolut-edit.jsp" path="/page/presidedRevolut/presidedRevolut-edit.jsp" location="10,310" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="importmajorerror.jsp" path="/page/common/importmajorerror.jsp" location="0,0" size="0,0" />
+  <webResource name="importerror.jsp" path="/page/common/importerror.jsp" location="0,0" size="0,0" />
+  <webResource name="presidedRevolut-add.jsp" path="/page/presidedRevolut/presidedRevolut-add.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="assneed" location="433,10" size="525,525">
+    <action name="initSearch" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="assessingneedtarget-list.jsp" />
+      </result>
+    </action>
+    <action name="findassneed" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="assessingneedtarget-list.jsp" />
+      </result>
+    </action>
+    <action name="editToAssneed" location="65,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="assessingneedtarget-edit.jsp" />
+      </result>
+    </action>
+    <action name="editAssneed" location="310,337" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteassneed" location="310,432" size="150,62">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="initTargetMind" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="targetmind.jsp" />
+      </result>
+    </action>
+    <action name="showTargetMind" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="assessingneedtarget-list.jsp" path="/page/assessingneedtarget/assessingneedtarget-list.jsp" location="48,135" size="150,55" />
+  <webResource name="assessingneedtarget-edit.jsp" path="/page/assessingneedtarget/assessingneedtarget-edit.jsp" location="10,310" size="150,55" />
+  <webResource name="error.jsp" path="../error.jsp" location="1013,415" size="150,55" />
+  <webResource name="targetmind.jsp" path="/page/assessingneedtarget/targetmind.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

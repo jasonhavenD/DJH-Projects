@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="stup" extends="struts-default" namespace="/stupatent">
+		<!-- 初始化查询页面 -->
+		<action name="initSearch" class="stupatentAction" method="initSearch">
+			<result name="success">/page/stupatent/stupatent-list.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--查询专利信息  -->
+		<action name="findStupatent" class="stupatentAction" method="findStupatent">
+			<result name="success">/page/stupatent/stupatent-list.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		
+		<!-- 跳转到修改页面 -->
+		<action name="editToStupatent" class="stupatentAction" method="initEdit">
+			<result name="success">/page/stupatent/stupatent-edit.jsp</result>
+		</action>
+
+		<action name="editStupatent" class="stupatentAction" method="modifiStupatent">
+			<result name="success" type="redirectAction">findStupatent</result>
+		</action>
+
+		<action name="deleteStupatent" class="stupatentAction" method="deleteStupatent">
+			<result name="success" type="redirectAction">initSearch</result>
+		</action>
+		<!-- 导出 -->
+        <action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">initSearch</result>
+        </action> 
+		  <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+		
+	</package>
+</struts>    

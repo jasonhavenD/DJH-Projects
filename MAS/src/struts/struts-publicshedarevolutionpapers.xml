@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="pep" extends="struts-default" namespace="/pep">
+		<!-- 初始化查询页面 -->
+		<action name="initSearch" class="publicshedarevolutionpapersAction" method="initSearch">
+			<result name="success">/page/publicshedarevolutionpapers/publicshedarevolutionpapers-list.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--查询专利信息  -->
+		<action name="findPep" class="publicshedarevolutionpapersAction" method="findPep">
+			<result name="success">/page/publicshedarevolutionpapers/publicshedarevolutionpapers-list.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		
+		
+		<!-- 跳转到修改页面 -->
+		<action name="editToPep" class="publicshedarevolutionpapersAction" method="initEdit">
+			<result name="success">/page/publicshedarevolutionpapers/publicshedarevolutionpapers-edit.jsp</result>
+		</action>
+
+		<action name="editPep" class="publicshedarevolutionpapersAction" method="modifiPep">
+			<result name="success" type="redirectAction">findPep</result>
+		</action>
+		<action name="deletePep" class="publicshedarevolutionpapersAction" method="deletePep">
+			<result name="success" type="redirectAction">initSearch</result>
+		</action>
+		<action name="clearPep" class="publicshedarevolutionpapersAction" method="clearPep">
+			<result name="success" type="redirectAction">initSearch</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">initSearch</result>
+        </action> 
+         <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+	</package>
+</struts>    

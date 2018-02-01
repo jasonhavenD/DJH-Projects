@@ -1,0 +1,1472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd  
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd  
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd  
+           ">
+
+	<aop:config></aop:config>
+
+
+	<!-- basedao 代理 -->
+	<bean name="BaseDao" class="cn.edu.nwsuaf.dao.Impl.BaseDaoImpl"></bean>
+
+
+
+	<!--
+		Service代理，由于其他的Service都是集成BaseService，因此Service代理只有一个baseDao,其他的Service不需要代理Dao
+	-->
+	<bean id="BaseService" class="cn.edu.nwsuaf.Service.Impl.BaseServiceImpl">
+		<property name="baseDao">
+			<ref bean="BaseDao"></ref>
+		</property>
+	</bean>
+	<!-- 专业信息 -->
+	<bean id="MajorService" class="cn.edu.nwsuaf.Service.Impl.MajorService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="DisciplineTypeService" class="cn.edu.nwsuaf.Service.Impl.DisciplineTypeService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="MajorCategoryService" class="cn.edu.nwsuaf.Service.Impl.MajorCategoryService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="MajorTypeService" class="cn.edu.nwsuaf.Service.Impl.MajorTypeService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 教师信息 -->
+	<bean id="TeacherService" class="cn.edu.nwsuaf.Service.Impl.TeacherService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 学院信息 -->
+	<bean id="DepartmentService" class="cn.edu.nwsuaf.Service.Impl.DepartmentService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 学位 -->
+	<bean id="DegreeService" class="cn.edu.nwsuaf.Service.Impl.DegreeService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="ProfessionalTitleService" class="cn.edu.nwsuaf.Service.Impl.ProfessionalTitleService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TeachersCategoryService" class="cn.edu.nwsuaf.Service.Impl.TeachersCategoryService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="JobTypeService" class="cn.edu.nwsuaf.Service.Impl.JobTypeService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="LearningEdgeService" class="cn.edu.nwsuaf.Service.Impl.LearningEdgeService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="SubjectCategoryService" class="cn.edu.nwsuaf.Service.Impl.SubjectCategoryService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="AcademicdegreeService" class="cn.edu.nwsuaf.Service.Impl.AcademicdegreeService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--学生专利  -->
+	<bean id="StupatentService" class="cn.edu.nwsuaf.Service.Impl.StupatentService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="AchievementService" class="cn.edu.nwsuaf.Service.Impl.AchievementService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TeachBooksService" class="cn.edu.nwsuaf.Service.Impl.TeachBooksService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TeachBookService" class="cn.edu.nwsuaf.Service.Impl.TeachBookService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 学科竞赛 -->
+	<bean id="CompetitionService" class="cn.edu.nwsuaf.Service.Impl.CompetitionService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TeachAchieveService" class="cn.edu.nwsuaf.Service.Impl.TeachAchieveService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TeachResultBaseService" class="cn.edu.nwsuaf.Service.Impl.TeachResultBaseService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TeachResultService" class="cn.edu.nwsuaf.Service.Impl.TeachResultService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TeachprojectuserService" class="cn.edu.nwsuaf.Service.Impl.TeachprojectuserService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TeachprojectService" class="cn.edu.nwsuaf.Service.Impl.TeachprojectService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="StuCptionService" class="cn.edu.nwsuaf.Service.Impl.StuCptionService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 学生发表论文Service -->
+	<bean id="StuthesisService" class="cn.edu.nwsuaf.Service.Impl.StuthesisService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 学生信息 -->
+	<bean id="StudentService" class="cn.edu.nwsuaf.Service.Impl.StudentService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 课程资源Service -->
+	<bean id="CurriculumresourceService" class="cn.edu.nwsuaf.Service.Impl.CurriculumresourceService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 就业情况Service -->
+	<bean id="EmploymentService" class="cn.edu.nwsuaf.Service.Impl.EmploymentService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 招生情况Service -->
+	<bean id="AddmissionsService" class="cn.edu.nwsuaf.Service.Impl.AddmissionsService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 质量标准建设Service -->
+	<bean id="QualitystandardService" class="cn.edu.nwsuaf.Service.Impl.QualitystandardService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="InnovationprojectService" class="cn.edu.nwsuaf.Service.Impl.InnovationprojectService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="InnovationmemberService" class="cn.edu.nwsuaf.Service.Impl.InnovationmemberService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="EffectqualityeducationService"
+		class="cn.edu.nwsuaf.Service.Impl.EffectqualityeducationService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="PublicshedaacademicpapersService"
+		class="cn.edu.nwsuaf.Service.Impl.PublicshedaacademicpapersService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="PublicshedarevolutionpapersService"
+		class="cn.edu.nwsuaf.Service.Impl.PublicshedarevolutionpapersService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TeachertrainingService" class="cn.edu.nwsuaf.Service.Impl.TeachertrainingService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 课程Service -->
+	<bean id="CourseService" class="cn.edu.nwsuaf.Service.Impl.CourseService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="HighleveltalentService" class="cn.edu.nwsuaf.Service.Impl.HighleveltalentService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="PresidedScientificService" class="cn.edu.nwsuaf.Service.Impl.PresidedScientificService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="PresidedRevolutService" class="cn.edu.nwsuaf.Service.Impl.PresidedRevolutionService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 统计 -->
+	<bean id="SummaryService" class="cn.edu.nwsuaf.Service.Impl.SummaryService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 专业所开课程Service -->
+	<bean class="cn.edu.nwsuaf.Service.Impl.MajorcourseService" id="MajorcourseService">
+		<property name="baseDao" ref="BaseDao" />
+	</bean>
+	<!-- 教学计划变更Service -->
+	<bean id="TeachingplanchangeService" class="cn.edu.nwsuaf.Service.Impl.TeachingplanchangeService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 实习实践毕业设计 -->
+	<bean id="FulfillinginstanceService" class="cn.edu.nwsuaf.Service.Impl.FulfillinginstanceService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TeachingcostService" class="cn.edu.nwsuaf.Service.Impl.TeachingcostService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TeachingcosttypeService" class="cn.edu.nwsuaf.Service.Impl.TeachingcosttypeService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TrainingvenueService" class="cn.edu.nwsuaf.Service.Impl.TrainingvenueService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="EquipmentService" class="cn.edu.nwsuaf.Service.Impl.EquipmentService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--  -->
+	<bean id="TraininguseinginformationService"
+		class="cn.edu.nwsuaf.Service.Impl.TraininguseinginformationService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 学生国内外交流情况 -->
+	<bean id="CommunicationsituService" class="cn.edu.nwsuaf.Service.Impl.CommunicationsituService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 指标基本信息Service -->
+	<bean id="AppraisalSystemService" class="cn.edu.nwsuaf.Service.Impl.AppraisalSystemService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 评估项目Service -->
+	<bean id="AssessingprojectService" class="cn.edu.nwsuaf.Service.Impl.AssessingprojectService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 项目评估所需指标service -->
+	<bean id="AssessingneedtargetService" class="cn.edu.nwsuaf.Service.Impl.AssessingneedtargetService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 专业评估指标service -->
+	<bean id="MasService" class="cn.edu.nwsuaf.Service.Impl.MasService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 文件上传下载 -->
+	<bean id="FileinfoattachmentService" class="cn.edu.nwsuaf.Service.Impl.FileinfoattachmentService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 功能Service -->
+	<bean id="SysFunmodleService" class="cn.edu.nwsuaf.Service.Impl.SysFunmodleService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 角色Service -->
+	<bean id="SysroleService" class="cn.edu.nwsuaf.Service.Impl.SysroleService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+
+
+	<!-- 用户Service -->
+	<bean id="SysuserinfoService" class="cn.edu.nwsuaf.Service.Impl.SysuserinfoService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+
+
+	<!-- 专家Service -->
+	<bean id="ExpertService" class="cn.edu.nwsuaf.Service.Impl.ExpertService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 功能角色Service -->
+	<bean id="SysrolejuriService" class="cn.edu.nwsuaf.Service.Impl.SysrolejuriService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!--F值参数  -->
+	<bean id="FuntionargsService" class="cn.edu.nwsuaf.Service.Impl.FuntionargsService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<bean id="NationalService" class="cn.edu.nwsuaf.Service.Impl.NationalService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 专家专业Service -->
+	<bean id="ExpertmajorService" class="cn.edu.nwsuaf.Service.Impl.ExpertmajorService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 专家打分Service -->
+	<bean id="ExpertscoreService" class="cn.edu.nwsuaf.Service.Impl.ExpertscoreService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 专家建议Service -->
+	<bean id="ExpertadviceService" class="cn.edu.nwsuaf.Service.Impl.ExpertadviceService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<!-- 计算 -->
+	<bean id="CalculateService" class="cn.edu.nwsuaf.Service.Impl.CalculateService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+	<bean id="ScoreService" class="cn.edu.nwsuaf.Service.Impl.ScoreService">
+		<property name="baseDao" ref="BaseDao"></property>
+		<property name="masService" ref="MasService"></property>
+		<property name="assneedtargetService" ref="AssessingneedtargetService"></property>
+	</bean>
+	<!-- 实验实训场地使用情况Service -->
+	<bean id="TrainingvenueUsingService" class="cn.edu.nwsuaf.Service.Impl.TrainingvenueUsingService">
+		<property name="baseDao" ref="BaseDao"></property>
+	</bean>
+
+	<!-- Action代理 -->
+	<bean id="majorAction" class="cn.edu.nwsuaf.Action.MajorAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="majortypeservice">
+			<ref bean="MajorTypeService"></ref>
+		</property>
+		<property name="majorcategoryservice">
+			<ref bean="MajorCategoryService"></ref>
+		</property>
+		<property name="disciplinetypeservice">
+			<ref bean="DisciplineTypeService"></ref>
+		</property>
+		<property name="teacherService">
+			<ref bean="TeacherService"></ref>
+		</property>
+	</bean>
+	<!-- 学生Action -->
+	<bean id="studentAction" class="cn.edu.nwsuaf.Action.StudentAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="nationalService">
+			<ref bean="NationalService"></ref>
+		</property>
+		<property name="studentService">
+			<ref bean="StudentService"></ref>
+		</property>
+	</bean>
+	<!-- 学生专利 -->
+	<bean id="stupatentAction" class="cn.edu.nwsuaf.Action.StupatentAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="stupatentService">
+			<ref bean="StupatentService"></ref>
+		</property>
+	</bean>
+	<!-- 教师 -->
+	<bean id="teacherAction" class="cn.edu.nwsuaf.Action.TeacherAction">
+		<property name="teacherService">
+			<ref bean="TeacherService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="degreeService">
+			<ref bean="DegreeService"></ref>
+		</property>
+		<property name="professionalTitleServoce">
+			<ref bean="ProfessionalTitleService"></ref>
+		</property>
+		<property name="teacherCategoryService">
+			<ref bean="TeachersCategoryService"></ref>
+		</property>
+		<property name="jobTypeService">
+			<ref bean="JobTypeService"></ref>
+		</property>
+		<property name="learningEdgeService">
+			<ref bean="LearningEdgeService"></ref>
+		</property>
+		<property name="subjectCategoryService">
+			<ref bean="SubjectCategoryService"></ref>
+		</property>
+		<property name="academicDegreeService">
+			<ref bean="AcademicdegreeService"></ref>
+		</property>
+	</bean>
+	<!--  -->
+	<bean id="achievementAction" class="cn.edu.nwsuaf.Action.AchievementAction">
+		<property name="teacherService">
+			<ref bean="TeacherService"></ref>
+		</property>
+		<property name="achievementService">
+			<ref bean="AchievementService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="teachAchieveService">
+			<ref bean="TeachAchieveService"></ref>
+		</property>
+	</bean>
+	<!-- 学科竞赛 -->
+	<bean id="competitionAction" class="cn.edu.nwsuaf.Action.CompetitionAction">
+		<property name="competitionService">
+			<ref bean="CompetitionService"></ref>
+		</property>
+		<property name="stuCptionService">
+			<ref bean="StuCptionService"></ref>
+		</property>
+		<property name="studentService">
+			<ref bean="StudentService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+	</bean>
+
+	<!--  -->
+	<bean id="teachBooksAction" class="cn.edu.nwsuaf.Action.TeachBooksAction">
+		<property name="teachBookService">
+			<ref bean="TeachBookService"></ref>
+		</property>
+		<property name="teachBooksService">
+			<ref bean="TeachBooksService"></ref>
+		</property>
+		<property name="teacherService">
+			<ref bean="TeacherService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+	</bean>
+	<!--  -->
+	<bean id="innovationAction" class="cn.edu.nwsuaf.Action.InnovationAction">
+		<property name="innovationmemberService">
+			<ref bean="InnovationmemberService"></ref>
+		</property>
+		<property name="innovationprojectService">
+			<ref bean="InnovationprojectService"></ref>
+		</property>
+		<property name="studentService">
+			<ref bean="StudentService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+	</bean>
+	<!--  -->
+	<bean id="teachResultBaseAction" class="cn.edu.nwsuaf.Action.TeachResultBaseAction">
+		<property name="teachResultBaseService">
+			<ref bean="TeachResultBaseService"></ref>
+		</property>
+		<property name="teachResultService">
+			<ref bean="TeachResultService"></ref>
+		</property>
+		<property name="teacherService">
+			<ref bean="TeacherService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+	</bean>
+	<!--  -->
+	<bean id="teachprojectAction" class="cn.edu.nwsuaf.Action.TeachprojectAction">
+		<property name="teachprojectService">
+			<ref bean="TeachprojectService"></ref>
+		</property>
+		<property name="teachprojectuserService">
+			<ref bean="TeachprojectuserService"></ref>
+		</property>
+		<property name="teacherService">
+			<ref bean="TeacherService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+	</bean>
+	<!--  -->
+	<bean id="autoSearchAction" class="cn.edu.nwsuaf.Action.AutoSearchAction">
+		<property name="teacherService">
+			<ref bean="TeacherService" />
+		</property>
+	</bean>
+
+	<!-- 人文科学素质教育效果 -->
+	<bean id="effectqualityeducationAction" class="cn.edu.nwsuaf.Action.EffectqualityeducationAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="effectqualityeducationService">
+			<ref bean="EffectqualityeducationService"></ref>
+		</property>
+	</bean>
+	<!-- 教师发表科研论文 -->
+	<bean id="publicshedaacademicpapersAction" class="cn.edu.nwsuaf.Action.PublicshedaacademicpapersAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="publicshedaacademicpapersService">
+			<ref bean="PublicshedaacademicpapersService"></ref>
+		</property>
+	</bean>
+	<!-- 教师发表教改论文 -->
+	<bean id="publicshedarevolutionpapersAction" class="cn.edu.nwsuaf.Action.PublicshedarevolutionpapersAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="publicshedarevolutionpapersService">
+			<ref bean="PublicshedarevolutionpapersService"></ref>
+		</property>
+	</bean>
+	<!-- 教师进修 -->
+	<bean id="teachertrainingAction" class="cn.edu.nwsuaf.Action.TeachertrainingAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="teachertrainingService">
+			<ref bean="TeachertrainingService"></ref>
+		</property>
+	</bean>
+	<!-- 课程信息 -->
+	<bean id="courseAction" class="cn.edu.nwsuaf.Action.CourseAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="courseService">
+			<ref bean="CourseService" />
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService" />
+		</property>
+	</bean>
+	<!-- 高层次人才 -->
+	<bean id="highAction" class="cn.edu.nwsuaf.Action.HighleveltalentAction">
+		<property name="highService">
+			<ref bean="HighleveltalentService" />
+		</property>
+		<property name="teacherService">
+			<ref bean="TeacherService" />
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService" />
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService" />
+		</property>
+	</bean>
+	<!--  -->
+	<bean id="presAction" class="cn.edu.nwsuaf.Action.PreScientAction">
+		<property name="presService">
+			<ref bean="PresidedScientificService" />
+		</property>
+		<property name="teacherService">
+			<ref bean="TeacherService" />
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService" />
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService" />
+		</property>
+	</bean>
+	<!--  -->
+	<bean id="prerAction" class="cn.edu.nwsuaf.Action.PreRevolutAction">
+		<property name="prerService">
+			<ref bean="PresidedRevolutService" />
+		</property>
+		<property name="teacherService">
+			<ref bean="TeacherService" />
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService" />
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService" />
+		</property>
+	</bean>
+	<!-- 学生发表论文Action -->
+	<bean id="stuthesisAction" class="cn.edu.nwsuaf.Action.StuthesisAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="stuthesisService">
+			<ref bean="StuthesisService"></ref>
+		</property>
+	</bean>
+	<!-- 教学计划变更Action -->
+	<bean id="tplanAction" class="cn.edu.nwsuaf.Action.TeachingplanchangeAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="tplanService">
+			<ref bean="TeachingplanchangeService"></ref>
+		</property>
+		<property name="courseService">
+			<ref bean="CourseService"></ref>
+		</property>
+	</bean>
+	<!-- 专业所开课程Action -->
+	<bean id="mcourseAction" class="cn.edu.nwsuaf.Action.MajorcourseAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="mcourseService">
+			<ref bean="MajorcourseService"></ref>
+		</property>
+		<property name="courseService">
+			<ref bean="CourseService"></ref>
+		</property>
+	</bean>
+	<!-- 课程资源Action -->
+	<bean id="CurriculumresourceAction" class="cn.edu.nwsuaf.Action.CurriculumresourceAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="curService">
+			<ref bean="CurriculumresourceService"></ref>
+		</property>
+		<property name="courseService">
+			<ref bean="CourseService"></ref>
+		</property>
+	</bean>
+	<!-- 就业情况Action -->
+	<bean id="EmploymentAction" class="cn.edu.nwsuaf.Action.EmploymentAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="empService">
+			<ref bean="EmploymentService"></ref>
+		</property>
+	</bean>
+	<!-- 招生情况Action -->
+	<bean id="AddmissionsAction" class="cn.edu.nwsuaf.Action.AddmissionsAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="admService">
+			<ref bean="AddmissionsService"></ref>
+		</property>
+	</bean>
+	<!-- 质量标准建设Action -->
+	<bean id="QualitystandardAction" class="cn.edu.nwsuaf.Action.QualitystandardAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="quastanService">
+			<ref bean="QualitystandardService"></ref>
+		</property>
+	</bean>
+	<!-- 评估数据统计 -->
+	<bean id="summaryAction" class="cn.edu.nwsuaf.Action.SummaryAction">
+		<property name="baseService">
+			<ref bean="BaseService" />
+		</property>
+		<property name="summaryService">
+			<ref bean="SummaryService" />
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService" />
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService" />
+		</property>
+		<property name="fiaService">
+			<ref bean="FileinfoattachmentService"></ref>
+		</property>
+		<property name="expertscoreservice">
+			<ref bean="ExpertscoreService"></ref>
+		</property>
+		<property name="teacherService">
+			<ref bean="TeacherService" />
+		</property>
+	</bean>
+
+	<!-- 实习实践毕业设计 -->
+	<bean id="fulfillinginstanceAction" class="cn.edu.nwsuaf.Action.FulfillinginstanceAction">
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="fulfillinginstanceService">
+			<ref bean="FulfillinginstanceService"></ref>
+		</property>
+	</bean>
+
+	<!--  -->
+	<bean id="teachingcostAction" class="cn.edu.nwsuaf.Action.TeachingcostAction">
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="teachingcostService">
+			<ref bean="TeachingcostService"></ref>
+		</property>
+		<property name="teachingcosttypeService">
+			<ref bean="TeachingcosttypeService"></ref>
+		</property>
+
+
+	</bean>
+
+	<!--实验实训场地  -->
+	<bean id="trainingvenueAction" class="cn.edu.nwsuaf.Action.TrainingvenueAction">
+		<property name="trainingvenueService">
+			<ref bean="TrainingvenueService"></ref>
+		</property>
+		<property name="equipmentService">
+			<ref bean="EquipmentService"></ref>
+		</property>
+		<property name="trainingvenueuseService">
+			<ref bean="TrainingvenueUsingService"></ref>
+		</property>
+	</bean>
+
+	<!-- 实践教学资源情况 -->
+	<bean id="traininguseinginformationAction" class="cn.edu.nwsuaf.Action.TraininguseinginformationAction">
+		<property name="traininguseinginformationService">
+			<ref bean="TraininguseinginformationService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="trainingvenueuseService">
+			<ref bean="TrainingvenueUsingService"></ref>
+		</property>
+		<property name="trainingvenueService">
+			<ref bean="TrainingvenueService"></ref>
+		</property>
+		<property name="studentService">
+			<ref bean="StudentService"></ref>
+		</property>
+	</bean>
+
+
+	<!-- 学生国内外交流 -->
+	<bean id="communicationsituAction" class="cn.edu.nwsuaf.Action.CommunicationsituAction">
+		<property name="communicationsituService">
+			<ref bean="CommunicationsituService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+	</bean>
+	<!-- 指标基本信息Action -->
+	<bean id="appAction" class="cn.edu.nwsuaf.Action.AppraisalsystemAction">
+		<property name="appService">
+			<ref bean="AppraisalSystemService"></ref>
+		</property>
+	</bean>
+	<!--评估项目Action -->
+	<bean id="aprojectAction" class="cn.edu.nwsuaf.Action.AssessingprojectAction">
+		<property name="aprojectService">
+			<ref bean="AssessingprojectService"></ref>
+		</property>
+	</bean>
+	<!--评估项目Action -->
+	<bean id="timeManageAction" class="cn.edu.nwsuaf.ajax.timeManage">
+		<property name="anewService">
+			<ref bean="AssessingprojectService"></ref>
+		</property>
+	</bean>
+	<!--项目评估所需指标Action -->
+	<bean id="assneedAction" class="cn.edu.nwsuaf.Action.AssessingneedtargetAction">
+		<property name="assneedService">
+			<ref bean="AssessingneedtargetService"></ref>
+		</property>
+		<property name="appService">
+			<ref bean="AppraisalSystemService"></ref>
+		</property>
+		<property name="aprojectService">
+			<ref bean="AssessingprojectService"></ref>
+		</property>
+		<property name="masService">
+			<ref bean="MasService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="fiaService">
+			<ref bean="FileinfoattachmentService"></ref>
+		</property>
+		<property name="expertscoreService">
+			<ref bean="ExpertscoreService"></ref>
+		</property>
+	</bean>
+	<!--专业评估指标Action -->
+	<bean id="masAction" class="cn.edu.nwsuaf.Action.MasAction">
+		<property name="masService">
+			<ref bean="MasService"></ref>
+		</property>
+		<property name="appService">
+			<ref bean="AppraisalSystemService"></ref>
+		</property>
+		<property name="aprojectService">
+			<ref bean="AssessingprojectService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="assessingneedtargetService">
+			<ref bean="AssessingneedtargetService"></ref>
+		</property>
+	</bean>
+
+	<!-- 文件上传下载 -->
+	<bean id="fileinfoAction" class="cn.edu.nwsuaf.Action.FileinfoAction">
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+
+		<property name="fiaService">
+			<ref bean="FileinfoattachmentService"></ref>
+		</property>
+	</bean>
+	<bean id="updownfileAction" class="cn.edu.nwsuaf.comAction.UpDownFileAction">
+
+		<property name="fiaService">
+			<ref bean="FileinfoattachmentService"></ref>
+		</property>
+	</bean>
+	<!-- 指标计算时用到的值F -->
+	<bean id="funtionargsAction" class="cn.edu.nwsuaf.Action.FuntionargsAction">
+		<property name="funtionargsService">
+			<ref bean="FuntionargsService" />
+		</property>
+	</bean>
+	<!-- 指标计算Y -->
+	<bean id="testAction" class="cn.edu.nwsuaf.Action.TestAction">
+		<property name="funtionargsService">
+			<ref bean="FuntionargsService" />
+		</property>
+		<property name="summaryService">
+			<ref bean="SummaryService" />
+		</property>
+	</bean>
+	<!-- 用户登录校验码 -->
+	<bean id="randomCodeAction" class="cn.edu.nwsuaf.comAction.RandomCodeAction">
+	</bean>
+	<!-- 用户登录Action -->
+	<bean id="loginAction" class="cn.edu.nwsuaf.comAction.LoginAction"
+		scope="prototype">
+		<property name="sysroleService">
+			<ref bean="SysroleService" />
+		</property>
+		<property name="sysuserinfoService">
+			<ref bean="SysuserinfoService"></ref>
+		</property>
+		<property name="sysrolejuriService">
+			<ref bean="SysrolejuriService"></ref>
+		</property>
+		<property name="expertService">
+			<ref bean="ExpertService"></ref>
+		</property>
+
+	</bean>
+	<!-- ExportAction 导出列表 -->
+	<bean id="exportAction" class="cn.edu.nwsuaf.comAction.ExportAction"
+		scope="prototype">
+		<property name="studentService">
+			<ref bean="StudentService"></ref>
+		</property>
+		<!-- 专家建议 -->
+		<property name="expertAdviceService">
+			<ref bean="ExpertadviceService"></ref>
+		</property>
+		<!-- 专业评估指标统计信息 -->
+		<property name="masService">
+			<ref bean="MasService"></ref>
+		</property>
+		<!--专业 -->
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<!--教师信息  -->
+		<property name="teacherService">
+			<ref bean="TeacherService"></ref>
+		</property>
+		<!--  -->
+		<property name="empService">
+			<ref bean="EmploymentService"></ref>
+		</property>
+		<!--  -->
+		<property name="curService">
+			<ref bean="CurriculumresourceService"></ref>
+		</property>
+		<!--  -->
+		<property name="quastanService">
+			<ref bean="QualitystandardService"></ref>
+		</property>
+		<!--  -->
+		<property name="admService">
+			<ref bean="AddmissionsService"></ref>
+		</property>
+		<!--  -->
+		<property name="tplanService">
+			<ref bean="TeachingplanchangeService"></ref>
+		</property>
+		<!--  -->
+		<property name="mcourseService">
+			<ref bean="MajorcourseService"></ref>
+		</property>
+		<!-- 学生论文 -->
+		<property name="stuthesisService">
+			<ref bean="StuthesisService"></ref>
+		</property>
+		<!--  -->
+		<property name="courseService">
+			<ref bean="CourseService"></ref>
+		</property>
+		<!-- 高层次人才 -->
+		<property name="highService">
+			<ref bean="HighleveltalentService" />
+		</property>
+		<!--  -->
+		<property name="prerService">
+			<ref bean="PresidedRevolutService" />
+		</property>
+		<!--  -->
+		<property name="presService">
+			<ref bean="PresidedScientificService" />
+		</property>
+		<!-- 学生专利 -->
+		<property name="stupatentService">
+			<ref bean="StupatentService" />
+		</property>
+		<!-- 教师进修培训 -->
+		<property name="teachertrainingService">
+			<ref bean="TeachertrainingService" />
+		</property>
+		<!--  -->
+		<property name="effectqualityeducationService">
+			<ref bean="EffectqualityeducationService" />
+		</property>
+		<!--  -->
+		<property name="publicshedaacademicpapersService">
+			<ref bean="PublicshedaacademicpapersService" />
+		</property>
+		<!--  -->
+		<property name="publicshedarevolutionpapersService">
+			<ref bean="PublicshedarevolutionpapersService" />
+		</property>
+		<!-- 学生国内外交流 -->
+		<property name="communicationsituService">
+			<ref bean="CommunicationsituService"></ref>
+		</property>
+		<!-- 实习实践毕业设计 -->
+		<property name="fulfillinginstanceService">
+			<ref bean="FulfillinginstanceService"></ref>
+		</property>
+		<!-- 教学成果奖 -->
+		<property name="teachResultBaseService">
+			<ref bean="TeachResultBaseService"></ref>
+		</property>
+		<!--  -->
+		<property name="achievementService">
+			<ref bean="AchievementService"></ref>
+		</property>
+		<!--  -->
+		<property name="teachBooksService">
+			<ref bean="TeachBooksService"></ref>
+		</property>
+		<!-- 学科竞赛 -->
+		<property name="competitionService">
+			<ref bean="CompetitionService"></ref>
+		</property>
+		<!--  -->
+		<property name="innovationprojectService">
+			<ref bean="InnovationprojectService"></ref>
+		</property>
+		<!--  -->
+		<property name="teachprojectService">
+			<ref bean="TeachprojectService"></ref>
+		</property>
+		<property name="stuCptionService">
+			<ref bean="StuCptionService"></ref>
+		</property>
+		<property name="teachBookService">
+			<ref bean="TeachBookService"></ref>
+		</property>
+		<property name="teachAchieveService">
+			<ref bean="TeachAchieveService"></ref>
+		</property>
+		<property name="teachResultService">
+			<ref bean="TeachResultService"></ref>
+		</property>
+		<property name="teachprojectuserService">
+			<ref bean="TeachprojectuserService"></ref>
+		</property>
+		<property name="innovationmemberService">
+			<ref bean="InnovationmemberService"></ref>
+		</property>
+		<property name="traininguseinginformationService">
+			<ref bean="TraininguseinginformationService"></ref>
+		</property>
+
+		<property name="teachingcostService">
+			<ref bean="TeachingcostService"></ref>
+		</property>
+
+		<property name="trainingvenueService">
+			<ref bean="TrainingvenueService"></ref>
+		</property>
+		<!--实验实训场地使用情况-->
+		<property name="trainingvenueuseService">
+			<ref bean="TrainingvenueUsingService"></ref>
+		</property>
+		<!--学院信息-->
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<!-- 定性指标统计 -->
+		<property name="fiaService">
+			<ref bean="FileinfoattachmentService"></ref>
+		</property>
+		<!-- 统计 -->
+		<property name="summaryService">
+			<ref bean="SummaryService"></ref>
+		</property>
+		<!-- 专业评估指标统计 -->
+		<property name="scoreService">
+			<ref bean="ScoreService"></ref>
+		</property>
+	</bean>
+	<!-- importAction 导入列表 -->
+	<bean id="importAction" class="cn.edu.nwsuaf.comAction.ImportAction"
+		scope="prototype">
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="stupatentService">
+			<ref bean="StupatentService"></ref>
+		</property>
+		<property name="teachertrainingService">
+			<ref bean="TeachertrainingService"></ref>
+		</property>
+
+		<property name="publicshedarevolutionpapersService">
+			<ref bean="PublicshedarevolutionpapersService"></ref>
+		</property>
+		<property name="publicshedaacademicpapersService">
+			<ref bean="PublicshedaacademicpapersService"></ref>
+		</property>
+
+		<property name="eqeService">
+			<ref bean="EffectqualityeducationService"></ref>
+		</property>
+		<property name="empService">
+			<ref bean="EmploymentService"></ref>
+		</property>
+		<property name="curService">
+			<ref bean="CurriculumresourceService"></ref>
+		</property>
+		<property name="quastanService">
+			<ref bean="QualitystandardService"></ref>
+		</property>
+		<property name="admService">
+			<ref bean="AddmissionsService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="courseService">
+			<ref bean="CourseService"></ref>
+		</property>
+		<property name="highService">
+			<ref bean="HighleveltalentService" />
+		</property>
+		<property name="presService">
+			<ref bean="PresidedScientificService" />
+		</property>
+		<property name="prerService">
+			<ref bean="PresidedRevolutService" />
+		</property>
+		<property name="achievementService">
+			<ref bean="AchievementService"></ref>
+		</property>
+		<property name="teachBooksService">
+			<ref bean="TeachBooksService"></ref>
+		</property>
+		<property name="competitionService">
+			<ref bean="CompetitionService"></ref>
+		</property>
+		<property name="teachResultBaseService">
+			<ref bean="TeachResultBaseService"></ref>
+		</property>
+		<property name="innovationprojectService">
+			<ref bean="InnovationprojectService"></ref>
+		</property>
+		<property name="teachprojectService">
+			<ref bean="TeachprojectService"></ref>
+		</property>
+		<property name="tplanService">
+			<ref bean="TeachingplanchangeService"></ref>
+		</property>
+		<property name="mcourseService">
+			<ref bean="MajorcourseService"></ref>
+		</property>
+		<property name="stuthesisService">
+			<ref bean="StuthesisService"></ref>
+		</property>
+		<property name="teacherService">
+			<ref bean="TeacherService"></ref>
+		</property>
+		<property name="studentService">
+			<ref bean="StudentService"></ref>
+		</property>
+		<property name="nationalService">
+			<ref bean="NationalService"></ref>
+		</property>
+		<property name="stuCptionService">
+			<ref bean="StuCptionService"></ref>
+		</property>
+		<property name="teachBookService">
+			<ref bean="TeachBookService"></ref>
+		</property>
+		<property name="teachAchieveService">
+			<ref bean="TeachAchieveService"></ref>
+		</property>
+		<property name="teachResultService">
+			<ref bean="TeachResultService"></ref>
+		</property>
+		<property name="teachprojectuserService">
+			<ref bean="TeachprojectuserService"></ref>
+		</property>
+		<property name="innovationmemberService">
+			<ref bean="InnovationmemberService"></ref>
+		</property>
+		<property name="teachingcostService">
+			<ref bean="TeachingcostService"></ref>
+		</property>
+		<property name="teachingcosttypeService">
+			<ref bean="TeachingcosttypeService"></ref>
+		</property>
+		<property name="communicationsituService">
+			<ref bean="CommunicationsituService"></ref>
+		</property>
+		<property name="fulfillinginstanceService">
+			<ref bean="FulfillinginstanceService"></ref>
+		</property>
+		<property name="traininguseinginformationService">
+			<ref bean="TraininguseinginformationService"></ref>
+		</property>
+		<property name="professionalTitleService">
+			<ref bean="ProfessionalTitleService"></ref>
+		</property>
+		<property name="academicdegreeService">
+			<ref bean="AcademicdegreeService"></ref>
+		</property>
+		<property name="degreeService">
+			<ref bean="DegreeService"></ref>
+		</property>
+		<property name="teachersCategoryService">
+			<ref bean="TeachersCategoryService"></ref>
+		</property>
+		<property name="learningEdgeService">
+			<ref bean="LearningEdgeService"></ref>
+		</property>
+		<property name="jobTypeService">
+			<ref bean="JobTypeService"></ref>
+		</property>
+		<property name="subjectCategoryService">
+			<ref bean="SubjectCategoryService"></ref>
+		</property>
+		<property name="trainingvenueService">
+			<ref bean="TrainingvenueService"></ref>
+		</property>
+		<!--实验实训场地使用情况-->
+		<property name="trainingvenueuseService">
+			<ref bean="TrainingvenueUsingService"></ref>
+		</property>
+	</bean>
+	<!-- ExportRoportAction 导出评估报告 -->
+	<bean id="exportReportAction" class="cn.edu.nwsuaf.comAction.ExportReportAction"
+		scope="session">
+		<aop:scoped-proxy />
+		<property name="masService">
+			<ref bean="MasService"></ref>
+		</property>
+		<property name="scoreService">
+			<ref bean="ScoreService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<!-- 专家建议 -->
+		<property name="expertAdviceService">
+			<ref bean="ExpertadviceService"></ref>
+		</property>
+		<property name="aprojectService">
+			<ref bean="AssessingprojectService"></ref>
+		</property>
+	</bean>
+	<!-- 功能Action -->
+	<bean id="SysFunmodleAction" class="cn.edu.nwsuaf.Action.SysFunmodleAction">
+		<property name="funcService">
+			<ref bean="SysFunmodleService" />
+		</property>
+	</bean>
+	<!-- 角色Action -->
+	<bean id="SysroleAction" class="cn.edu.nwsuaf.Action.SysroleAction">
+		<property name="roleService">
+			<ref bean="SysroleService" />
+		</property>
+		<property name="funcService">
+			<ref bean="SysFunmodleService" />
+		</property>
+		<property name="rolejuriService">
+			<ref bean="SysrolejuriService" />
+		</property>
+	</bean>
+	<!-- 用户Action -->
+	<bean id="SysuserinfoAction" class="cn.edu.nwsuaf.Action.SysuserinfoAction">
+		<property name="roleService">
+			<ref bean="SysroleService" />
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="userService">
+			<ref bean="SysuserinfoService"></ref>
+		</property>
+		<property name="expertmajorService">
+			<ref bean="ExpertmajorService" />
+		</property>
+		<property name="expertService">
+			<ref bean="ExpertService" />
+		</property>
+	</bean>
+	<!-- 专家Action -->
+	<bean id="ExpertmanageAction" class="cn.edu.nwsuaf.Action.ExpertmanageAction">
+		<property name="expertService">
+			<ref bean="ExpertService"></ref>
+		</property>
+	</bean>
+	<!-- 专家专业Action -->
+	<bean id="ExpertmajorAction" class="cn.edu.nwsuaf.Action.ExpertmajorAction">
+		<property name="assessingprojectService">
+			<ref bean="AssessingprojectService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="expertService">
+			<ref bean="ExpertService"></ref>
+		</property>
+		<property name="expertmajorService">
+			<ref bean="ExpertmajorService" />
+		</property>
+		<property name="assneedService">
+			<ref bean="AssessingneedtargetService"></ref>
+		</property>
+		<property name="appService">
+			<ref bean="AppraisalSystemService"></ref>
+		</property>
+		<property name="masService">
+			<ref bean="MasService"></ref>
+		</property>
+		<property name="fiaService">
+			<ref bean="FileinfoattachmentService"></ref>
+		</property>
+		<property name="expertscoreService">
+			<ref bean="ExpertscoreService"></ref>
+		</property>
+	</bean>
+	<bean id="ExpertAdviceAction" class="cn.edu.nwsuaf.Action.ExpertAdviceAction"
+		scope="session">
+		<aop:scoped-proxy />
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="expertscoreService">
+			<ref bean="ExpertscoreService"></ref>
+		</property>
+		<property name="expertadviceService">
+			<ref bean="ExpertadviceService"></ref>
+		</property>
+	</bean>
+	<!-- 专家专业评分Action -->
+	<bean id="ExpertscoreAction" class="cn.edu.nwsuaf.Action.ExpertscoreAction"
+		scope="session">
+		<aop:scoped-proxy />
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="expertscoreservice">
+			<ref bean="ExpertscoreService"></ref>
+		</property>
+		<property name="fiaService">
+			<ref bean="FileinfoattachmentService"></ref>
+		</property>
+	</bean>
+	<!--项目评估计算Action -->
+	<bean id="calculateAction" class="cn.edu.nwsuaf.Action.CalculateAction">
+		<property name="masService">
+			<ref bean="MasService"></ref>
+		</property>
+		<property name="calculateService">
+			<ref bean="CalculateService"></ref>
+		</property>
+		<property name="expertscoreService">
+			<ref bean="ExpertscoreService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="fileinfoattachmentService">
+			<ref bean="FileinfoattachmentService"></ref>
+		</property>
+		<property name="funtionargsService">
+			<ref bean="FuntionargsService"></ref>
+		</property>
+		<property name="fulfillinginstanceService">
+			<ref bean="FulfillinginstanceService"></ref>
+		</property>
+		<property name="effectqualityeducationService">
+			<ref bean="EffectqualityeducationService"></ref>
+		</property>
+		<property name="scoreService">
+			<ref bean="ScoreService"></ref>
+		</property>
+		<property name="aprojectService">
+			<ref bean="AssessingprojectService"></ref>
+		</property>
+	</bean>
+	<!-- 统计得分分类查询 -->
+	<bean id="ScoreAction" class="cn.edu.nwsuaf.Action.ScoreAction">
+		<property name="scoreService">
+			<ref bean="ScoreService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="masService">
+			<ref bean="MasService"></ref>
+		</property>
+		<property name="aprojectService">
+			<ref bean="AssessingprojectService"></ref>
+		</property>
+	</bean>
+	<!-- 实验实训场地使用情况Action -->
+	<bean id="TrainingvenueUsingAction" class="cn.edu.nwsuaf.Action.TrainingvenueUsingAction">
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+		<property name="trainingvenueuseService">
+			<ref bean="TrainingvenueUsingService"></ref>
+		</property>
+		<property name="trainingvenueService">
+			<ref bean="TrainingvenueService"></ref>
+		</property>
+	</bean>
+	<!-- 学院信息Action -->
+	<bean id="departmentAction" class="cn.edu.nwsuaf.Action.DepartmentAction">
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+	</bean>
+
+	<!-- 统计结果分析-2016-11-17 -->
+	<bean id="AnalyseResultAction" class="cn.edu.nwsuaf.Action.AnalyseResultAction">
+		<property name="masService">
+			<ref bean="MasService"></ref>
+		</property>
+		<property name="majorService">
+			<ref bean="MajorService"></ref>
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService"></ref>
+		</property>
+	</bean>
+
+	<!-- 邮件 -->
+	<bean id="MailAction" class="cn.edu.nwsuaf.comAction.MailAction">
+		<property name="sysuserinfoService" ref="SysuserinfoService"></property>
+	</bean>
+
+
+
+
+</beans>

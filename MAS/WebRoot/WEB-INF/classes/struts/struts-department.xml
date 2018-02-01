@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="department" extends="commons" namespace="/department">
+		<!-- 初始化查询页面 -->
+		<action name="initSearch" class="departmentAction" method="initSearch">
+			<result name="success">/page/department/department-list.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--查询课程信息  -->
+		<action name="finddepartment" class="departmentAction" method="findDepartment">
+			<result name="success">/page/department/department-list.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!-- 跳转到修改页面 -->
+		<action name="editTodepartment" class="departmentAction" method="initEdit">
+			<result name="success">/page/department/department-edit.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!--保存修改信息  -->
+		<action name="editdepartment" class="departmentAction" method="modifiDepartment">
+			<result name="success" type="redirectAction">finddepartment</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!-- 删除 -->
+		<action name="deletedepartment" class="departmentAction" method="deleteDepartment">
+			<result name="success" type="redirectAction">finddepartment</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!-- 导出 -->
+        <action name="exportExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">initSearch</result>
+        	<result name="error">/page/common/doOperationerror.jsp</result>
+        </action> 
+
+	</package>
+</struts>

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>评论管理</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link href="../css/bootstrap-datetimepicker.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+	<link href="css/templatemo-style.css" rel="stylesheet">
+	
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="js/comment.js"></script>
+</head>
+<body onLoad="forcomment()">
+
+		<!--Main content -->
+		<div class="templatemo-content col-1 light-gray-bg">
+			<div class="templatemo-content-container">
+				<div class="templatemo-content-widget white-bg">
+					<ul id="myTab" class="nav nav-tabs">
+						<li class="active">
+							<a href="#zero" data-toggle="tab" onClick="forcomment()">
+								未审核
+							</a>
+						</li>
+						<!-- <li>
+							<a href="#one" data-toggle="tab">
+								未通过
+							</a>
+						</li> -->
+						<li>
+							<a href="#two" data-toggle="tab" onClick="stateTwo()">
+								通过
+							</a>
+						</li>
+
+					</ul>
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade in active" id="zero">
+							<div class="panel panel-default table-responsive">
+								<table class="table table-striped table-bordered templatemo-user-table">
+				                  <thead>
+				                    <tr>
+				                     <td><a href="" class="white-text templatemo-sort-by">产品名称</a></td>
+				                     <td><a href="" class="white-text templatemo-sort-by">客户名</a></td>
+				                     <!-- <td><a href="" class="white-text templatemo-sort-by">电话</a></td> -->
+				                     <td><a href="" class="white-text templatemo-sort-by">评价内容</a></td>
+				                    
+				                     <td></td>
+				                   </tr>
+				                 </thead>
+				                 <tbody></tbody>
+				               </table>
+							</div>
+						</div>
+						<!-- <div class="tab-pane fade in" id="one">
+							<div class="panel panel-default table-responsive">
+								<table class="table table-striped table-bordered templatemo-user-table">
+									<thead>
+										<tr>
+											<td><a href="" class="white-text templatemo-sort-by">产品名称</a></td>
+											<td><a href="" class="white-text templatemo-sort-by">会员名</a></td>
+											<td><a href="" class="white-text templatemo-sort-by">评价内容</a></td>
+											<td><a href="" class="white-text templatemo-sort-by">时间</a></td>
+											<td><a href="" class="white-text templatemo-sort-by">状态</a></td>
+											
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											
+										</tr>
+									</tbody>
+								</table>    
+							</div>
+						</div> -->
+						<div class="tab-pane fade in" id="two">
+							<div class="panel panel-default table-responsive">
+								<table class="table table-striped table-bordered templatemo-user-table">
+									<thead>
+				                    <tr>
+				                     <td><a href="" class="white-text templatemo-sort-by">产品名称</a></td>
+				                     <td><a href="" class="white-text templatemo-sort-by">客户名</a></td>
+				                     <!-- <td><a href="" class="white-text templatemo-sort-by">电话</a></td> -->
+				                     <td><a href="" class="white-text templatemo-sort-by">评价内容</a></td>
+				                    
+				                   </tr>
+				                 </thead>
+									<tbody>
+										
+									</tbody>
+								</table>    
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+</body>
+</html>

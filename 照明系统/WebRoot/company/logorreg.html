@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>登录与注册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="stylesheet" type="text/css" href="../css/demo.css" />
+  <link rel="stylesheet" type="text/css" href="../css/login-style.css" />
+  <link rel="stylesheet" type="text/css" href="../css/animate-custom.css" />
+  <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="../js/md5.js"></script><!-- 加密算法 -->
+</head>
+<body >
+  <div class="container"><br/>
+   <div style="text-align:center;clear:both;">
+
+   </div>
+   <section>				
+    <div id="container_demo" >
+
+      <a class="hiddenanchor" id="toregister"></a>
+      <a class="hiddenanchor" id="toregister_youxiang"></a>
+      <a class="hiddenanchor" id="tologin"></a>
+
+      <div id="wrapper">
+
+        <div id="login" class="animate form">
+          <form  autocomplete="on" method="post"> 
+           <div id="logo"></div> <h1>会员登录</h1> 
+           <p> 
+            <label for="username" class="uname" data-icon="u" > 
+             用户名 </label><label id="usernamewarn"></label>
+             <input id="username" name="username" value="www" required="required" type="text" placeholder="用户名/手机号/邮箱" onblur="isUsername()"/>
+           </p>
+           <p> 
+            <label for="password" class="youpasswd" data-icon="p"> 密&nbsp;码 </label><label id="passwordwarn"></label>
+            <input id="password" name="password" value="123" required="required" type="password" placeholder="密码" /> 
+          </p>
+
+          验证码 <input type="text" id="validatecode" style="width:60px; padding-left:10px; text-align:left" onblur="validatePicture()" />
+          <div class="pinpic">
+           <img alt="验证码" id="imageCode" src="../IdentifyingCode_getPictureCode" class="pin">      
+           <a href="javascript:;" onclick="document.getElementById('imageCode').src='../IdentifyingCode_getPictureCode?'+new Date()" >看不清楚？换一张</a>
+         </div>
+         <p>
+          <a href="forgetpasswd.html" id="forget">找回密码</a>
+         </p>
+
+
+
+         
+         <p class="login button"> 
+          <input type="button" value="登录" onclick="User_login()" /> 
+        </p>
+        <p id="else">使用合作网站账号登录<br>
+         <a href="#">QQ</a>|
+         <a href="#">微信</a>|
+         <a href="#">微博</a>|
+         <a href="#">淘宝</a>
+       </p>
+       <p class="change_link"> 
+         还没有用户名？
+         <!-- <a href="#toregister" class="to_register">手机注册</a> -->	<a href="#toregister_youxiang" class="to_register">邮箱注册</a>
+       </p>
+     </form>
+   </div>
+
+   <div id="register" class="animate form">
+    <form  autocomplete="on" method="post"> 
+      <h1> 手机注册 </h1> 
+      <p> 
+        <label for="usernamephone" class="uname" data-icon="u">用户名</label><label id="phonewarn"></label>
+        <input id="usernamephone" name="" required="required" type="text" onblur="validatePhoneName()" />
+      </p>
+      <p> 
+        <label for="phone" class="youphone" data-icon="T" > 手机号</label><label id="pwarn"></label>
+        <input id="phone" name="" required="required" type="text" onblur="validatePhone()"/> 
+      </p>
+      <p> 
+        <label for="passwordphone" class="youpasswd" data-icon="p">密码 </label><label id="pwarnpassword"></label>
+        <input id="passwordphone" name="" required="required" type="password" onblur="validatePhonePassword()"/>
+      </p>
+      <p> 
+        <label for="passwordphone_confirm" class="youpasswd" data-icon="p">确认密码</label><label id="ppasswordwarn"></label>
+        <input id="passwordphone_confirm" name="" required="required" type="password" onblur="confirmPhonePassword()"/>
+      </p>
+      <p> 
+        <a href="javascript:void(0);" id="sendphone" for="pinphone" class="pincode" onclick="getCodeByPhone()">点击获取手机验证码</a><label id="pinphonewarn"></label>
+        <input id="pinphone" name="pin" required="required" type="text" onblur="confirmPhoneCode()" />
+
+        <label class="pinmsg">验证码2分钟之内有效，请及时查收</label>
+      </p>
+      <p class="signin button"> 
+       <input type="submit" value="注册" onclick="phoneRegister()"/> 
+     </p>
+
+
+
+     <p class="change_link">  
+       已有账号
+       <a href="#tologin" class="to_register"> 登录</a>
+     </p>
+   </form>
+ </div>
+ <div id="register_youxiang" class="animate form">
+  <form  autocomplete="on" method="post"> 
+   <h1>邮箱注册</h1> 
+   <p> 
+    <label for="usernameemail" class="uname" data-icon="u">用户名</label><label id="emailwarn"></label>
+    <input id="usernameemail" name="usernamesignup" required="required" type="text" placeholder="请输入3-12位用户名" onblur="validateEmailName()" />
+  </p>
+  <p> 
+    <label for="email" class="youmail" data-icon="e" > 邮箱</label><label id="ewarn"></label>
+    <input id="email" name="emailsignup" required="required" type="email" onblur="validateEmail()"/> 
+  </p>
+  <p> 
+    <label for="passwordemail" class="youpasswd" data-icon="p">密码 </label><label id="ewarnpassword"></label>
+    <input id="passwordemail" name="passwordsignup" required="required" type="password" placeholder="******" onblur="validateEmailPassword()"/>
+  </p>
+  <p> 
+    <label for="passwordemail_confirm" class="youpasswd" data-icon="p">确认密码</label><label id="epasswordwarn"></label>
+    <input id="passwordemail_confirm" name="passwordsignup_confirm" required="required" type="password"  placeholder="******" onblur="confirmEmailPassword()"/>
+  </p>
+  <p> 
+    <a href="javascript:void(0);" id="send" for="pinemail" class="pincode" onclick="getCodeByEmail()">点击获取邮箱验证码</a><label id="pinemailwarn"></label>
+    <input id="pinemail" name="pin" required="required" type="text" onblur="confirmEmailCode()" />
+
+    <label class="pinmsg">验证码2分钟之内有效，请及时查收</label>
+  </p>
+  <p class="signin button"> 
+   <input type="submit" value="注册" onclick="emailRegister()"/> 
+ </p>
+
+
+
+
+ <p class="change_link">  
+   已有账号
+   <a href="#tologin" class="to_register"> 登录</a>
+ </p>
+</form>
+</div>
+
+</div>
+</div>  
+</section>
+</div>
+<script type="text/javascript" src="../js/logorreg.js"></script>
+</body>
+</html>

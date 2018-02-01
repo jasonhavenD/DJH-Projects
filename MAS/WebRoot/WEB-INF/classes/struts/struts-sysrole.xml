@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- Struts2标签外观设置 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+
+	<!-- struts2委托spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+
+	<!-- struts2缺省配置 -->
+	<include file="struts.xml"></include>
+	<include file="struts-default.xml"></include>
+
+	<package name="Sysrole" extends="struts-default,json-default" namespace="/Sysrole">
+		<action name="initSearch" class="SysroleAction" method="initSearch">
+        	<result name="success">/page/sys/role/role-list.jsp</result>
+        </action>
+        <!-- 跳转到修改or添加页面 -->
+        <action name="editToSysrole" class="SysroleAction" method="initEdit">  
+            <result name="success">/page/sys/role/role-edit.jsp</result>
+        </action>
+        <!-- 保存 -->
+        <action name="editSysrole" class="SysroleAction" method="modifiSysrole" >  
+           <result name="success" type="redirectAction">initSearch</result>
+        </action>
+        <!-- 删除 -->
+        <action name="deleteSysrole" class="SysroleAction" method="deleteSysrole" >  
+            <result name="success" type="redirectAction">initSearch</result>
+        </action>
+        <!-- 分配权限 -->
+        <action name="addFun" class="SysroleAction" method="addFun" >  
+            <result name="success">/page/sys/role/role-addFun.jsp</result>
+        </action>
+         <!-- 添加功能 -->
+        <action name="editSysrolejuri" class="SysroleAction" method="modifiSysrolejuri" >  
+           <result name="success" type="redirectAction">addFun</result>
+        </action>
+        <!-- 删除功能 -->
+        <action name="deleteSysrolejuri" class="SysroleAction" method="deleteSysrolejuri" >  
+            <result name="success" type="redirectAction">addFun</result>
+        </action>
+	</package>
+</struts>    

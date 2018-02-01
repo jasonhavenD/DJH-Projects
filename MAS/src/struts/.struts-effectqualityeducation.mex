@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="eqe" location="310,10" size="1015,455">
+    <action name="initSearch" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="effectofqualityeducation-list.jsp" />
+      </result>
+    </action>
+    <action name="findEqe" location="65,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="effectofqualityeducation-list.jsp" />
+      </result>
+    </action>
+    <action name="findMajorByDno" location="310,267" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="editToEqe" location="310,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="effectofqualityeducation-edit.jsp" />
+      </result>
+    </action>
+    <action name="editEqe" location="555,57" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteEqe" location="800,57" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="searchContestToTCO" location="800,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="effectofqualityeducation-list.jsp" />
+      </result>
+    </action>
+    <action name="exportSubContestTExcel" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+      <result name="majorerror">
+        <resourceEdge source="majorerror" routing="0" target="importmajorerror.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="importerror.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="effectofqualityeducation-list.jsp" path="/page/effectofqualityeducation-list.jsp" location="13,240" size="150,55" />
+  <webResource name="effectofqualityeducation-edit.jsp" path="/page/effectofqualityeducation-edit.jsp" location="10,30" size="150,55" />
+  <webResource name="effectofqualityeducation-list.jsp" path="/page/effectofqualityeducation/effectofqualityeducation-list.jsp" location="0,0" size="0,0" />
+  <webResource name="effectofqualityeducation-edit.jsp" path="/page/effectofqualityeducation/effectofqualityeducation-edit.jsp" location="0,0" size="0,0" />
+  <webResource name="effectofqualityeducation-list.jsp" path="/page/effectqualityeducation/effectofqualityeducation-list.jsp" location="0,0" size="0,0" />
+  <webResource name="effectofqualityeducation-edit.jsp" path="/page/effectqualityeducation/effectofqualityeducation-edit.jsp" location="0,0" size="0,0" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="importmajorerror.jsp" path="/page/common/importmajorerror.jsp" location="0,0" size="0,0" />
+  <webResource name="importerror.jsp" path="/page/common/importerror.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

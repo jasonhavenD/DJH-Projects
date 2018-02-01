@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="Expertmajor" location="259,220" size="1645,595">
+    <action name="addType" location="100,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addtype.jsp" />
+      </result>
+    </action>
+    <action name="groupInitSearch" location="100,152" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="group-major-list.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="groupfind" location="345,152" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="group-major-list.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="groupAddMajor" location="695,162" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="groupAddExpert" location="695,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="group-major-addexpert.jsp" />
+      </result>
+    </action>
+    <action name="groupFindExpert" location="940,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="group-major-addexpert.jsp" />
+      </result>
+    </action>
+    <action name="addExpertToGroup" location="1185,57" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="groupMajorToExpert" location="1430,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="initSearch" location="1430,222" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="major-list.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="find" location="1430,327" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="major-list.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="addExpert" location="1185,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="major-addexpert.jsp" />
+      </result>
+    </action>
+    <action name="findExpert" location="695,512" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="major-addexpert.jsp" />
+      </result>
+    </action>
+    <action name="editExpertmajor" location="940,512" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteExpertmajor" location="940,407" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteExpertmajors" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="findExperts" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addtype.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="addtype.jsp" path="/page/expertmajor/addtype.jsp" location="15,240" size="150,55" />
+  <webResource name="group-major-list.jsp" path="/page/expertmajor/group-major-list.jsp" location="166,1080" size="150,55" />
+  <webResource name="errorstring.jsp" path="../errorstring.jsp" location="725,975" size="150,55" />
+  <webResource name="group-major-addexpert.jsp" path="/page/expertmajor/group-major-addexpert.jsp" location="1124,65" size="150,55" />
+  <webResource name="success.jsp" path="/page/expertmajor/success.jsp" location="1662,65" size="150,55" />
+  <webResource name="major-list.jsp" path="/page/expertmajor/major-list.jsp" location="1971,520" size="150,55" />
+  <webResource name="major-addexpert.jsp" path="/page/expertmajor/major-addexpert.jsp" location="899,870" size="150,55" />
+  <include file="struts.xml" location="10,1255" size="150,30" />
+  <include file="struts-default.xml" location="255,1255" size="150,30" />
+</Struts2Diagram>
+

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>退货退款</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+  <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <link href="css/aboutperson.css" rel='stylesheet' type='text/css'>
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <div class="header">
+    <div class="container">
+      <div class="header_top">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt=""/></a>
+        </div>
+        <!--搜索框-->
+        <form class="search-form domain-search">
+
+          <div class="three-fifth column first">
+            <input type="text" class="text" value="搜索你想要的产品" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}">               
+          </div>
+          <div class="one-fifth column">
+            <input type="submit" value="搜索">
+          </div>
+
+        </form>
+        <div class="cssmenu">
+          <ul>
+            <li><a href="#">会员中心</a></li> 
+            <li class="active"><a href="#">我的订单</a></li>
+            <li class="active"><a href="#">站内消息</a></li>  
+            <li><a href="#small-dialog">登录/注册</a></li>
+          </ul>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+      <div class="h_menu4"><!-- start h_menu4 -->
+        <a class="toggleMenu" href="#">Menu</a>
+        <ul class="nav">
+          <li class="active"><a href="index.html">主页</a></li>
+          <li><a href="#">节能灯</a></li>
+          <li><a href="#">球泡灯</a></li>
+          <li><a href="#">一体化筒灯</a></li>
+          <li><a href="#">天花射灯</a></li>
+          <li><a href="#">吸顶灯配件</a></li>
+          <li><a href="#">配件</a></li>
+          
+        </ul>
+        <script type="text/javascript" src="js/nav.js"></script>
+      </div><!-- end h_menu4 -->
+    </div>
+  </div>
+  <div class="templatemo-flex-row">
+    <!--left-->
+    <div class="left-sidebar">
+      <nav>
+        <ul>
+          <li>会员中心</li>
+          <li><a href="person.html">个人资料</a></li>
+          <li><a href="modifypassword.html">修改密码</a></li>
+          <li><a href="companyorder.html">我的订单</a></li>
+          <li><a href="">待付款</a></li>
+          <li><a href="">待发货</a></li>
+          <li><a href="">待收货</a></li>
+          <li><a href="">待点评</a></li>
+          <li><a href="">预定成功订单</a></li>
+          <li><a href="">我的收藏</a></li>
+          <li><a href="">我的资金</a></li>
+          <li><a href="">收货地址</a></li>
+
+        </ul>
+      </nav>
+    </div>
+    <div class="container person-container">
+      <div class="content">
+        <button type="button" class="btn btn-default">平台/物流中心同意退款</button>
+        <button type="button" class="btn btn-success">输入物流信息</button>
+        <button type="button" class="btn btn-success">输入退款金额</button>
+        <button type="button" class="btn btn-default">平台/物流中心处理</button>
+
+        <button type="button" class="btn btn-default">完成</button>
+        <div>
+          <a href="#">查看订单详情</a>
+        </div>
+        <div>
+          <h2 align="center">请等待平台/物流中心同意退款!</h2>
+        </div>
+        <div>
+          <form>
+            <div class="form-group">
+              <label for="number" class="col-md-2 ">订单编号:</label>
+              <div class="col-md-3">
+                <input type="text" class="form-control" id="number"  placeholder="输入订单编号">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class=" col-sm-6">
+                <button type="submit" class="btn btn-default">确认</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div>
+          <form>
+            <div class="form-group">
+              <label for="money" class="col-md-2 ">退款金额:</label>
+              <div class="col-md-3">
+                <input type="text" class="form-control" id="money"  placeholder="输入退款金额">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class=" col-sm-6">
+                <button type="submit" class="btn btn-default">确认</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

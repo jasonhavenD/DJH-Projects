@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="teachproject" location="640,10" size="1190,945">
+    <action name="teachproject_*" location="975,190" size="150,335">
+      <result name="initSearch">
+        <resourceEdge source="initSearch" routing="0" target="teach_project-list.jsp" />
+      </result>
+      <result name="find">
+        <resourceEdge source="find" routing="0" target="teach_project-list.jsp" />
+      </result>
+      <result name="initSee">
+        <resourceEdge source="initSee" routing="0" target="teach_project-user-find.jsp" />
+      </result>
+      <result name="see" />
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="teach_project-edit.jsp" />
+      </result>
+      <result name="modifi" />
+      <result name="editU">
+        <resourceEdge source="editU" routing="0" target="teach_project-user-edit.jsp" />
+      </result>
+      <result name="edit1">
+        <resourceEdge source="edit1" routing="0" target="teach_project-user-edit.jsp" />
+      </result>
+      <result name="modifiU" />
+      <result name="add">
+        <resourceEdge source="add" routing="0" target="teach_project-add.jsp" />
+      </result>
+      <result name="addU" />
+      <result name="delete" />
+      <result name="deleteU" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="exportSubContestTExcel" location="835,862" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="590,862" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="310,862" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+    </action>
+    <action name="exportSubContestTExcel1" location="65,862" size="150,41">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="teach_project-list.jsp" path="/page/teach_project/teach_project-list.jsp" location="1558,1115" size="150,55" />
+  <webResource name="teach_project-user-find.jsp" path="/page/teach_project/teach_project-user-find.jsp" location="280,310" size="150,55" />
+  <webResource name="teach_project-edit.jsp" path="/page/teach_project/teach_project-edit.jsp" location="330,520" size="150,55" />
+  <webResource name="teach_project-user-edit.jsp" path="/page/teach_project/teach_project-user-edit.jsp" location="70,100" size="150,55" />
+  <webResource name="index.jsp" path="../index.jsp" location="65,660" size="150,55" />
+  <webResource name="error.jsp" path="../error.jsp" location="485,765" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="1215,1010" size="150,55" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="913,1010" size="150,55" />
+  <webResource name="teach_project-add.jsp" path="/page/teach_project/teach_project-add.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

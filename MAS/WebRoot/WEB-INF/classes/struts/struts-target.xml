@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+<package name="target" extends="struts-default" namespace="/Target">
+	
+	<!-- 初始化查询页面 -->
+		<action name="initSearch" class="appAction" method="initSearch">
+        	<result name="success">/page/appraisalsystem/appraisalsystem-list.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!--查询信息  -->
+         <action name="find" class="appAction" method="findTarget">  
+            <result name="success">/page/appraisalsystem/appraisalsystem-list.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!-- 跳转到修改页面 -->
+        <action name="editToTarget" class="appAction" method="initEdit">  
+            <result name="success">/page/appraisalsystem/appraisalsystem-edit.jsp</result>
+        </action>
+        <!-- 保存 -->
+        <action name="editTarget" class="appAction" method="modifiTarget" >  
+           <result name="success" type="redirectAction">initSearch</result>
+        </action>
+        <!-- 删除 -->
+        <action name="deleteTarget" class="appAction" method="deleteTarget" >  
+            <result name="success" type="redirectAction">initSearch</result>
+        </action>
+	</package>
+</struts>    

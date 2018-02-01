@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="Sysuserinfo" location="249,10" size="525,420">
+    <action name="initSearch" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="user-list.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="find" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="user-list.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="modifyUserPassword" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="modify_pwd.jsp" />
+      </result>
+    </action>
+    <action name="updateUserPassword" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="modifiy.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="editToSysuserinfo" location="65,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="user-edit.jsp" />
+      </result>
+    </action>
+    <action name="editSysuserinfo" location="310,337" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="deleteSysuserinfo" location="310,232" size="150,41">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="user-list.jsp" path="/page/sys/user/user-list.jsp" location="17,135" size="150,55" />
+  <webResource name="user-edit.jsp" path="/page/sys/user/user-edit.jsp" location="14,310" size="150,55" />
+  <webResource name="errorstring.jsp" path="../errorstring.jsp" location="0,0" size="0,0" />
+  <webResource name="modify_pwd.jsp" path="/page/sys/user/modify_pwd.jsp" location="0,0" size="0,0" />
+  <webResource name="modifiy.jsp" path="../modifiy.jsp" location="0,0" size="0,0" />
+  <webResource name="error.jsp" path="../error.jsp" location="0,0" size="0,0" />
+  <include file="struts.xml" location="10,520" size="150,30" />
+  <include file="struts-default.xml" location="255,520" size="150,30" />
+</Struts2Diagram>
+

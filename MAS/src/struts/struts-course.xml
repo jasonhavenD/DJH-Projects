@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="course" extends="commons" namespace="/course">
+		<!-- 初始化查询页面 -->
+		<action name="courseInitSearch" class="courseAction" method="initSearch">
+			<result name="success">/page/course/course-list.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--查询课程信息  -->
+		<action name="findCourse" class="courseAction" method="findCourse">
+			<result name="success">/page/course/course-list.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!-- 查询专利页面初始化-下拉列表级联-->
+		<action name="findMajorByDno" class="courseAction" method="findMajorByDno">
+			<result name="success"></result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!-- 跳转到修改页面 -->
+		<action name="editToCourse" class="courseAction" method="initEdit">
+			<result name="success">/page/course/course-edit.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!--保存修改信息  -->
+		<action name="editCourse" class="courseAction" method="modifiCourse">
+			<result name="success" type="redirectAction">findCourse</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!-- 删除记录 -->
+		<action name="deleteCourse" class="courseAction" method="deleteCourse">
+			<result name="success" type="redirectAction">findCourse</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!-- 导出 -->
+		<action name="exportExcel" class="exportAction" method="export">
+			<result name="success" type="redirectAction">courseInitSearch</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!-- 导入 -->
+        <!-- 弹出上传提示框 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+		</action>
+		<!-- 上传附件 -->
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    	</action>
+	</package>
+</struts>

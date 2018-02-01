@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>产品管理</title>
+<meta name="description" content="">
+
+<link href="css/templatemo-style.css" rel="stylesheet">
+<link href="../css/bootstrap-datetimepicker.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../company/css/energyb.css" rel='stylesheet' type='text/css' />
+
+<script src="../js/jquery-1.11.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="./js/jquery.params.js"></script>
+
+
+
+</head>
+<body onload="load()">
+	<!-- Left column -->
+	<div class="templatemo-flex-row">
+		<div class="templatemo-sidebar">
+			<header class="templatemo-site-header">
+				<div class="square"></div>
+				<h5>后台管理</h5>
+			</header>
+			<div class="profile-photo-container">
+				<img src="images/lightlogo.png" alt="Profile Photo"
+					class="img-responsive">
+				<div class="profile-photo-overlay"></div>
+			</div>
+			<!-- Search box -->
+			<form class="templatemo-search-form" role="search">
+				<div class="input-group">
+
+					<input type="text" class="form-control" placeholder="Search"
+						name="srch-term" id="srch-term">
+					<button type="submit" class="fa fa-search"></button>
+				</div>
+			</form>
+			<div class="mobile-menu-icon">
+				<i class="fa fa-bars"></i>
+			</div>
+			<nav class="templatemo-left-nav">
+				<ul>
+					<li><a href="showproduct.html" class="active"><i
+							class="glyphicon glyphicon-lamp"></i>产品中心</a></li>
+					<li><a href="order.html"><i
+							class="glyphicon glyphicon-duplicate"></i>订单管理</a></li>
+					<li><a href="station.html"><i
+							class="glyphicon glyphicon-fullscreen"></i>物流中心</a></li>
+					<li><a href="region.html"><i
+							class="glyphicon glyphicon-globe"></i>地区分布</a></li>
+					<li><a href="user.html"><i
+							class="glyphicon glyphicon-user"></i>会员管理</a></li>
+					<li><a href="comment.html"><i
+							class="glyphicon glyphicon-leaf"></i>评价管理</a></li>
+					<li><a href="cash.html"><i class="glyphicon glyphicon-jpy"></i>资金管理</a></li>
+					<li><a href="#"><i class="glyphicon glyphicon-tasks"></i>控制面板</a></li>
+					<li><a href="javascript:void(0)" id="out"><i
+							class="glyphicon glyphicon-log-out"></i>退出登录</a></li>
+				</ul>
+			</nav>
+		</div>
+		<!-- Main content -->
+
+		<div class="templatemo-content col-1 light-gray-bg">
+			<div class="templatemo-top-nav-container">
+				<div class="row">
+					<nav class="templatemo-top-nav col-lg-12 col-md-12">
+						<ul class="text-uppercase">
+							<li><a href="" class="active">权限管理</a></li>
+							<li><a href="">基本设置</a></li>
+							<li><a href="">页面设置</a></li>
+							<li><a href="login.html">注册</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<!-- content detail -->
+			<div class="templatemo-content-container">
+				<div class="templatemo-content-widget white-bg">
+					<div class="row form-group"
+						style="margin-left:30px;font-size:16px;margin-top:20px;">
+						<div class="col-lg-3" style="width:44%">
+							<!-- 图片 -->
+							<br />
+							<div class="detail-pic">
+								<div class="img-wrap">
+									<img id="preview_img" src="../company/images/spxq2.jpg"
+										height="300" alt="节能灯">
+								</div>
+								<div class="detail-pic-min">
+									<a href="javascript:void(0);"
+										class="detail-pic-prev prev-disabled" id="prev_thumb"></a>
+									<div class="detail-pic-ul">
+										<ul class="fn-clear" id="thumb_list">
+											<!-- li个数*62 -->
+											<!--<li>
+			                <a href="javascript:void(0);">
+			                  <img alt="" src="../company/images/spxq2.jpg" width="60" height="60" />
+			                </a>
+			              </li>
+			              <li>
+			                <a href="javascript:void(0);">
+			                  <img alt="" src="../company/images/light.png" width="60" height="60" />
+			                </a>
+			              </li>
+			              <li>
+			                <a href="javascript:void(0);">
+			                  <img alt="" src="../company/images/banner.jpg" width="60" height="60" />
+			                </a>
+			              </li>
+			              <li>
+			                <a href="javascript:void(0);">
+			                  <img alt="" src="../company/images/server.png" width="60" height="60" />
+			                </a>
+			              </li>
+			              <li>
+			                <a href="javascript:void(0);">
+			                  <img alt="" src="../company/images/spxq2.jpg" width="60" height="60" />
+			                </a>
+			              </li>-->
+										</ul>
+									</div>
+									<a href="javascript:void(0);"
+										class="detail-pic-next next-disabled" id="next_thumb"></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-6   form-group" style="display:block">
+							<hr />
+							<label>基本信息</label>
+
+						</div>
+						<div class="col-lg-2  form-group">
+							<label for="proname">产品名称：</label> <span id="proname">ddd</span>
+						</div>
+						<div class="col-lg-2  form-group">
+							<label for="protype">产品类别：</label> <span id="protype">ddd</span>
+						</div>
+
+						<div class="col-lg-2   form-group">
+							<label for="price">价格：</label><span id="price">ddd</span>
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="certifiedprice">认证经销商价格：</label> <span
+								id="certifiedprice">123</span>
+						</div>
+						<div class="col-lg-2  form-group">
+							<label for="logisticsprice">物流中心价格：</label> <span
+								id="logisticsprice">123</span>
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="inventoryquantity">库存：</label> <span
+								id="inventoryquantity"></span>
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="inventoryquantity">列表图：</label> <img src=""
+								id="proimg" width="60px" height="40px">
+						</div>
+
+						<div class="col-lg-6   form-group" style="display:block">
+							<hr />
+							<label>产品参数</label>
+
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="power">功率：</label> <span id="power">ddd</span>
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="lampholder">灯头：</label> <span id="lampholder">ddd</span>
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="colortemp">色温：</label> <span id="colortemp">ddd</span>
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="voltage">电压：</label> <span id="voltage"></span>
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="luminousflux">光通量：</label> <span id="luminousflux"></span>
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="lightefficiency">光效：</label> <span
+								id="lightefficiency"></span>
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="colorrendering">显色指数：</label> <span
+								id="colorrendering"></span>
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="beamangle">光束角：</label> <span id="beamangle"></span>
+						</div>
+						<div class="col-lg-2   form-group">
+							<label for="isemc">是否符合EMC：</label> <span id="isemc"></span>
+						</div>
+						<div class="col-lg-11   form-group" style="display:block">
+							<hr />
+							<label>其他内容</label>
+						</div>
+						<div class="col-lg-3   form-group">
+							<label for="sendpoints">赠送积分数：</label> <span id="sendpoints"></span>
+						</div>
+
+						<div class="col-lg-3   form-group">
+							<label for="issale">是否上架：</label> <span id="issale"></span>
+						</div>
+						<div class="col-lg-3  form-group">
+							<label for="ishot">是否热卖：</label> <span id="ishot"></span>
+						</div>
+						<div class="col-lg-3  form-group">
+							<label for="isnew">是否新品：</label> <span id="isnew"></span>
+						</div>
+						<div class="col-lg-3  form-group">
+							<label for="isrecommend">是否推荐：</label> <span id="isrecommend"></span>
+						</div>
+						<div class=" col-lg-11  form-group">
+							<hr />
+							<label for="activecontent">活动内容：</label> <span id="activecontent"
+								style="color:red"></span>
+						</div>
+						<div class="col-lg-3 form-group">
+							<label>活动开始时间：</label> <span id="activestarttime"></span>
+						</div>
+						<div class="col-lg-3 form-group">
+							<label>活动结束时间：</label> <span id="activeendtime"></span>
+						</div>
+						<div class="col-lg-3   form-group">
+							<label>活动价格：</label> <span id="activeprice"></span>
+						</div>
+						<div class="col-lg-3  form-group">
+							<label>经销商价格：</label> <span id="activecertifiedprice"></span>
+						</div>
+						<div class="col-lg-3  form-group">
+							<label>物流中心价格：</label> <span id="activelogisticsprice"></span>
+						</div>
+						<div class="col-lg-3 form-group">
+							<label><span id="activeType"></span>数量：</label> <span
+								id="activequantity"></span>
+						</div>
+						<div class="col-lg-3 form-group">
+							<label>起订数量：</label> <span id="activestartquantity"></span>
+						</div>
+						<div class="col-lg-3 form-group" style="display:none"
+							id="depositrate0">
+							<label>众筹定金：</label> <span id="depositrate"></span>
+						</div>
+						<div class="col-lg-11   form-group">
+							<hr />
+							<label for="productdiscribe">产品简介：</label> <div
+								id="productdiscribe"></div>
+								
+						</div>
+					</div>
+				</div>
+				<!-- templatemo-content-widget white-bg -->
+			</div>
+			<!-- templatemo-content-container -->
+		</div>
+		<!-- templatemo-content col-1 light-gray-bg -->
+
+		<script type="text/javascript" src="../company/js/energyb.js"></script>
+		<script type="text/javascript">
+			function load() {
+				var id = $.query.get("id");
+				$
+						.post(
+								'../Product_getOneProductdetail',
+								{
+									"productid" : id
+								},
+								function(data) {
+									if (data.list == "fail") {
+										alert("没有详情");
+									} else {
+										var array = data.list;
+										$("#proname")
+												.text(array[0].productname);//产品名称
+										$("#protype").text(
+												array[0].producttypename);//类别
+										$("#price").text(array[0].price);
+										$("#certifiedprice").text(
+												array[0].certifiedprice);
+										$("#logisticsprice").text(
+												array[0].logisticsprice);
+										/*$("#inventoryquantity").text(array[0].inventoryquantity);*/
+										if (array[0].inventoryquantity == 1) {
+											$("#inventoryquantity").text("有");
+										} else {
+											$("#inventoryquantity").text("无");
+										}
+										$("#power").text(array[0].power);
+										$("#lampholder").text(
+												array[0].lampholder);
+										$("#colortemp")
+												.text(array[0].colortemp);
+										$("#voltage").text(array[0].voltage);
+										$("#luminousflux").text(
+												array[0].luminousflux);
+										$("#lightefficiency").text(
+												array[0].lightefficiency);
+										$("#colorrendering").text(
+												array[0].colorrendering);
+										$("#beamangle")
+												.text(array[0].beamangle);
+										$("#isemc").text(array[0].isemc);
+										$("#sendpoints").text(
+												array[0].sendpoints);
+										$("#productdiscribe").html(
+												array[0].productdiscribe);
+										if (array[0].issale == 1) {
+											$("#issale").text("是");
+										} else {
+											$("#issale").text("否");
+										}
+										if (array[0].ishot == 1) {
+											$("#ishot").text("是");
+										} else {
+											$("#ishot").text("否");
+										}
+										if (array[0].isnew == 1) {
+											$("#isnew").text("是");
+										} else {
+											$("#isnew").text("否");
+										}
+										if (array[0].isrecommend == 1) {
+											$("#isrecommend").text("是");
+										} else {
+											$("#isrecommend").text("否");
+										}
+										if (array[0].issnapup) {
+											$("#activecontent").text("限时抢购");
+											$("#activeType").text("促销");
+											$("#activestarttime").text(
+													array[0].snapupstarttime);
+											$("#activeendtime").text(
+													array[0].snapupendtime);
+											$("#activeprice").text(
+													array[0].snapupprice);
+											$("#activecertifiedprice")
+													.text(
+															array[0].snapupcertifiedprice);
+											$("#activelogisticsprice")
+													.text(
+															array[0].snapuplogisticsprice);
+											$("#activequantity").text(
+													array[0].snapupquantity);
+											$("#activestartquantity")
+													.text(
+															array[0].grouponstartquantity);
+										} else if (array[0].isgroupon) {
+											$("#activecontent").text("团购");
+											$("#activeType").text("团购");
+											$("#activestartquantity")
+													.text(
+															array[0].grouponstartquantity);
+											$("#activestarttime").text(
+													array[0].grouponstarttime);
+											$("#activeendtime").text(
+													array[0].grouponendtime);
+											$("#activeprice").text(
+													array[0].grouponprice);
+											$("#activecertifiedprice")
+													.text(
+															array[0].grouponcertifiedprice);
+											$("#activelogisticsprice")
+													.text(
+															array[0].grouponlogisticsprice);
+											$("#activequantity").text(
+													array[0].grouponquantity);
+										} else if (array[0].iscrowdfunding) {
+											$("#activecontent").text("众筹预售");
+											$("#activeType").text("众筹");
+											$("#activestartquantity")
+													.text(
+															array[0].crowfundingstartquantity);
+											$("#depositrate")
+													.text(
+															array[0].crowfundingdepositrate);
+											$("#depositrate0").css("display",
+													"block")
+											$("#activestarttime")
+													.text(
+															array[0].crowfundingstarttime);
+											$("#activeendtime")
+													.text(
+															array[0].crowfundingendtime);
+											$("#activeprice").text(
+													array[0].crowfundingprice);
+											$("#activecertifiedprice")
+													.text(
+															array[0].crowfundingcertifiedprice);
+											$("#activelogisticsprice")
+													.text(
+															array[0].crowfundinglogisticsprice);
+										} else {
+											$("#activecontent").text("该产品无活动");
+										}
+
+									
+										var str = "";
+										$("#preview_img").attr("src",
+												data.img[0].imgurl);
+										$("#proimg").attr("src",array[0].productpicture);
+										for (var i = 0; i < data.img.length; i++) {
+											str += "<li>"
+													+ " <a href='javascript:void(0);'>"
+													+ "<img alt='' src='"+data.img[i].imgurl+"' width='60' height='60' />"
+													+ "</a></li>";
+
+										}
+										$("#thumb_list").append(str);
+										//$("#inventoryquantity").text(array[0].inventoryquantity);
+									}
+								})
+			}
+		</script>
+		<script src="js/templatemo-script.js"></script>
+</body>
+
+</html>

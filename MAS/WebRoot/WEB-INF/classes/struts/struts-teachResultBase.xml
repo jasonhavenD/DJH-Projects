@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.multipart.saveDir" value="/tmp"/>
+	<package name="teachResultBase" extends="commons" namespace="/teachResultBase">
+		<action name="teachResultBase_*" class="teachResultBaseAction" method="{1}">
+			<result name="initSearch">/page/teach_result/teach_result-list.jsp</result>
+			<result name="find">/page/teach_result/teach_result-list.jsp</result>	
+			<result name="initSee">/page/teach_result/tache_result-people-find.jsp</result>		
+			<result name="see">/page/teach_result/tache_result-people-find.jsp</result>		
+			<result name="edit">/page/teach_result/teach_result-edit.jsp</result>
+			<result name="edit1">/page/teach_result/teach_result-people-edit.jsp</result>
+			<result name="modifi" type="redirectAction">teachResultBase_find.action</result>
+			<result name="editB">/page/teach_result/teach_result-people-edit.jsp</result>
+			<result name="modifiB" type="redirectAction">teachResultBase_initSee.action</result>
+			<result name="add" >/page/teach_result/teach_result-add.jsp</result>
+			<result name="addB" type="redirectAction">teachResultBase_initSee.action</result>
+			<result name="delete" type="redirectAction">teachResultBase_initSearch.action</result>
+			<result name="deleteB" type="redirectAction">teachResultBase_initSee.action</result>
+			<result name="error">../error.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--清空所有奖项成员信息-->
+		<action name="clearB" class="teachResultBaseAction"
+			method="clearB">
+			<result name="success" type="redirectAction">teachResultBase_initSee</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!--清空当前页奖项成员信息 -->
+		<action name="clearListB" class="teachResultBaseAction"
+			method="clearListB">
+			<result name="success" type="redirectAction">teachResultBase_initSee</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!-- 导出 -->
+        <action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">teachResultBase_find</result>
+        </action>
+        <!-- 导出 -->
+        <action name="exportSubContestTExcel1" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">teachResultBase_initSee</result>
+        </action>
+          <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+	</package>
+</struts>    

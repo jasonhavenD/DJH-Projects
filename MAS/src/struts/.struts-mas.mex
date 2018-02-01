@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="mas" location="509,10" size="770,525">
+    <action name="initSearch" location="555,117" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="mas-list.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="findMas" location="310,397" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="mas-list.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="editToMas" location="310,302" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="mas-edit.jsp" />
+      </result>
+    </action>
+    <action name="editMas" location="310,197" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteMas" location="65,197" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportMas" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="mas-list.jsp" path="/page/mas/mas-list.jsp" location="10,450" size="150,55" />
+  <webResource name="errorstring.jsp" path="../errorstring.jsp" location="170,100" size="150,55" />
+  <webResource name="mas-edit.jsp" path="/page/mas/mas-edit.jsp" location="287,275" size="150,55" />
+</Struts2Diagram>
+

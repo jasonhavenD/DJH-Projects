@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="fia" location="45,10" size="1295,245">
+    <action name="initSearch" location="1080,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="updownload.jsp" />
+      </result>
+    </action>
+    <action name="findFia" location="1080,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="updownload.jsp" />
+      </result>
+    </action>
+    <action name="exportSubContestTExcel" location="835,162" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="590,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="attachment.jsp" />
+      </result>
+    </action>
+    <action name="upDown_*" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="attachFileLis" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="updownload.jsp" path="/page/updownload/updownload.jsp" location="1082,415" size="150,55" />
+  <webResource name="attachment.jsp" path="/page/updownload/attachment.jsp" location="597,310" size="150,55" />
+  <webResource name="cover.jsp" path="/page/updownload/cover.jsp" location="333,310" size="150,55" />
+  <webResource name="success.jsp" path="/page/common/success.jsp" location="93,310" size="150,55" />
+  <webResource name="error.jsp" path="/page/common/error.jsp" location="0,0" size="0,0" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

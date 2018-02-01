@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<!-- Struts2标签外观设置 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+
+	<!-- struts2委托spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<!-- 设置文件上传大小 -->
+	<constant name="struts.multipart.maxSize" value="10485760" />
+	<!--u邮件-->
+	<include file="struts/struts-mail.xml" />
+	<!-- 学生 -->
+	<include file="struts/struts-student.xml" />
+	<!-- 专业 -->
+	<include file="struts/struts-major.xml" />
+	<!--人文科学素质教育效果 -->
+	<include file="struts/struts-effectqualityeducation.xml" />
+	<!--教师发表科研论文 -->
+	<include file="struts/struts-publicshedaacademicpapers.xml" />
+	<!--教师发表教改论文-->
+	<include file="struts/struts-publicshedarevolutionpapers.xml" />
+	<!--教师进修  -->
+	<include file="struts/struts-teachertraining.xml" />
+	<!-- 教师信息 -->
+	<include file="struts/struts-teacher.xml" />
+	<!-- 学生获得专利信息 -->
+	<include file="struts/struts-stupatent.xml" />
+	<!-- 通用 -->
+	<include file="struts/struts-comments.xml" />
+	<!-- 科研成果信息 -->
+	<include file="struts/struts-achievement.xml" />
+	<!-- 教材信息 -->
+	<include file="struts/struts-teachbook.xml" />
+	<!-- 竞赛获奖信息 -->
+	<include file="struts/struts-competition.xml" />
+	<!-- 创新创业项目信息 -->
+	<include file="struts/struts-innovation.xml"></include>
+	<!-- 教学成果信息 -->
+	<include file="struts/struts-teachResultBase.xml"></include>
+	<!-- 教学质量工程信息 -->
+	<include file="struts/struts-teachproject.xml"></include>
+	<!-- 课程基本信息 -->
+	<include file="struts/struts-course.xml"></include>
+	<!-- 高层次人才信息 -->
+	<include file="struts/struts-highleveltalent.xml"></include>
+	<!-- 主持科研信息 -->
+	<include file="struts/struts-presidedScientific.xml"></include>
+	<!-- 主持教改信息 -->
+	<include file="struts/struts-presidedRevolution.xml"></include>
+	<!-- 学生发表论文 -->
+	<include file="struts/struts-stuthesis.xml"></include>
+	<!-- 课程资源页面 -->
+	<include file="struts/struts-curriculumresource.xml"></include>
+	<!-- 就业情况页面 -->
+	<include file="struts/struts-employment.xml"></include>
+	<!-- 招生情况页面 -->
+	<include file="struts/struts-addmissions.xml"></include>
+	<!-- 质量标准建设页面 -->
+	<include file="struts/struts-qualitystandard.xml"></include>
+	<!--  -->
+	<include file="struts/struts-summary.xml"></include>
+	<!-- 教学计划变更 -->
+	<include file="struts/struts-teaplanchange.xml" />
+	<!-- 专业课所开课程 -->
+	<include file="struts/struts-majorcourse.xml" />
+	<!-- 实习实践毕业设计 -->
+	<include file="struts/struts-fulfillinginstance.xml" />
+	<!-- 教学经费 -->
+	<include file="struts/struts-teachingcost.xml" />
+	<!--  -->
+	<include file="struts/struts-trainingvenue.xml" />
+	<!-- 实验基地 -->
+	<include file="struts/struts-traininguseinginformation.xml" />
+	<!-- 指标F值及其value -->
+	<include file="struts/struts-funtionArgs.xml"></include>
+	
+	<include file="struts/struts-calculate.xml"></include>
+	<!-- 学生国内外交流 -->
+	<include file="struts/struts-communicationsitu.xml" />
+	<!-- 文件上传下载 -->
+	<include file="struts/struts-fileinfoattachment.xml" />
+	<!-- 自动搜索 -->
+	<package name="common" extends="commons">
+		<action name="autoSearch" class="autoSearchAction" method="autoSearch" />
+	</package>
+	<!-- 指标基本信息 -->
+	<include file="struts/struts-target.xml"></include>
+	<!-- 评估项目信息 -->
+	<include file="struts/struts-assessingproject.xml"></include>
+	<!-- 项目评估所需指标信息 -->
+	<include file="struts/struts-assessingneedtarget.xml"></include>
+	<!-- 专业评估指标统计信息 -->
+	<include file="struts/struts-mas.xml"></include>
+	<!--功能页面 -->
+	<include file="struts/struts-sysFunmodel.xml" />
+	<!--角色页面 -->
+	<include file="struts/struts-sysrole.xml" />
+	<!--用户页面 -->
+	<include file="struts/struts-sysuserinfo.xml" />
+	<!--登录 -->
+	<include file="struts/struts-login.xml" />
+	<!--专家管理 -->
+	<include file="struts/struts-expertmanage.xml" />
+	<!--专家任务分配 -->
+	<include file="struts/struts-expertmajor.xml" />
+	<!--专家评分 -->
+	<include file="struts/struts-expertscore.xml" />
+	<!--实验实训场地使用情况 -->
+	<include file="struts/struts-trainingvenueUsing.xml" />
+	<!--学院信息 -->
+	<include file="struts/struts-department.xml" />
+	<!--专家建议 -->
+	<include file="struts/struts-expertadvice.xml"/>
+	<!-- 评审时间判断 -->
+	<package name="AssessingprojectAjax" extends="struts-default,json-default" namespace="/">
+	<!-- 初始化查询页面 -->
+		<action name="testAjax" class="timeManageAction" method="testAjax">
+        	<result name="success" type="json"><param name="root">json</param></result>
+        </action>
+	</package>
+</struts>    

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="achievements" extends="commons" namespace="/achievements">
+	
+ <!-- 查询科研奖成果信息 -->
+        <action name="findAchievements" class="achievementAction" method="findAchievements">
+        	<result name="success">/page/Result/result-list.jsp</result>
+        	<result name="error">../error.jsp</result>
+        </action> 
+        <!-- 初始化科研奖成果查询页面 --> 
+        <action name="initSearchAchieve" class="achievementAction" method="initSearch">
+        	<result name="success">/page/Result/result-list.jsp</result>
+        	<result name="error">../error.jsp</result>
+        	<result name="errorstring">../errorstring.jsp</result>
+        </action>  
+        <!-- 跳转科研奖成果修改页面 -->
+         <action name="editToAchievements" class="achievementAction" method="initEdit">  
+            <result name="success">/page/Result/Result-in-edit.jsp</result>
+            <result name="error">../error.jsp</result>
+        </action>
+        <!-- 修改科研奖成果信息 -->
+        <action name="editAchievements" class="achievementAction" method="modifiAchievements" >  
+           <result name="success" type="redirectAction">findAchievements</result>
+           <result name="error">../error.jsp</result>
+        </action>
+         <!-- 添加科研奖成果信息 -->
+        <action name="addAchievements" class="achievementAction" method="insertAchievements" >  
+           <result name="success" type="redirectAction">initSearchAchieve</result>
+           <result name="error">../error.jsp</result>
+        </action>
+         <!-- 删除科研奖成果信息 -->
+        <action name="deleteAchievements" class="achievementAction" method="deleteAchievements" >  
+           <result name="success" type="redirectAction">initSearchAchieve</result>
+           <result name="error">../error.jsp</result>
+        </action>
+         <!-- 查看科研奖成员信息 -->
+        <action name="findTeachAchieves" class="achievementAction" method="findTeachAchieves" >  
+           <result name="success" >/page/Result/teacher-Result-information.jsp</result>
+           <result name="error">../error.jsp</result>
+        </action>
+        <!-- 跳转科研奖成员修改页面 -->
+         <action name="editToTeacherachievements" class="achievementAction" method="initEditTache">  
+            <result name="success">/page/Result/teacher-result-edit.jsp</result>
+            <result name="error">../error.jsp</result>
+        </action>
+         <!--修改科研奖成员信息 -->
+        <action name="modifiTeacherachievements" class="achievementAction" method="modifiTeacherachievements" >  
+           <result name="success" type="redirectAction">findTeachAchieves</result>
+           <result name="error">../error.jsp</result>
+        </action>
+        <!-- 添加科研奖成员信息 -->
+        <action name="addTeacherachievements" class="achievementAction" method="insertTeacherachievements" >  
+           <result name="success" type="redirectAction">findTeachAchieves</result>
+           <result name="error">../error.jsp</result>
+        </action>
+        <!-- 删除科研奖成果成员信息 -->
+        <action name="deleteTeacherachievements" class="achievementAction" method="deleteTeacherachievements" >  
+           <result name="success" type="redirectAction">findTeachAchieves</result>
+           <result name="error">../error.jsp</result>
+        </action>
+         <!-- 初始化添加页面-->
+         <action name="addToAchievements" class="achievementAction" method="initEdit">  
+            <result name="success">/page/Result/teacher-result-edit.jsp</result>
+            <result name="error">../error.jsp</result>
+        </action>
+         <!-- 导出 -->
+        <action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">initSearchAchieve</result>
+        	
+        </action> 
+        
+        <!-- 导出 -->
+        <action name="exportSubContestTExcel_1" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">findTeachAchieves</result>
+        </action>
+         <!-- 弹出上传提示框 -->
+		 <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+       
+	</package>
+</struts>    

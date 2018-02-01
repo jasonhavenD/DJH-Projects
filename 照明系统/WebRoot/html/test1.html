@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>test1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		function test(){
+			alert("执行");
+			$.post("../Company_getAuthenticateCompanyList",{"state":1},function(data){
+				alert(data.authenticateCompanyList.length);
+				var array = new Array(data.authenticateCompanyList.length);
+				array = data.authenticateCompanyList;
+				var array1 = new Array();
+				for(var i = 0; i < array.length; i++){
+					array1 = array[i];
+					for(var j = 0 ; j < array1.length; j++){
+						$("body").append(array1[j]+" ");
+					}
+					$("body").append("<br/>");
+				}
+			})
+		}	
+	</script>
+  </head>
+  
+  <body onload="test()">
+  
+  <!--
+        <input name="oldpassword" type="password" id="old"/>
+        <input name="newpassword" type="password" id="new"/>
+        <input type="button" value="更改密码" id="change">
+  --></body><!--
+  
+  <script type="text/javascript">
+		$("#old").blur(function(){
+			var password = $(this).val();
+			alert(password);
+			$.post("../User_isTruePassword",{
+				"userinfo.password":password
+			},
+			function(data){
+				alert(data.state);
+			});
+		});
+	$("#change").click(function(){
+			var password = $("#new").val();
+			alert(password);
+			$.post("../User_changePassword",{
+				"userinfo.password":password
+			},
+			function(data){
+				alert(data.state);
+			});
+		});
+	</script>
+--></html>

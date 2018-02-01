@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.multipart.saveDir" value="/tmp"/>
+	<package name="summary" extends="commons" namespace="/teachersummary">
+		<action name="summary_*" class="summaryAction" method="{1}">
+			<result name="TeacherinfosummaryList">/page/summary/TeacherInfoSummary-list.jsp</result>
+			<result name="findSTeacherinfosummaryList">/page/summary/TeacherInfoSummary-list.jsp</result>
+			<result name="TeacherresearchsummaryList">/page/summary/TeacherResearchSummary-list.jsp</result>
+			<result name="findSTeacherresearchsummaryList">/page/summary/TeacherResearchSummary-list.jsp</result>
+			<result name="StudentculturesummaryList">/page/summary/StudentCultureSummary-list.jsp</result>	
+			<result name="findSStudentculturesummaryList">/page/summary/StudentCultureSummary-list.jsp</result>	
+			<result name="PracticecoursesummaryList">/page/summary/Practicecoursesummary-list.jsp</result>
+			<result name="findSPracticecoursesummaryList">/page/summary/Practicecoursesummary-list.jsp</result>
+			<result name="ExpertsummaryList">/page/summary/ExpertSummary-list.jsp</result>
+			<result name="findSExpertsummaryList">/page/summary/ExpertSummary-list.jsp</result>
+			<result name="summary">../updatesummary.jsp</result>		
+			<result name="error">../error.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+			<result name="success" type="chain">summary_initSearch</result>
+		</action>
+		 <!-- 导出 -->
+        <action name="exportSubContestTExcelexpert" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">summary_initSearch</result>
+        </action> 
+        <action name="exportSubContestTExcelpracticecourse" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">summary_PracticecoursesummaryList</result>
+        </action>
+        <action name="exportSubContestTExcelStudentculture" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">summary_StudentculturesummaryList</result>
+        </action>
+        <action name="exportSubContestTExcelTeacherinfo" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">summary_StudentculturesummaryList</result>
+        </action>
+        <action name="exportSubContestTExcelTeacherresearch" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">summary_StudentculturesummaryList</result>
+        </action>
+        <!-- 图形 -->
+        <action name="findSTeacherresearchsummaryCountList" class="summaryAction" method="findSTeacherresearchsummaryCountList">
+			<result name="success">/page/summary/TeacherResearchGraph-list.jsp</result>
+		</action>
+        <action name="findSTeacherresearchsummaryCount" class="summaryAction" method="findSTeacherresearchsummaryCount">
+			<result name="success" type="json"><param name="root">json</param></result>
+		</action>
+	</package>
+</struts>    

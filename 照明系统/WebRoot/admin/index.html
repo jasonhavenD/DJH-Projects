@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>后台index</title>
+<meta name="description" content="">
+<link href="css/templatemo-style.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<!-- Left column -->
+<div class="templatemo-flex-row" style="float:left;width:12%;">
+        <div class="templatemo-sidebar">
+                <header class="templatemo-site-header">
+                        <h1> 后台管理 </h1>
+                </header>
+                <div class="profile-photo-container"> <img src="images/lightlogo.png" alt="Profile Photo"
+						class="img-responsive">
+                        <div class="profile-photo-overlay"></div>
+                </div>
+                <!-- Search box -->
+                <form class="templatemo-search-form" role="search">
+                        <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search"
+							name="srch-term" id="srch-term">
+                                <button type="submit" class="fa fa-search"></button>
+                        </div>
+                </form>
+                <div class="mobile-menu-icon"> <i class="fa fa-bars"></i> </div>
+                <nav class="templatemo-left-nav">
+                        <ul>
+                                <li> <a href="showproduct.html" onclick="change(this)" target="ifr" ><i
+							class="glyphicon glyphicon-lamp" ></i>产品中心</a> </li>
+                                <li> <a href="order.html" onclick="change(this)" target="ifr"><i class="glyphicon glyphicon-duplicate"></i>订单管理</a> </li>
+                                <li> <a href="station.html" onclick="change(this)" target="ifr"><i
+							class="glyphicon glyphicon-fullscreen"></i>物流中心</a> </li>
+                                <li> <a href="region.html" onclick="change(this)" target="ifr"><i
+							class="glyphicon glyphicon-globe"></i>地区分布</a> </li>
+                                <li> <a href="user.html" onclick="change(this)" target="ifr"><i
+							class="glyphicon glyphicon-user"></i>会员管理</a> </li>
+                                <li> <a href="comment.html" onclick="change(this)" target="ifr"><i
+							class="glyphicon glyphicon-leaf"></i>评价管理</a> </li>
+                                <li> <a href="cash.html" onclick="change(this)" target="ifr"><i class="glyphicon glyphicon-jpy"></i>资金管理</a> </li>
+                                <li> <a href="javascript:void(0)" target="ifr" onclick="change(this)"><i
+							class="glyphicon glyphicon-tasks"></i>控制面板</a> </li>
+                                <li> <a href="../LoginOffAction" id="out" onclick="change(this)"><i
+							class="glyphicon glyphicon-log-out"></i>退出登录</a> </li>
+                        </ul>
+                </nav>
+        </div>
+</div>
+<!-- top column-->
+<div class="templatemo-top-nav-container" style="float:left;width:88%; box-shadow:none;">
+        <div class="row">
+                <nav class="templatemo-top-nav col-lg-12 col-md-12">
+                        <ul class="text-uppercase">
+                                <li> <a href="" class="active">权限管理</a> </li>
+                                <li> <a href="">基本设置</a> </li>
+                                <li> <a href="">页面设置</a> </li>
+                                <li> <a href="login.html">注册</a> </li>
+                        </ul>
+                </nav>
+        </div>
+</div>
+<div class="templatemo-content col-1 light-gray-bg" style="float:left;width:88%;height:auto;">
+  <iframe name="ifr" src="" height="1600px" width="1200px" scrolling="no"></iframe>
+</div>
+<script>
+	function change(a){
+		$(".active").removeClass("active");
+		$(a).addClass("active");
+	}
+</script>
+<script src="../js/jquery-1.11.1.min.js">
+</script>
+<script src="../js/bootstrap.min.js">
+</script>
+<script type="text/javascript" charset="utf-8" src="../ueditor/lang/zh-cn/zh-cn.js"></script>
+</body>
+</html>

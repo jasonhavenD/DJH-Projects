@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>会员中心</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+  <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <link href="css/aboutperson.css" rel='stylesheet' type='text/css' />
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="js/person.js"></script>
+</head>
+<body onload="getAddress()" >
+
+  <div class="header">
+    <div class="container">
+      <div class="header_top">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt=""/></a>
+        </div>
+        <!--搜索框-->
+       <!--  <form class="search-form domain-search">
+
+          <div class="three-fifth column first">
+            <input type="text" class="text" value="搜索你想要的产品" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}">               
+          </div>
+          <div class="one-fifth column">
+            <input type="submit" value="搜索">
+          </div>
+
+        </form> -->
+        <div class="cssmenu">
+          <ul>
+            <li><a href="person.html">会员中心</a></li> 
+            <li><a href="cart.jsp">购物车</a></li>
+            <li id="showname"><!-- <a href="../html/logorreg.html">登录/注册</a> --></li>
+            <li><a  href="javascript:void(0)" id="out">退出</a></li>
+          </ul>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+      <div class="h_menu4"><!-- start h_menu4 -->
+        <a class="toggleMenu" href="#">Menu</a>
+        <ul class="nav">
+          <li class="active" ><a href="index.jsp">主页</a></li>
+          <li><a href="productType.jsp?producttype=1" >节能灯</a></li>
+          <li><a href="productType.jsp?producttype=2">球泡灯</a></li>
+          <li><a href="productType.jsp?producttype=3">一体化筒灯</a></li>
+          <li><a href="productType.jsp?producttype=4">天花射灯</a></li>
+          <li><a href="productType.jsp?producttype=5">吸顶灯</a></li>
+          <li><a href="productType.jsp?producttype=6">配件</a></li>
+        </ul>
+        <script type="text/javascript" src="js/nav.js"></script>
+      </div><!-- end h_menu4 -->
+    </div>
+  </div>
+  <div class="templatemo-flex-row">
+    <!--left-->
+    <div class="left-sidebar">
+      <nav>
+        <ul>
+          <li>会员中心</li>
+          <li><a href="showperson.html"><i class="glyphicon glyphicon-user"></i>个人资料</a></li>
+          <li><a href="person.html"><i class="glyphicon glyphicon-user"></i>完善资料</a></li>
+          <li><a href="modifypassword.html"><i class="glyphicon glyphicon-pencil"></i>密码安全</a></li>
+          <li><a href="paypassword.html"><i class="glyphicon glyphicon-lock"></i>支付密码</a></li>
+          <li><a href="companyorder.jsp"><i class="glyphicon glyphicon-duplicate"></i>我的订单</a></li>
+          <li><a href="favorite.html"><i class="glyphicon glyphicon-heart"></i>我的收藏</a></li>
+          <li><a href="wallet.html"><i class="glyphicon glyphicon-yen"></i>我的资金</a></li>
+          <li><a href="address.html" class="active"><i class="glyphicon glyphicon-home"></i>收货地址</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container person-container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <label>已经保存的收货地址</label>
+          <label>您已经创建了<label id="now"></label>个地址，最多可以创建<label id="all"></label>个地址</label><a class="btn btn-default" href="#addaddress" style="float:right;">新增收货地址</a>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover" >
+            <thead>
+              <tr class="address-thead">
+                <th>收货人</th>
+                <th>详细地址</th>
+                <th>邮编</th>
+                <th>电话/手机</th>
+                <th>操作</th>
+                <th>  </th>
+              </tr>
+            </thead>
+            <tbody id="showTable">
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- 模态框 -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">修改收货地址</h4>
+            </div>
+            <div class="modal-body">
+              <form action="#" class="row">
+                <div class="modifybottom">
+                  <label for="" class="col-md-2">详细地址</label>
+                    <input type="input" class="col-md-8" id="modifyaddress" placeholder="建议您如实填写详细收货地址，例如街道名称、门牌号码等信息">
+                </div>
+                <div class="modifybottom">
+                  <label for="" class="col-md-2">邮编</label>
+                    <input type="text" class="col-md-3" id="modifypostcode" placeholder="">
+                    <label for="" class="col-md-2">收货姓名</label>
+                    <input type="text" class="col-md-3" id="modifyname" placeholder="">
+                </div>
+                <div class="modifybottom">
+                  <label for="" class="col-md-2">手机</label>
+                  <input type="text" class="col-md-3" id="modifyphone" placeholder="">
+                  <!--  
+                  <label for="" class="col-md-2">固定电话</label>
+                  <input type="text" class="col-md-3" id="" placeholder="">
+                  -->
+                   <input type="hidden"  id="modifyid" >
+                </div>
+                <!--  
+                <div class="modifybottom">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div >
+                      <label>
+                        <input type="checkbox" id="modifydefault"> 设置为默认地址
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                -->
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-default" onclick="editAddress(this)">保存</button>
+                  </div>
+                </div>
+                
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <label id="addaddress">新增地址</label>
+        </div>
+        <div class="panel-body">
+          <form action="#" id="formContainer" class="form form-horizontal">
+            <div class="form-group">
+              <label for="inputaddress" class="col-sm-2 control-label">详细地址</label>
+              <div class="col-sm-10">
+                <input type="input" class="form-control" id="inputaddress" placeholder="建议您如实填写详细收货地址，例如街道名称、门牌号码等信息">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputpostcode" class="col-sm-2 control-label">邮编</label>
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="inputpostcode" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputname" class="col-sm-2 control-label">收货人姓名</label>
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="inputname" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputphone" class="col-sm-2 control-label">收货人电话</label>
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="inputphone" placeholder="">
+              </div>
+            </div>
+            <!--  
+            <div class="form-group">
+              <label for="inputtel" class="col-sm-2 control-label">收货人固定电话</label>
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="inputtel" placeholder="">
+              </div>
+            </div>
+            -->
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div >
+                  <label>
+                    <input type="checkbox" id="isdefault"> 设置为默认地址
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-default" onclick="addAddress()">保存</button>
+              </div>
+            </div>
+            
+          </form>
+        </div>
+        
+        <script type="text/javascript" src="../company/js/address.js">
+
+        </script>
+      </div>
+      
+      
+    </div>
+  </div>
+
+</body>
+</html>

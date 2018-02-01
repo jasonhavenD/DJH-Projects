@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="Expertadvice" location="15,10" size="280,140">
+    <action name="initSearch" location="65,57" size="150,41">
+      <result name="expertsuccess" />
+      <result name="expertnull">
+        <resourceEdge source="expertnull" routing="0" target="advice3.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="advice2.jsp" />
+      </result>
+    </action>
+    <action name="saveAdvice" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="advice.jsp" />
+      </result>
+    </action>
+    <action name="findAdvice" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="advice.jsp" />
+      </result>
+    </action>
+    <action name="findAdvice" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="advice.jsp" />
+      </result>
+    </action>
+    <action name="searchAdvice" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="advice2.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="advice.jsp" path="/page/expertadvice/advice.jsp" location="55,205" size="150,55" />
+  <webResource name="advice2.jsp" path="/page/expertadvice/advice2.jsp" location="0,0" size="0,0" />
+  <webResource name="advice3.jsp" path="/page/expertadvice/advice3.jsp" location="0,0" size="0,0" />
+  <include file="struts.xml" location="10,380" size="150,30" />
+  <include file="struts-default.xml" location="255,380" size="150,30" />
+</Struts2Diagram>
+

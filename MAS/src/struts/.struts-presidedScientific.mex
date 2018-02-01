@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="pres" location="380,10" size="770,420">
+    <action name="presInitSearch" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="presidedScientific-list.jsp" />
+      </result>
+    </action>
+    <action name="findPres" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="presidedScientific-list.jsp" />
+      </result>
+    </action>
+    <action name="editToPres" location="65,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="presidedScientific-edit.jsp" />
+      </result>
+    </action>
+    <action name="editPres" location="555,337" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deletePres" location="555,232" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportExcel" location="310,232" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+      <result name="majorerror">
+        <resourceEdge source="majorerror" routing="0" target="importmajorerror.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="importerror.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="presidedScientific-list.jsp" path="/page/presidedScientific/presidedScientific-list.jsp" location="13,135" size="150,55" />
+  <webResource name="presidedScientific-edit.jsp" path="/page/presidedScientific/presidedScientific-edit.jsp" location="10,310" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="importmajorerror.jsp" path="/page/common/importmajorerror.jsp" location="0,0" size="0,0" />
+  <webResource name="importerror.jsp" path="/page/common/importerror.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

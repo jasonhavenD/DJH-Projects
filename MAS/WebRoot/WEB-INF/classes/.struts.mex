@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="common" location="0,0" size="0,0">
+    <action name="autoSearch" location="0,0" size="0,0" />
+  </package>
+  <package name="AssessingprojectAjax" location="0,0" size="0,0">
+    <action name="testAjax" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="index.jsp" path="index.jsp" location="50,50" size="150,55" />
+  <webResource name="list.jsp" path="list.jsp" location="200,50" size="150,55" />
+  <webResource name="error.jsp" path="error.jsp" location="350,50" size="150,55" />
+  <webResource name="teacher_info-find.jsp" path="/page/mypage/teacher_info-find.jsp" location="500,50" size="150,55" />
+  <webResource name="stupatent-list.jsp" path="/page/stupatent-list.jsp" location="50,200" size="150,55" />
+  <webResource name="stupatent-edit.jsp" path="/page/stupatent-edit.jsp" location="350,200" size="150,55" />
+  <include file="struts-student.xml" location="0,0" size="0,0" />
+  <include file="struts-major.xml" location="0,0" size="0,0" />
+  <include file="struts-effectqualityeducation.xml" location="0,0" size="0,0" />
+  <include file="struts-publicshedaacademicpapers.xml" location="0,0" size="0,0" />
+  <include file="struts-publicshedarevolutionpapers.xml" location="0,0" size="0,0" />
+  <include file="struts-teachertraining.xml" location="0,0" size="0,0" />
+  <include file="struts-teacher.xml" location="50,650" size="150,30" />
+  <include file="struts-stupatent.xml" location="350,650" size="150,30" />
+  <include file="struts-comments.xml" location="50,800" size="150,30" />
+  <include file="struts-achievement.xml" location="350,800" size="150,30" />
+  <include file="struts-teachbook.xml" location="50,950" size="150,30" />
+  <include file="struts-competition.xml" location="50,1100" size="150,30" />
+  <include file="struts-innovation.xml" location="350,1250" size="150,30" />
+  <include file="struts-teachResultBase.xml" location="0,0" size="0,0" />
+  <include file="struts-teachproject.xml" location="0,0" size="0,0" />
+  <include file="struts-course.xml" location="0,0" size="0,0" />
+  <include file="struts-highleveltalent.xml" location="0,0" size="0,0" />
+  <include file="struts-presidedScientific.xml" location="0,0" size="0,0" />
+  <include file="struts-presidedRevolution.xml" location="0,0" size="0,0" />
+  <include file="struts-stuthesis.xml" location="350,950" size="150,30" />
+  <include file="struts-curriculumresource.xml" location="50,1250" size="150,30" />
+  <include file="struts-employment.xml" location="0,0" size="0,0" />
+  <include file="struts-addmissions.xml" location="0,0" size="0,0" />
+  <include file="struts-qualitystandard.xml" location="0,0" size="0,0" />
+  <include file="struts-summary.xml" location="0,0" size="0,0" />
+  <include file="struts-teaplanchange.xml" location="0,0" size="0,0" />
+  <include file="struts-majorcourse.xml" location="0,0" size="0,0" />
+  <include file="struts-fulfillinginstance.xml" location="0,0" size="0,0" />
+  <include file="struts-teachingcost.xml" location="0,0" size="0,0" />
+  <include file="struts-trainingvenue.xml" location="0,0" size="0,0" />
+  <include file="struts-traininguseinginformation.xml" location="0,0" size="0,0" />
+  <include file="struts-funtionArgs.xml" location="0,0" size="0,0" />
+  <include file="struts-calculate.xml" location="0,0" size="0,0" />
+  <include file="struts-communicationsitu.xml" location="0,0" size="0,0" />
+  <include file="struts-fileinfoattachment.xml" location="0,0" size="0,0" />
+  <include file="struts-target.xml" location="0,0" size="0,0" />
+  <include file="struts-assessingproject.xml" location="0,0" size="0,0" />
+  <include file="struts-assessingneedtarget.xml" location="0,0" size="0,0" />
+  <include file="struts-mas.xml" location="0,0" size="0,0" />
+  <include file="struts-sysFunmodel.xml" location="0,0" size="0,0" />
+  <include file="struts-sysrole.xml" location="0,0" size="0,0" />
+  <include file="struts-sysuserinfo.xml" location="0,0" size="0,0" />
+  <include file="struts-login.xml" location="0,0" size="0,0" />
+  <include file="struts-expertmanage.xml" location="0,0" size="0,0" />
+  <include file="struts-expertmajor.xml" location="0,0" size="0,0" />
+  <include file="struts-expertscore.xml" location="0,0" size="0,0" />
+  <include file="struts-trainingvenueUsing.xml" location="0,0" size="0,0" />
+  <include file="struts-department.xml" location="0,0" size="0,0" />
+</Struts2Diagram>
+

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="competition" extends="commons" namespace="/competition">	
+		<!-- 初始化竞赛获奖情况查询页面 -->
+		<action name="initSearchCompetition" class="competitionAction" 
+			method="initSearch">
+			<result name="success">/page/Competition/discipline-competition.jsp
+			</result>
+			<result name="error">../error.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+
+		<!-- 查询竞赛获奖情况信息 -->
+		<action name="findCompetition" class="competitionAction"
+			method="findCompetition">
+			<result name="success">/page/Competition/discipline-competition.jsp
+			</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!-- 跳转竞赛获奖情况修改页面 -->
+		<action name="editToCompetition" class="competitionAction"
+			method="initEdit">
+			<result name="success">/page/Competition/competition-edit.jsp</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!-- 修改竞赛获奖情况信息 -->
+		<action name="editCompetition" class="competitionAction"
+			method="modifiCompetition">
+			<result name="success" type="redirectAction">findCompetition</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!-- 添加竞赛获奖情况信息 -->
+		<action name="addCompetition" class="competitionAction" method="insertCompetition">
+			<result name="success" type="redirectAction">initSearchCompetition</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!-- 删除竞赛获奖情况信息 -->
+		<action name="deleteCompetition" class="competitionAction"
+			method="deleteCompetition">
+			<result name="success" type="redirectAction">initSearchCompetition</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!-- 查询竞赛成员信息 -->
+		<action name="findStuCption" class="competitionAction" method="findStuCption">
+			<result name="success">/page/Competition/competition-people-find.jsp
+			</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!-- 跳转修改竞赛成员页面 -->
+		<action name="modifitoStuCption" class="competitionAction"
+			method="initEditSuCp">
+			<result name="success">/page/Competition/competition-people-edit.jsp
+			</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!-- 修改竞赛成员信息 -->
+		<action name="modifiStuCption" class="competitionAction"
+			method="modifiStuCption">
+			<result name="success" type="redirectAction">findStuCption</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!-- 添加成员信息 -->
+		<action name="insertStuCption" class="competitionAction"
+			method="insertStuCption">
+			<result name="success" type="redirectAction">findStuCption</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!-- 删除成员信息 -->
+		<action name="deleteStuCption" class="competitionAction"
+			method="deleteStuCption">
+			<result name="success" type="redirectAction">findStuCption</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!--清空所有竞赛成员信息 -->
+		<action name="clearStuCption" class="competitionAction"
+			method="clearStuCption">
+			<result name="success" type="redirectAction">findStuCption</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!--清空当前页竞赛成员信息 -->
+		<action name="clearListStuCption" class="competitionAction"
+			method="clearListStuCption">
+			<result name="success" type="redirectAction">findStuCption</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		 <!-- 自动搜索 -->
+        <action name="autoSearch" class="autoSearchAction" method="autoSearch" />
+        <!-- 跳转竞赛获奖情况修改页面 -->
+		<action name="editCompetitions" class="competitionAction"
+			method="initEdit">
+			<result name="success">/page/Competition/competition-people-edit.jsp</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		 <!-- 导出 -->
+        <action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">findCompetition</result>
+        </action>
+         <!-- 导出 -->
+        <action name="exportSubContestTExcel1" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">findStuCption</result>
+        </action>
+          <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+       
+	</package>
+</struts>    

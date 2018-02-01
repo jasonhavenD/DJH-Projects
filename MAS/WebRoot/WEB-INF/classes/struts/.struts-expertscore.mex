@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="Expertscore" location="0,0" size="0,0">
+    <action name="initSearch" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="expertscore.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="initSearchpert" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="expertscore-list.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="findexpertscore" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="expertscore-list.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="findexpertscorepert" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="expertscore.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="editToexpertscore" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="expertscore-edit.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+    </action>
+    <action name="expfindexpertscore" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="expertscore-list.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+    </action>
+    <action name="saveExpertscore" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="doOperationerror.jsp" />
+      </result>
+    </action>
+    <action name="ajaxsaveExpertscore" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="attachment.jsp" />
+      </result>
+    </action>
+    <action name="upDown_*" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="success.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="major-list.jsp" path="/page/expertmajor/major-list.jsp" location="36,135" size="150,55" />
+  <webResource name="major-addexpert.jsp" path="/page/expertmajor/major-addexpert.jsp" location="14,310" size="150,55" />
+  <webResource name="expertscore.jsp" path="/page/expertscore/expertscore.jsp" location="0,0" size="0,0" />
+  <webResource name="expertscore_edit.jsp" path="/page/expertscore/expertscore_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="doOperationerror.jsp" path="/page/common/doOperationerror.jsp" location="0,0" size="0,0" />
+  <webResource name="expertscore-edit.jsp" path="/page/expertscore/expertscore-edit.jsp" location="0,0" size="0,0" />
+  <webResource name="attachment.jsp" path="/page/expertscore/attachment.jsp" location="0,0" size="0,0" />
+  <webResource name="success.jsp" path="/page/common/success.jsp" location="0,0" size="0,0" />
+  <webResource name="error.jsp" path="/page/common/error.jsp" location="0,0" size="0,0" />
+  <webResource name="errorstring.jsp" path="../errorstring.jsp" location="0,0" size="0,0" />
+  <webResource name="expertscore-list.jsp" path="/page/expertscore/expertscore-list.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

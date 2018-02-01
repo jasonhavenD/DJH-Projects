@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <title>库存管理</title>
+  <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+  <link href="../admin/css/templatemo-style.css" rel="stylesheet">
+  <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet">
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/inventory.js"></script>
+
+
+
+</head>
+<body onload="getInventory()">  
+  <!-- Left column -->
+  <div class="templatemo-flex-row">
+    <div class="templatemo-sidebar">
+      <header class="templatemo-site-header">
+        <h1>库存管理</h1>
+      </header>
+      <div class="profile-photo-container">
+        <img src="images/lightlogo.png" alt="Profile Photo" class="img-responsive">  
+        <div class="profile-photo-overlay"></div>
+      </div>      
+      <!-- Search box -->
+      <form class="templatemo-search-form" role="search">
+        <div class="input-group">
+
+          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">    
+          <button type="submit" class="fa fa-search"></button>       
+        </div>
+      </form>
+      <div class="mobile-menu-icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <nav class="templatemo-left-nav">          
+       <ul>
+            <li><a href="index.html"><i class="glyphicon glyphicon-tasks"></i>主页</a></li>
+            <li><a href="order.html" ><i class="glyphicon glyphicon-duplicate"></i>订单管理</a></li>
+            <li><a href="user.html"><i class="glyphicon glyphicon-user"></i>会员管理</a></li>
+            <li><a href="inventory.html" ><i class="glyphicon glyphicon-inbox"></i>库存</a></li>
+            <li><a href="region.html"><i class="glyphicon glyphicon-globe"></i>地区分布</a></li>
+            <li><a href="javascript:void(0)" id ="out"><i class="glyphicon glyphicon-log-out"></i>退出登录</a></li>
+          </ul>   
+      </nav>
+    </div>
+    <!-- Main content --> 
+
+    <div class="templatemo-content col-1 light-gray-bg">
+      
+
+      <div class="templatemo-content-container">
+        <div class="templatemo-content-widget white-bg">
+          <div class="templatemo-content-widget no-padding">
+            <div class="panel panel-default table-responsive">
+              <table class="table table-striped table-bordered templatemo-user-table" id="inventory">
+                <thead>
+                  <tr>
+                    <td><a href="" class="white-text templatemo-sort-by">产品名称</a></td>
+                    <td><a href="" class="white-text templatemo-sort-by">产品属性</a></td>
+                    <!-- <td><a href="" class="white-text templatemo-sort-by">产品销量</a></td> -->
+                    <td><a href="" class="white-text templatemo-sort-by">库存</a></td>
+                    <td>修改库存</td>               
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- <tr>
+                    <td>HS节能灯</td>               
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button class="templatemo-edit-btn" data-toggle="modal" data-target="#myModal">修改</button></td>
+                  </tr> -->
+                </tbody>
+              </table>    
+            </div>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    输入库存：<input/>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                  </div>
+                </div>
+              </div>
+            </div>                          
+          </div>                
+        </div>       
+      </div>
+    </div>
+  </div>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

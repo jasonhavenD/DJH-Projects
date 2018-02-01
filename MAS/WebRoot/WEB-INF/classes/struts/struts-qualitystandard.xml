@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- Struts2标签外观设置 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+
+	<!-- struts2委托spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+
+	<!-- struts2缺省配置 -->
+	<include file="struts.xml"></include>
+	<include file="struts-default.xml"></include>
+
+	<package name="qualitystandard" extends="struts-default,json-default" namespace="/qualitystandard">
+		<action name="initSearch" class="QualitystandardAction" method="initSearch">
+        	<result name="success">/page/qualitystandard/qualitystandard-list.jsp</result>
+        	<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!--查询信息  -->
+         <action name="find" class="QualitystandardAction" method="find">  
+            <result name="success">/page/qualitystandard/qualitystandard-list.jsp</result>
+            <result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!-- 跳转到修改or添加页面 -->
+        <action name="editToQualitystandard" class="QualitystandardAction" method="initEdit">  
+            <result name="success">/page/qualitystandard/qualitystandard-edit.jsp</result>
+        </action>
+        <!-- 保存 -->
+        <action name="editQualitystandard" class="QualitystandardAction" method="modifiQualitystandard" >  
+           <result name="success" type="redirectAction">find</result>
+        </action>
+        <!-- 删除 -->
+        <action name="deleteQualitystandard" class="QualitystandardAction" method="deleteQualitystandard" >  
+            <result name="success" type="redirectAction">initSearch</result>
+        </action>
+         <!-- 导出 -->
+        <action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">initSearch</result>
+        </action> 
+        <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+	</package>
+</struts>    

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="calculate" extends="commons" namespace="/cal">
+		<!-- 初始化查询页面 -->
+		<action name="calculateAllTarget" class="calculateAction" method="calculateAllTarget">
+			<result name="success">/page/mas/mas-list.jsp</result>
+			<result name="error">../errorstring.jsp</result>  
+		</action>
+		<action name="outPrint" class="calculateAction" method="initSearch">
+			<result name="success">/page/mas/masScore-list.jsp</result>
+			<result name="error">../sessionPast.jsp</result>  
+		</action>
+		<action name="findScore" class="calculateAction" method="findScore">
+			<result name="success">/page/mas/masScore-list.jsp</result>
+			<result name="error">../errorstring.jsp</result>  
+		</action>
+		<!-- 图形 -->
+		<action name="findScoreCountList" class="calculateAction" method="findScoreCountList">
+			<result name="success">/page/mas/masScoreGraph.jsp</result>
+		</action>
+		<action name="findScoreCount" class="calculateAction" method="findScoreCount">
+			<result name="success" type="json"><param name="root">json</param></result>
+		</action>
+		<!-- 统计结果分析-2016-11-17 -->
+		<action name="initShowAssessingResult" class="AnalyseResultAction" method="initShowAssessingResult">
+			<result name="success">/page/mas/showAnalyseResult.jsp</result>
+		</action>
+		<action name="showAssessingResult" class="AnalyseResultAction" method="showAssessingResult">
+			<result name="success" type="json"><param name="root">json</param></result>
+		</action>
+		<!-- 统计结果分类查询-2016-12-7 -->
+		<action name = "initSearchScore" class="ScoreAction" method="initSearch">
+			<result name="success">/page/mas/score-list.jsp</result>
+			<result name="error">../sessionPast.jsp</result>  
+		</action>
+		<action name="classifyFindScore" class="ScoreAction" method="classifyFindScore">
+			<result name="success">/page/mas/score-list.jsp</result>
+		</action>
+		<action name="majorClassCascade" class="ScoreAction" method="majorClassifyCascade">
+			<result name="success" type="json"><param name="root">majorJson</param></result>
+		</action>
+		<!-- 分类查询柱状图 -->
+		<action name="initClassifyGraph" class="ScoreAction" method="initGraphPage">
+			<result name="success">/page/mas/classifyScoreGraph.jsp</result>
+		</action>
+		<action name="findGraphData" class="ScoreAction" method="findGraphData">
+			<result name="success" type="json"><param name="root">scoreJson</param></result>
+		</action>
+		 <!-- 导出 -->
+        <action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">calculateAllTarget</result>
+        </action> 
+		<!-- 导出评估报告 -->
+        <action name="exportReportPage" class="exportReportAction" method="initFindReportInfo">
+        	<result name="success">/page/exportreport/assessingReport.jsp</result>
+        	<result name="error">../sessionPast.jsp</result>  
+        </action>
+		<action name="exportReport" class="exportReportAction" method="createDoc">
+			<result name="success" type="redirectAction">exportReportPage</result>
+		</action>
+		<action name="exportReportWorld" class="exportReportAction" method="createWorld">
+			<result name="success" type="redirectAction">exportReportPage</result>
+			<result name="error">../sessionPast.jsp</result>  
+		</action>
+	</package>
+</struts>

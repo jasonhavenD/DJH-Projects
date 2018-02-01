@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="curriculumresource" location="394,10" size="770,420">
+    <action name="initSearch" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="curriculumresource-list.jsp" />
+      </result>
+    </action>
+    <action name="find" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="curriculumresource-list.jsp" />
+      </result>
+    </action>
+    <action name="editToCurriculumresource" location="310,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="curriculumresource-edit.jsp" />
+      </result>
+    </action>
+    <action name="editCurriculumresource" location="555,337" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteCurriculumresource" location="555,232" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcel" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+      <result name="majorerror">
+        <resourceEdge source="majorerror" routing="0" target="importmajorerror.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="importerror.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="curriculumresource-list.jsp" path="/page/curriculumresource/curriculumresource-list.jsp" location="18,135" size="150,55" />
+  <webResource name="curriculumresource-edit.jsp" path="/page/curriculumresource/curriculumresource-edit.jsp" location="15,310" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="importmajorerror.jsp" path="/page/common/importmajorerror.jsp" location="0,0" size="0,0" />
+  <webResource name="importerror.jsp" path="/page/common/importerror.jsp" location="0,0" size="0,0" />
+  <include file="struts.xml" location="10,520" size="150,30" />
+  <include file="struts-default.xml" location="255,520" size="150,30" />
+</Struts2Diagram>
+

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="competition" location="220,45" size="280,455">
+    <action name="initSearchCompetition" location="65,47" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="discipline-competition.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="findCompetition" location="65,152" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="discipline-competition.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="editToCompetition" location="65,257" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="competition-edit.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="editCompetition" location="65,362" size="150,62">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="addCompetition" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="deleteCompetition" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="findStuCption" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="competition-people-find.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="modifitoStuCption" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="competition-people-edit.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="modifiStuCption" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="insertStuCption" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="deleteStuCption" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="autoSearch" location="0,0" size="0,0" />
+    <action name="editCompetitions" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="competition-people-edit.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="exportSubContestTExcel" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcel1" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="discipline-competition.jsp" path="/page/Competition/discipline-competition.jsp" location="881,170" size="150,55" />
+  <webResource name="error.jsp" path="error.jsp" location="65,275" size="150,55" />
+  <webResource name="competition-edit.jsp" path="/page/Competition/competition-edit.jsp" location="547,275" size="150,55" />
+  <webResource name="competition-people-find.jsp" path="/page/Competition/competition-people-find.jsp" location="0,0" size="0,0" />
+  <webResource name="competition-people-edit.jsp" path="/page/Competition/competition-people-edit.jsp" location="0,0" size="0,0" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="error.jsp" path="../error.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

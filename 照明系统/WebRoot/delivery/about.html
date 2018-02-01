@@ -1,0 +1,209 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>关于</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+   <link href="../css/loading.css" rel='stylesheet' type='text/css' />
+  <link href="../admin/css/templatemo-style.css" rel="stylesheet" type='text/css'/>
+  <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/md5.js"></script><!-- 加密算法 -->
+  <script type="text/javascript" src="../js/loading.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=826e806b86676d155282de3d37188137"></script>
+  <script type="text/javascript" src="../js/MarkerTool_min.js"></script>
+  <script type="text/javascript" src="../js/CityList_min.js"></script>
+  <style type="text/css">
+  @media (min-width: 768px){
+  .modal-dialog {
+    width: 900px; 
+    margin: 30px auto;
+  }
+  }
+  h2{
+    margin: 20px auto;
+    text-align: center;
+    color: #6495ED;
+  }
+
+  </style>
+</head>
+<body onload="getId()">
+	<div class="container">
+    <!-- 加载动画 -->
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+    <!-- 地图-->
+        <div class="modal fade" id="delivermap" tabindex="-1" role="dialog" aria-labelledby="baseInf">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="truxe">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">选择地址</h4>
+              </div>
+              <div class="modal-body">
+                <div>
+                  <h4>1.选择位置>2.标注位置>3.保存位置</h4>
+
+                  <div class="content">
+                    <div id="f_container">
+                      <div id="container"></div>
+                    </div>
+                    <div id="allmap" style="width:790px;height:500px;"></div>
+                    <div style="margin-top: 15px;text-align: right">
+                      <!-- 经度纬度 -->
+                      <input type="hidden" id="lat"/><input type="hidden" id="lng"/>
+                      <!-- 省市县街道 -->
+                      <input  id="province" type="hidden"/>
+                      <input  id="city" type="hidden"/>
+                      <input  id="borough" type="hidden"/>
+                      <input  id="road" type="hidden"/>
+                      <button  onclick="saveAddress()" class="btn">保存</button>
+                      <button  onclick="dhide()" class="btn">取消</button>
+                    </div>
+                  </div>
+                </div>
+              <script type="text/javascript">
+              var province;
+              var city;
+              var district;
+              var detailaddress;
+              var marker;
+
+                // 百度地图API功能
+                var map = new BMap.Map("allmap");            // 创建Map实例
+                map.centerAndZoom('北京',12);                   // 初始化地图,设置城市和地图级别。
+                map.enableScrollWheelZoom(true);
+                map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT}));    // 右下比例尺
+                map.setDefaultCursor("Crosshair");//鼠标样式
+
+                var cityList = new BMapLib.CityList({
+                  container: 'container',
+                  map: map
+                });
+
+                map.addEventListener("click", showInfo);
+
+                function showInfo(e){
+                  map.clearOverlays();
+                  marker = new BMap.Marker(new BMap.Point(e.point.lng, e.point.lat));  // 创建标注
+                  map.addOverlay(marker);
+                  //获取经纬度
+                  document.getElementById("lng").value = e.point.lng;
+                  document.getElementById("lat").value = e.point.lat;
+                  //alert(e.point.lng + "," + e.point.lat);
+                }
+                function savaAddress(){
+
+                }
+
+                </script>
+              </div>
+               <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+		<div class="templatemo-content-widget white-bg">
+      <div class="panel panel-default" style="width:400px; margin:0 auto">
+        <h2>物流中心完善信息</h2>
+        <form>
+        <div class="input-group">
+          <div class="input-group-addon">省份<i class="fa fa-user fa-fw"></i></div>             
+          <!-- <select class="form-control" id="province">
+            <option>北京市</option>
+            <option>上海市</option>
+            <option>北京市</option>
+            <option>天津市</option>
+            <option>重庆市</option>
+            <option>吉林省</option>
+            <option>山西省</option>
+            <option>青海省</option>
+            <option>新疆维吾尔自治区</option>
+            <option>西藏自治区</option>
+            <option>湖北省</option>
+            <option>福建省</option>
+            <option>广西壮族自治区</option>
+            <option>江苏省</option>
+            <option>辽宁省</option>
+            <option>宁夏回族自治区</option>
+            <option>海南省</option>
+            <option>黑龙江省</option>
+            <option>安徽省</option>
+            <option>贵州省</option>
+            <option>河北省</option>
+            <option>湖南省</option>
+            <option>陕西省</option>
+            <option>云南省</option>
+            <option>浙江省</option>
+            <option>河南省</option>
+            <option>江西省</option>
+            <option>四川省</option>
+            <option>台湾省</option>
+            <option>甘肃省</option>
+            <option>广东省</option>
+            <option>山东省</option>
+            <option>澳门特别行政区</option>
+            <option>香港特别行政区</option>
+            <option>内蒙古自治区</option>
+          </select> -->
+          <input type="text" id="modalshow" class="form-control">           
+        </div> 
+        <br/>
+        <div class="input-group">
+          <div class="input-group-addon">地址<i class="fa fa-user fa-fw"></i></div>             
+          
+          <input type="text" id="address" class="form-control" placehold="请保持在25个字符以内">           
+        </div>
+        <br/>
+        <div class="input-group">
+          <div class="input-group-addon">名称<i class="fa fa-user fa-fw"></i></div>             
+          
+          <input type="text" id="cname" class="form-control">           
+        </div>
+        <br/>
+        <div class="input-group">
+          <div class="input-group-addon">负责人名<i class="fa fa-user fa-fw"></i></div>             
+          
+          <input type="text" id="mname" class="form-control">           
+        </div>
+        <br/>
+        <div class="input-group">
+          <div class="input-group-addon">负责人电话<i class="fa fa-user fa-fw"></i></div>             
+          
+          <input type="text" id="mphone" class="form-control">           
+        </div>
+        <br/>
+        <div class="input-group">
+          <div class="input-group-addon">支付密码<i class="fa fa-user fa-fw"></i></div>             
+          
+          <input type="password" id="paypsw" class="form-control" placehold="">           
+        </div>
+        <br/>
+        <div class="input-group">
+          <div class="input-group-addon">确认密码<i class="fa fa-user fa-fw"></i></div>             
+          
+          <input type="password" id="conpaypsw" class="form-control" placehold="请确认支付密码">           
+        </div>
+        <br/>
+         
+        
+        <div class="form-group">
+        <input type="button" value="提交" class="templatemo-blue-button width-100" onclick="conprovince()"></input>
+        </div>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="js/about.js">
+
+</script>
+</body>
+</html>

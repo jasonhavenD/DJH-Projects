@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <title>修改产品</title>
+  <meta name="description" content="">
+
+  <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+  <link href="css/templatemo-style.css" rel="stylesheet">
+  
+  <link href="../company/css/energyb.css" rel='stylesheet' type='text/css' />
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/bootstrap-filestyle.min.js"></script> 
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="./js/jquery.params.js"></script>
+  <script src="../js/bootstrap-datetimepicker.js"></script>
+  <script type="text/javascript" src="../js/jquery-form.js"></script>
+  
+</head>
+<body onload="load()">  
+  <!-- Left column -->
+  <div class="templatemo-flex-row">
+    <div class="templatemo-sidebar">
+      <header class="templatemo-site-header">
+        <div class="square"></div>
+        <h5>后台管理</h5>
+      </header>
+      <div class="profile-photo-container">
+        <img src="images/lightlogo.png" alt="Profile Photo" class="img-responsive">  
+        <div class="profile-photo-overlay"></div>
+      </div>      
+      <!-- Search box -->
+      <form class="templatemo-search-form" role="search">
+        <div class="input-group">
+        
+        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">    
+        <button type="submit" class="fa fa-search"></button>       
+        </div>
+      </form>
+      <div class="mobile-menu-icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <nav class="templatemo-left-nav">          
+         <ul>
+            <li><a href="showproduct.html" class="active" ><i class="glyphicon glyphicon-lamp" ></i>产品中心</a></li>
+            <li><a href="order.html" ><i class="glyphicon glyphicon-duplicate"></i>订单管理</a></li>
+            <li><a href="station.html" ><i class="glyphicon glyphicon-fullscreen"></i>物流中心管理</a></li>
+            <li><a href="region.html" ><i class="glyphicon glyphicon-globe"></i>地区分布</a></li>
+            <li><a href="user.html" ><i class="glyphicon glyphicon-user"></i>会员管理</a></li>
+            <li><a href="comment.html" ><i class="glyphicon glyphicon-leaf"></i>评价管理</a></li>
+             <li><a href="cash.html" ><i class="glyphicon glyphicon-jpy"></i>资金管理</a></li>
+            <li><a href="#" ><i class="glyphicon glyphicon-tasks"></i>控制面板</a></li>
+            <li><a href="javascript:void(0)" id ="out"><i class="glyphicon glyphicon-log-out"></i>退出登录</a></li>
+          </ul>  
+      </nav>
+    </div>
+    <!-- Main content --> 
+    
+    <div class="templatemo-content col-1 light-gray-bg">
+      <div class="templatemo-top-nav-container">
+        <div class="row">
+          <nav class="templatemo-top-nav col-lg-12 col-md-12">
+            <ul class="text-uppercase">
+              <li><a href="" class="active">权限管理</a></li>
+              <li><a href="">基本设置</a></li>
+              <li><a href="">页面设置</a></li>
+              <li><a href="login.html">注册</a></li>
+            </ul>  
+          </nav> 
+        </div>
+      </div>
+	<!-- content detail -->
+	<div class="templatemo-content-container">
+        <div class="templatemo-content-widget white-bg">
+              <div class="row form-group" style="margin-left:30px;font-size:16px;margin-top:20px;">
+                <div class="col-lg-3" style="width:44%">
+                  <!-- 图片 --><br/>
+                  <div class="detail-pic">
+			        <div class="img-wrap">                                
+			        	<img id="preview_img" src="../company/images/spxq2.jpg" height="300" alt="节能灯">
+			        </div>
+			        <div class="detail-pic-min">
+			          <a href="javascript:void(0);" class="detail-pic-prev prev-disabled" id="prev_thumb"></a>
+			          <div class="detail-pic-ul">
+			            <ul class="fn-clear"  id="thumb_list">
+			              
+			            </ul>
+			          </div>
+			          <a href="javascript:void(0);" class="detail-pic-next next-disabled" id="next_thumb"></a>
+			        </div>
+			      </div> 
+			      <br/><br/>
+			      	<form id="productimage" method="post"  enctype="multipart/form-data" action="../ProductImg_upload">
+			      	 <label class="control-label templatemo-block">重新上传图片：<span id="filewarn" style="color:red"></span></label><br/>
+			      	 <input type="file"  id="image" name="image" multiple class="filestyle" onchange="uploadImage()">
+	                  <input type="text" style="display:none"  id="imagename">
+	                </form>
+                </div>
+                
+              <div class="col-lg-6   form-group" style="display:block"> 
+                <hr/>
+                <label >基本信息</label>
+                
+              </div>
+                <div class="col-lg-2  form-group"> 
+                  <label for="proname">产品名称：<span id="pronamewarn" style="color:red"></span></label>
+                  <input id="proname" type="text" class="form-control"></input>
+                </div>
+                <div class="col-lg-2  form-group"> 
+                  <label for="typeshow">产品类别：</label>
+                  <select id="typeshow" class="form-control">
+                  	
+                  </select>
+              </div>
+              
+              <div class="col-lg-2   form-group"> 
+                <label for="price" >价格：<span id="pricewarn" style="color:red"></span></label>
+                <input id="price" type="text" class="form-control num"></input>
+              </div>
+              <div class="col-lg-2   form-group"> 
+                <label for="certifiedprice">认证经销商价格：<span id="certifiedpricewarn" style="color:red"></span></label>
+                <input id="certifiedprice" type="text" class="form-control num"></input>
+              </div>
+              <div class="col-lg-2  form-group"> 
+                <label for="logisticsprice">物流中心价格：<span id="logisticspricewarn" style="color:red"></span></label>
+                <input id="logisticsprice" type="text" class="form-control num"></input>
+              </div>
+              <div class="col-lg-2   form-group"> 
+                <label for="inventoryquantity">库存：</label>
+                <select id="inventoryquantity"  class="form-control">
+                	<option value="1">有</option>
+                	<option value="0">无</option>
+                </select>
+              </div>
+              
+              <div class="col-lg-6   form-group" style="display:block"> 
+                <hr/>
+                <label >产品参数</label>
+              </div>
+              <div class="col-lg-2   form-group"> 
+                <label for="power">功率：</label>
+                <input id="power" type="text" class="form-control"></input>
+              </div>
+              <div class="col-lg-2   form-group"> 
+                <label for="lampholder">灯头：</label>
+                <input id="lampholder" type="text" class="form-control"></input>
+              </div>
+              <div class="col-lg-2   form-group"> 
+                <label for="colortemp">色温：</label>
+                <input id="colortemp" type="text" class="form-control"></input>
+              </div>
+              <div class="col-lg-2   form-group"> 
+                <label for="voltage">电压：</label>
+                <input id="voltage" type="text" class="form-control"></input>
+              </div>
+              <div class="col-lg-2   form-group"> 
+                <label for="luminousflux">光通量：</label>
+                <input id="luminousflux" type="text" class="form-control"></input>
+              </div>
+              <div class="col-lg-2   form-group"> 
+                <label for="lightefficiency">光效：</label>
+                <input id="lightefficiency" type="text" class="form-control"></input>
+              </div>
+              <div class="col-lg-2   form-group"> 
+                <label for="colorrendering">显色指数：</label>
+                <input id="colorrendering" type="text" class="form-control"></input>
+              </div>
+              <div class="col-lg-2   form-group"> 
+                <label for="beamangle">光束角：</label>
+               <input id="beamangle" type="text" class="form-control"></input>
+              </div>
+              <div class="col-lg-2   form-group"> 
+               <label for="isemc">是否符合EMC：</label>
+               <select id="isemc" class="form-control">
+               	<option value="是">是</option>
+               	<option value="否">否</option>
+               </select>
+              </div>
+               <div class="col-lg-11   form-group" style="display:block"> 
+                <hr/>
+                <label >其他内容</label>
+              </div>
+              <div class="col-lg-3   form-group"> 
+                <label for="sendpoints">赠送积分数：<span id="sendpointswarn" style="color:red"></span></label>
+                <input id="sendpoints" type="text" class="form-control num"></input>
+              </div>
+              
+              <div class="col-lg-2   form-group">                   
+                  
+                  <label for="issale" >是否上架：</label>
+                  <input type="checkbox" name="issale" id="issale" value="0"/>
+              </div>
+              <div class="col-lg-2  form-group">                      
+                  <label for="ishot" >是否热卖：</label>
+                  <input type="checkbox" name="ishot" id="ishot" value="0"/>
+              </div>
+              <div class="col-lg-2  form-group">
+                  <label for="isnew" >是否新品：</label>
+                  <input type="checkbox" name="isnew" id="isnew" value="0"/>
+                </div>
+              <div class="col-lg-2  form-group">
+                  <label for="isrecommend" >是否推荐：</label>
+                  <input type="checkbox" name="expired" id="isrecommend" value="0"/>
+              </div>
+              <div class=" col-lg-11  form-group">
+               	<hr/>
+               	<label for="activecontent">活动内容：</label>
+               	<span id="activecontent" style="color:red"></span>
+              </div>
+              
+              
+              <div class="col-lg-12 form-group">                   
+                <div class="margin-right-15 templatemo-inline-block">
+                  参与限时抢购		<input type="radio" id="issnapup0" name="active" class="btn btn-primary" data-toggle="modal" data-target="#issnapup">
+                    
+                  </input>
+                </div>
+                <!-- 限时抢购的模态框 -->
+                <div class="modal fade" id="issnapup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">限时抢购</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form action="" method="post" id="form">
+                          <div class="row form-group">
+                            <div class="col-lg-6 col-md-6  form-group"> 
+                              <label for="snapupstarttime">活动开始时间：
+                              <span id="snapupstarttimewarn" style="color:red"></span></label>
+                              <div class="input-append date form_datetime ">
+                                <input size="30" type="text"  id="snapupstarttime"readonly/>
+                                <span class="add-on"><i class="icon-th"></i></span>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6  form-group"> 
+                              <label for="snapupendtime">活动结束时间：
+                              <span id="snapupendtimewarn" style="color:red"></span></label>
+                              <div class="input-append date form_datetime ">
+                                <input size="30" type="text" id="snapupendtime" readonly/>
+                                <span class="add-on"><i class="icon-th"></i></span>
+                              </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4  form-group"> 
+                              <label for="snapupprice">促销价格：
+                              <span id="snapuppricewarn" style="color:red"></span></label>
+                              <input type="text" class="form-control num"  id="snapupprice"/>
+                            </div>
+                            <div class="col-lg-4 col-md-4  form-group"> 
+                              <label for="snapupcertifiedprice">促销认证经销商价格：
+                              <span id="snapupcertifiedpricewarn" style="color:red"></span></label>
+                              <input type="text" class="form-control num"  id="snapupcertifiedprice"/>
+                            </div>
+                            <div class="col-lg-4 col-md-4 form-group"> 
+                              <label for="snapuplogisticsprice">促销物流中心价格：
+                              <span id="snapuplogisticspricewarn" style="color:red"></span></label>
+                              <input type="text" class="form-control num" id="snapuplogisticsprice"/>
+                            </div>
+                            <div class="col-lg-4 col-md-4 form-group"> 
+                              <label for="snapupquantity">促销数量：
+                              <span id="snapupquantitywarn" style="color:red"></span></label>
+                              <input type="text" class="form-control num" id="snapupquantity"/>
+                            </div>
+                            <div class="col-lg-4 col-md-4  form-group"> 
+                              <label for="grouponstartquantity0">促销起订数量：
+                              <span id="grouponstartquantity0warn" style="color:red"></span></label>
+                              <input type="text" class="form-control num" id="grouponstartquantity0"/>
+                            </div>
+                              <!-- <div class="col-lg-12 form-group text-right">
+                                <button type="submit" class="templatemo-blue-button">添加</button>
+                                <button type="reset" class="templatemo-white-button">重置</button>
+                              </div>
+                            -->
+                          </div>
+                        </form>
+                        <script type="text/javascript">
+                        $(".form_datetime").datetimepicker({
+                          format: "yyyy-mm-dd hh:ii:ss",
+                          autoclose: true,
+                          todayBtn: true,
+                          pickerPosition: "bottom-left"
+                        });
+                        </script>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id = "cancel" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary save" >保存</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="margin-right-15 templatemo-inline-block">
+                                                参与团购 <input type="radio"   id="isgroupon0" name="active" class="btn btn-primary" data-toggle="modal" data-target="#isgroupon">
+                    
+                  </input>
+                </div>
+                <!-- 团购的模态框 -->
+                <div class="modal fade" id="isgroupon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">团购</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form id="form1" class="templatemo-login-form" method="post">
+                          <div class="row form-group">
+                            <div class="col-lg-6 col-md-6  form-group"> 
+                              <label for="grouponstarttime">活动开始时间：
+                              <span id="grouponstarttimewarn" style="color:red"></span></label>
+                              <div class="input-append date form_datetime ">
+                                <input size="30" type="text" value="" id="grouponstarttime"readonly>
+                                <span class="add-on"><i class="icon-th"></i></span>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6  form-group"> 
+                              <label for="grouponendtime">活动结束时间:
+                              <span id="grouponendtimewarn" style="color:red"></span></label>
+                              <div class="input-append date form_datetime ">
+                                <input size="30" type="text" value="" id="grouponendtime" readonly>
+                                <span class="add-on"><i class="icon-th"></i></span>
+                              </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3  form-group"> 
+                              <label for="grouponprice">团购价格:
+                              <span id="grouponpricewarn" style="color:red"></span></label>
+                              <input type="text" class="form-control num" id="grouponprice">
+                            </div>
+                            <div class="col-lg-4 col-md-4  form-group"> 
+                              <label for="grouponcertifiedprice">团购经销商价格:
+                              <span id="grouponcertifiedpricewarn" style="color:red"></span></label>
+                              <input type="text" class="form-control num" id="grouponcertifiedprice">
+                            </div>
+                            <div class="col-lg-4 col-md-4  form-group"> 
+                              <label for="grouponlogisticsprice">团购物流中心价格:
+                              <span id="grouponlogisticspricewarn" style="color:red"></span></label>
+                              <input type="text" class="form-control num"  id="grouponlogisticsprice">
+                            </div>
+                            <div class="col-lg-4 col-md-4  form-group"> 
+                              <label for="grouponquantity">团购数量:
+                              <span id="grouponquantitywarn" style="color:red"></span></label>
+                              <input type="text" class="form-control num" id="grouponquantity">
+                            </div>
+                            <div class="col-lg-4 col-md-4  form-group"> 
+                              <label for="grouponstartquantity">团购起订数量: 
+                              <span id="grouponstartquantitywarn" style="color:red"></span></label>
+                              <input type="text" class="form-control num" id="grouponstartquantity">
+                            </div>
+                              <!-- <div class="col-lg-12 form-group text-right">
+                                <button type="submit" class="templatemo-blue-button">添加</button>
+                                <button type="reset" class="templatemo-white-button">重置</button>
+                              </div> -->
+                            </div>
+                          </form>
+                          <script type="text/javascript">
+                          $(".form_datetime").datetimepicker({
+                            format: "yyyy-mm-dd hh:ii:ss",
+                            autoclose: true,
+                            todayBtn: true,
+                            pickerPosition: "bottom-left"
+                          });
+                          </script>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default cancel" id="cancel1"data-dismiss="modal">取消</button>
+                          <button type="button" class="btn btn-primary save">保存</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="margin-right-15 templatemo-inline-block">
+               	参与众筹预售 <input type="radio"   name="active" id="iscrowdfunding0" class="btn btn-primary" data-toggle="modal" data-target="#iscrowdfunding">
+                      
+                    </input>
+                  </div>
+
+                  <!-- 众筹预售 -->
+                  <div class="modal fade" id="iscrowdfunding" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">众筹预售</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form id="form2" class="templatemo-login-form" method="post">
+                            <div class="row form-group">
+                              <div class="col-lg-4 col-md-4  form-group"> 
+                                <label for="crowfundingstarttime">活动开始时间:
+                                <span id="crowfundingstarttimewarn" style="color:red"></span></label>
+                                <div class="input-append date form_datetime ">
+                                  <input size="30" type="text" value="" id="crowfundingstarttime"readonly>
+                                  <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 col-md-4  form-group"> 
+                                <label for="crowfundingendtime">活动结束时间: 
+                                <span id="crowfundingendtimewarn" style="color:red"></span>
+                                </label>
+                                <div class="input-append date form_datetime ">
+                                  <input size="30" type="text" value="" id="crowfundingendtime" readonly>
+                                  <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 col-md-4  form-group"> 
+                                <label for="crowfundingdepositrate">众筹定金:
+                                <span id="crowfundingdepositratewarn" style="color:red"></span>
+                                </label>
+                                <input type="text" class="form-control num" id="crowfundingdepositrate">
+                              </div>
+                              <div class="col-lg-4 col-md-4  form-group"> 
+                                <label for="crowfundingprice">众筹产品价格:
+                                <span id="crowfundingpricewarn" style="color:red"></span></label>
+                                <input type="text" class="form-control num" id="crowfundingprice">
+                              </div>
+                              <div class="col-lg-4 col-md-4  form-group"> 
+                                <label for="crowfundingcertifiedprice">众筹认证经销商价格:
+                                <span id="crowfundingcertifiedpricewarn" style="color:red"></span></label>
+                                <input type="text" class="form-control num" id="crowfundingcertifiedprice">
+                              </div>
+                              <div class="col-lg-4 col-md-4  form-group"> 
+                                <label for="crowfundinglogisticsprice">众筹物流中心价格:
+                                <span id="crowfundinglogisticspricewarn" style="color:red"></span>
+                                </label>
+                                <input type="text" class="form-control num" id="crowfundinglogisticsprice">
+                              </div>
+                              <div class="col-lg-4 col-md-4  form-group"> 
+                                <label for="crowfundingstartquantity">众筹起订数量:
+                                <span id="crowfundingstartquantitywarn" style="color:red"></span>
+                                </label>
+                                <input type="text" class="form-control num" id="crowfundingstartquantity">
+                              </div>
+                              <div class="col-lg-4 col-md-4  form-group"> 
+                                <label for="crowfundingquantity">众筹数量:
+                                <span id="crowfundingquantitywarn" style="color:red"></span>
+                                </label>
+                                <input type="text" class="form-control num" id="crowfundingquantity">
+                              </div>
+                              <!-- <div class="col-lg-12 form-group text-right">
+                                <button type="submit" class="templatemo-blue-button">添加</button>
+                                <button type="reset" class="templatemo-white-button">重置</button>
+                              </div> -->
+                            </div>
+                          </form>
+                          <script type="text/javascript">
+                          $(".form_datetime").datetimepicker({
+                            format: "yyyy-mm-dd hh:ii:ss",
+                            autoclose: true,
+                            todayBtn: true,
+                            pickerPosition: "bottom-left"
+                          });
+                          </script>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default cancel" id="cancel2"data-dismiss="modal">取消</button>
+                          <button type="button" class="btn btn-primary save">保存</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+               <!-- 产品简介 -->
+               <div class="col-lg-11   form-group">         
+               <hr/>          
+                <label  for="productdiscribe">产品简介：</label>
+				<textarea class="form-control" id="productdiscribe" rows="3" ></textarea>
+              </div>
+              <div class="col-lg-11  form-group">
+              	<input  type="button" value="修改" class="btn btn-primary" style="margin-left:42%;width:100px;"  onclick="updateProduct()"/>
+              </div>
+             </div>
+             
+	</div><!-- templatemo-content-widget white-bg -->
+    </div><!-- templatemo-content-container -->
+  </div><!-- templatemo-content col-1 light-gray-bg -->
+
+<script type="text/javascript" src="../company/js/energyb.js"></script>
+ <script src="../js/knockout-3.2.0.debug.js"></script>
+ <script src="../uui/js/u.js"></script>
+ <script src="./js/showproduct.js"></script>
+<script type="text/javascript">
+ 	function load(){
+ 		 var id = $.query.get("id");
+ 		 $.post('../Product_getOneProductdetail',{"productid":id},function(data){
+ 			 if(data.list == "fail"){
+ 				 alert("没有详情");
+ 			 }else
+ 			{
+ 				var array = data.list; 
+		 		$("#proname").val(array[0].productname);//产品名称
+		 		$("#typeshow").val(array[0].producttypeid);
+		 		/*for(var i = 0 ; i < tmptype.length; i++){
+		 			if(tmptype[i].html() == array[0].producttypename);
+		 				tmptype.attr("selected",true);
+		 		}*/
+				//$("#typeshow").val(array[0].producttypename);//类别
+				$("#price").val(array[0].price);
+				$("#certifiedprice").val(array[0].certifiedprice);
+				$("#logisticsprice").val(array[0].logisticsprice);
+				$("#inventoryquantity").val(array[0].inventoryquantity);
+				 $("#isemc").val(array[0].isemc);
+				/*for(var i = 0 ; i < 2; i ++){
+					if(tmpinven[i].val() == array[0].inventoryquantity)
+						tmpinven[i].attr("selected",true);
+					if(tmpisemc[i].val() == array[0].isemc)
+						tmpisemc[i].attr("selected",true);
+				}*/
+				$("#power").val(array[0].power);
+				$("#lampholder").val(array[0].lampholder);
+				$("#colortemp").val(array[0].colortemp);
+				$("#voltage").val(array[0].voltage);
+				$("#luminousflux").val(array[0].luminousflux);
+				$("#lightefficiency").val(array[0].lightefficiency);
+				$("#colorrendering").val(array[0].colorrendering);
+				$("#beamangle").val(array[0].beamangle);
+				$("#sendpoints").val(array[0].sendpoints);
+				$("#productdiscribe").val(array[0].productdiscribe);
+				$("#issale").val(array[0].issale);
+				$("#ishot").val(array[0].ishot);
+				$("#isnew").val(array[0].isnew);
+				$("#isrecommend").val(array[0].isrecommend);
+				$("#issnapup0").val(array[0].issnapup);
+				$("#isgroupon0").val(array[0].isgroupon);
+				$("#iscrowdfunding0").val(array[0].iscrowdfunding0);
+				if(array[0].issale == 1){
+				{
+					$("#issale").attr("checked",true);
+					$("#issale").val("1");
+				}
+				}else{
+					$("#issale").attr("checked",false);
+					$("#issale").val("0");
+				}
+				if(array[0].ishot == 1){
+					$("#ishot").attr("checked",true);
+					$("#ishot").val("1");
+				}else{
+					$("#ishot").attr("checked",false);
+					$("#ishot").val("0");
+				}
+				if(array[0].isnew == 1){
+					$("#isnew").attr("checked",true);
+					$("#isnew").val("1");
+				}else{
+					$("#isnew").attr("checked",false);
+					$("#isnew").val("0");
+				}
+				if(array[0].isrecommend == 1){
+					$("#isrecommend").attr("checked",true);
+					$("#isrecommend").val("1");
+				}else{
+					$("#isrecommend").attr("checked",false);
+					$("#isrecommend").val("0");
+				}
+				/*alert(array[0].issnapup);
+				alert(array[0].isgroupon);
+				alert(array[0].iscrowdfunding);*/
+				if(array[0].issnapup == 1){
+					$("#issnapup0").attr("checked",true);
+					$("#issnapup0").val("1");
+				}else{
+					$("#issnapup0").attr("checked",false);
+					$("#issnapup0").val("0");
+				}
+				if(array[0].isgroupon == 1){
+					$("#isgroupon0").attr("checked",true);
+					$("#isgroupon0").val("1");
+				}else{
+					$("#isgroupon0").attr("checked",false);
+					$("#isgroupon0").val("0");
+				}
+				if(array[0].iscrowdfunding == 1){
+					$("#iscrowdfunding0").attr("checked",true);
+					$("#iscrowdfunding0").val("1");
+				}else{
+					$("#iscrowdfunding0").attr("checked",false);
+					$("#iscrowdfunding0").val("0");
+				}
+				if(array[0].issnapup){
+					$("#snapupstarttime").val(array[0].snapupstarttime);
+					$("#snapupendtime").val(array[0].snapupendtime);
+					$("#snapupprice").val(array[0].snapupprice);
+					$("#snapupcertifiedprice").val(array[0].snapupcertifiedprice);
+					$("#snapuplogisticsprice").val(array[0].snapuplogisticsprice);
+					$("#snapupquantity").val(array[0].snapupquantity);
+					$("#grouponstartquantity0").val(array[0].grouponstartquantity);
+				}else if(array[0].isgroupon)
+				{
+					$("#grouponstartquantity").val(array[0].grouponstartquantity);
+					$("#grouponstarttime").val(array[0].grouponstarttime);
+					$("#grouponendtime").val(array[0].grouponendtime);
+					$("#grouponprice").val(array[0].grouponprice);
+					$("#grouponcertifiedprice").val(array[0].grouponcertifiedprice);
+					$("#grouponlogisticsprice").val(array[0].grouponlogisticsprice);
+					$("#grouponquantity").val(array[0].grouponquantity);
+				}else if(array[0].iscrowdfunding){
+					$("#crowfundingstartquantity").val(array[0].crowfundingstartquantity);
+					$("#crowfundingdepositrate").val(array[0].crowfundingdepositrate);
+					$("#crowfundingstarttime").val(array[0].crowfundingstarttime);
+					$("#crowfundingendtime").val(array[0].crowfundingendtime);
+					$("#crowfundingprice").val(array[0].crowfundingprice);
+					$("#crowfundingcertifiedprice").val(array[0].crowfundingcertifiedprice);
+					$("#crowfundinglogisticsprice").val(array[0].crowfundinglogisticsprice);
+				}else{
+					$("#activecontent").val("该产品无活动");
+				}
+				var imagename = array[0].productpicture;
+				$("#imagename").val(imagename);
+				var imageArray = imagename.split("|");
+				var arraylength = imageArray.length;
+				if(arraylength > 5)
+					arraylength = 5;
+				var str="";
+				$("#preview_img").attr("src",".."+imageArray[0]);
+				for(var i = 0 ; i < arraylength; i++){
+					str+="<li>"+
+			               " <a href='javascript:void(0);'>"+
+			                 "<img alt='' src='.."+imageArray[i]+"' width='60' height='60' />" +
+			                "</a></li>";
+			              
+				}
+				$("#thumb_list").append(str);
+				//$("#inventoryquantity").val(array[0].inventoryquantity);
+ 			}
+ 		 })
+ 	}	 
+ 	function updateProduct(){
+ 		//alert("zhixing")
+ 		var proname = $("#proname").val().trim();//产品名称
+		if(proname == ""){
+			$("#pronamewarn").text("不能为空");
+			return false;
+		}else{
+			$("#pronamewarn").text("");
+		}
+		var typeshow = $("#typeshow").val();//类别
+		var productpicture = $("#imagename").val().trim();
+		if(productpicture == ""){
+			$("#filewarn").text("请上传图片");
+			return false;
+		}
+		var price = $("#price").val().trim();
+		if(price == ""){
+			$("#pricewarn").text("不能为空");
+			return false;
+		}else{
+			$("#pricewarn").text("");
+		}
+			
+		var certifiedprice = $("#certifiedprice").val().trim();
+		if(certifiedprice == ""){
+			$("#certifiedpricewarn").text("不能为空");
+			return false;
+		}else{
+			$("#certifiedpricewarn").text("");
+		}
+		var logisticsprice = $("#logisticsprice").val().trim();
+		if(logisticsprice == ""){
+			$("#logisticspricewarn").text("不能为空");
+			return false;
+		}else{
+			$("#logisticspricewarn").text("");
+		}
+		var inventoryquantity = $("#inventoryquantity").val().trim();
+		var power = $("#power").val().trim();
+		var lampholder = $("#lampholder").val().trim();
+		var colortemp = $("#colortemp").val().trim();
+		var voltage = $("#voltage").val().trim();
+		var luminousflux = $("#luminousflux").val().trim();
+		var lightefficiency = $("#lightefficiency").val().trim();
+		var colorrendering = $("#colorrendering").val().trim();
+		var beamangle = $("#beamangle").val().trim();
+		var isemc = $("#isemc").val().trim();
+		var sendpoints = $("#sendpoints").val().trim();
+		if(sendpoints == ""){
+			$("#sendpointswarn").text("不能为空");
+			return false;
+		}else{
+			$("#sendpointswarn").text("");
+		}
+		var productdiscribe = $("#productdiscribe").val().trim();
+		if(productdiscribe == ""){
+			$("#productdiscribewarn").text("不能为空");
+			return false;
+		}else{
+			$("#productdiscribewarn").text("");
+		}
+		var issale = $("#issale").val().trim();
+		var ishot = $("#ishot").val().trim();
+		var isnew = $("#isnew").val().trim();
+		var isrecommend = $("#isrecommend").val().trim();
+		var issnapup = $("#issnapup0").val().trim();
+		var isgroupon = $("#isgroupon0").val().trim();
+		var iscrowdfunding = $("#iscrowdfunding0").val().trim();
+		
+		var snapupstarttime = $("#snapupstarttime").val().trim();
+		var snapupendtime = $("#snapupendtime").val().trim();
+		var snapupprice = $("#snapupprice").val().trim();
+		var snapupcertifiedprice = $("#snapupcertifiedprice").val().trim();
+		var snapuplogisticsprice = $("#snapuplogisticsprice").val().trim();
+		var snapupquantity = $("#snapupquantity").val().trim();
+		
+		var grouponstartquantity = $("#grouponstartquantity").val().trim();
+		if(grouponstartquantity == ''){
+			grouponstartquantity = $("#grouponstartquantity0").val().trim();
+		}
+		var grouponstarttime = $("#grouponstarttime").val().trim();
+		var grouponendtime = $("#grouponendtime").val().trim();
+		var grouponprice = $("#grouponprice").val().trim();
+		var grouponcertifiedprice = $("#grouponcertifiedprice").val().trim();
+		var grouponlogisticsprice = $("#grouponlogisticsprice").val().trim();
+		var grouponquantity = $("#grouponquantity").val().trim();
+		
+		var crowfundingstartquantity = $("#crowfundingstartquantity").val().trim();
+		var crowfundingdepositrate = $("#crowfundingdepositrate").val().trim();
+		var crowfundingstarttime = $("#crowfundingstarttime").val().trim();
+		var crowfundingendtime = $("#crowfundingendtime").val().trim();
+		var crowfundingprice = $("#crowfundingprice").val().trim();
+		var crowfundingcertifiedprice = $("#crowfundingcertifiedprice").val().trim();
+		var crowfundinglogisticsprice = $("#crowfundinglogisticsprice").val().trim();
+		var crowfundingquantity = $("#crowfundingquantity").val().trim();
+		
+		
+		if(issnapup == 1){
+			if(snapupstarttime == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#snapupstarttimewarn").text("不能为空");
+				return false;
+			}else{
+				$("#snapupstarttimewarn").text("");
+			}
+			if(snapupendtime == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#snapupendtimewarn").text("不能为空");
+				return false;
+			}else{
+				$("#snapupendtimewarn").text("");
+			}
+			if(snapupprice == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#snapuppricewarn").text("不能为空");
+				return false;
+			}else{
+				$("#snapuppricewarn").text("");
+			}
+			if(snapupcertifiedprice == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#snapupcertifiedpricewarn").text("不能为空");
+				return false;
+			}else{
+				$("#snapupcertifiedpricewarn").text("");
+			}
+			if(snapuplogisticsprice == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#snapuplogisticspricewarn").text("不能为空");
+				return false;
+			}else{
+				$("#snapuplogisticspricewarn").text("");
+			}
+			if(snapupquantity == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#snapupquantitywarn").text("不能为空");
+				return false;
+			}else{
+				$("#snapupquantitywarn").text("");
+			}
+			if(grouponstartquantity == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#grouponstartquantity0warn").text("不能为空");
+				return false;
+			}else{
+				$("#grouponstartquantity0warn").text("");
+			}
+		}else if(isgroupon == 1){
+			if(grouponstarttime == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#grouponstarttimewarn").text("不能为空");
+				return false;
+			}else{
+				$("#grouponstarttimewarn").text("");
+			}
+			if(grouponendtime == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#grouponendtimewarn").text("不能为空");
+				return false;
+			}else{
+				$("#grouponendtimewarn").text("");
+			}
+			if(grouponprice == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#grouponpricewarn").text("不能为空");
+				return false;
+			}else{
+				$("#grouponpricewarn").text("");
+			}
+			if(grouponcertifiedprice == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#grouponcertifiedpricewarn").text("不能为空");
+				return false;
+			}else{
+				$("#grouponcertifiedpricewarn").text("");
+			}
+			if(grouponlogisticsprice == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#grouponlogisticspricewarn").text("不能为空");
+				return false;
+			}else{
+				$("#grouponlogisticspricewarn").text("");
+			}
+			if(grouponquantity == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#grouponquantitywarn").text("不能为空");
+				return false;
+			}else{
+				$("#grouponquantitywarn").text("");
+			}
+			if(grouponstartquantity == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#grouponstartquantitywarn").text("不能为空");
+				return false;
+			}else{
+				$("#grouponstartquantitywarn").text("");
+			}
+		}else if(iscrowdfunding == 1){
+			if(crowfundingstarttime == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#crowfundingstarttimewarn").text("不能为空");
+				return false;
+			}else{
+				$("#crowfundingstarttimewarn").text("");
+			}
+			if(crowfundingendtime == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#crowfundingendtimewarn").text("不能为空");
+				return false;
+			}else{
+				$("#crowfundingendtimewarn").text("");
+			}
+			if(crowfundingprice == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#crowfundingpricewarn").text("不能为空");
+				return false;
+			}else{
+				$("#crowfundingpricewarn").text("");
+			}
+			if(crowfundingcertifiedprice == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#crowfundingcertifiedpricewarn").text("不能为空");
+				return false;
+			}else{
+				$("#crowfundingcertifiedpricewarn").text("");
+			}
+			if(crowfundinglogisticsprice == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#crowfundinglogisticspricewarn").text("不能为空");
+				return false;
+			}else{
+				$("#crowfundinglogisticspricewarn").text("");
+			}
+			if(crowfundingquantity == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#crowfundingquantitywarn").text("不能为空");
+				return false;
+			}else{
+				$("#crowfundingquantitywarn").text("");
+			}
+			if(crowfundingstartquantity == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#crowfundingstartquantitywarn").text("不能为空");
+				return false;
+			}else{
+				$("#crowfundingstartquantitywarn").text("");
+			}
+			if(crowfundingdepositrate == ""){
+				$("#activecontent").text("活动选项均为必填项");
+				$("#crowfundingdepositratewarn").text("不能为空");
+				return false;
+			}else
+				$("#crowfundingdepositratewarn").text("");
+		}
+		var id = $.query.get("id");
+			$.post('../Product_update',{
+			"product.productid":id,
+			"product.productname":proname,
+			"product.producttype.producttypeid":typeshow,
+			"product.price":price,
+			"product.certifiedprice":certifiedprice,
+			"product.logisticsprice":logisticsprice,
+			"product.productpicture":productpicture,
+			"product.inventoryquantity":inventoryquantity,
+			"power":power,
+			"lampholder":lampholder,
+			"colortemp":colortemp,
+			"voltage":voltage,
+			"luminousflux":luminousflux,
+			"lightefficiency":lightefficiency,
+			"colorrendering":colorrendering,
+			"beamangle":beamangle,
+			"isemc":isemc,
+			"product.sendpoints":sendpoints,
+			"product.productdiscribe":productdiscribe,
+			"product.issale":issale,
+			"product.ishot":ishot,
+			"product.isnew":isnew,
+			"product.isrecommend":isrecommend,
+			"product.issnapup":issnapup,
+			"product.isgroupon":isgroupon,
+			"product.iscrowdfunding":iscrowdfunding,
+			"product.snapupstarttime":snapupstarttime,
+			"product.snapupendtime":snapupendtime,
+			"product.snapupprice":snapupprice,
+			"product.snapupcertifiedprice":snapupcertifiedprice,
+			"product.snapuplogisticsprice":snapuplogisticsprice,
+			"product.snapupquantity":snapupquantity,
+			"product.grouponstartquantity":grouponstartquantity,
+			"product.grouponstarttime":grouponstarttime,
+			"product.grouponendtime":grouponendtime,
+			"product.grouponprice":grouponprice,
+			"product.grouponcertifiedprice":grouponcertifiedprice,
+			"product.grouponlogisticsprice":grouponlogisticsprice,
+			"product.grouponquantity":grouponquantity,
+			"product.crowfundingstartquantity":crowfundingstartquantity,
+			"product.crowfundingdepositrate":crowfundingdepositrate,
+			"product.crowfundingstarttime":crowfundingstarttime,
+			"product.crowfundingendtime":crowfundingendtime,
+			"product.crowfundingprice":crowfundingprice,
+			"product.crowfundingcertifiedprice":crowfundingcertifiedprice,
+			"product.crowfundinglogisticsprice":crowfundinglogisticsprice,
+			"product.crowfundingquantity":crowfundingquantity,
+		},function (data){
+			if(data.state == "success"){
+				alert("更新成功");
+				window.location.reload();
+			}
+		});
+ 	}
+ </script>
+<script src="js/templatemo-script.js"></script>
+</body>
+
+</html>

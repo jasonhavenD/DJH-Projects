@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="pres" extends="commons" namespace="/presidedScientific">
+		<!-- 初始化查询页面 -->
+		<action name="presInitSearch" class="presAction" method="initSearch">
+			<result name="success">/page/presidedScientific/presidedScientific-list.jsp</result>
+		</action>
+		<!--查询高层次人才信息  -->
+		<action name="findPres" class="presAction" method="findPres">
+			<result name="success">/page/presidedScientific/presidedScientific-list.jsp</result>
+		</action>
+		<!-- 跳转到修改页面 -->
+		<action name="editToPres" class="presAction" method="initEdit">
+			<result name="success">/page/presidedScientific/presidedScientific-edit.jsp</result>
+		</action>
+		<!--保存修改信息  -->
+		<action name="editPres" class="presAction" method="modifiPres">
+			<result name="success" type="redirectAction">findPres</result>
+		</action>
+		<!-- 删除记录 -->
+		<action name="deletePres" class="presAction" method="deletePres">
+			<result name="success" type="redirectAction">presInitSearch</result>
+		</action>
+		<!-- 清空记录 -->
+		<action name="clearPres" class="presAction" method="clearPres">
+			<result name="success" type="redirectAction">presInitSearch</result>
+		</action>
+		<!-- 导出 -->
+		<action name="exportExcel" class="exportAction" method="export">
+			<result name="success" type="redirectAction">presInitSearch</result>
+		</action>
+		
+        <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+	</package>
+</struts>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- Struts2标签外观设置 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+
+	<!-- struts2委托spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+
+	<!-- struts2缺省配置 -->
+	<include file="struts.xml"></include>
+	<include file="struts-default.xml"></include>
+
+	<package name="Expertmanage" extends="struts-default,json-default" namespace="/Expertmanage">
+		<action name="initSearch" class="ExpertmanageAction" method="initSearch">
+        	<result name="success">/page/expertmanage/expert-list.jsp</result>
+        	<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!--查询信息  -->
+         <action name="find" class="ExpertmanageAction" method="find">  
+            <result name="success">/page/expertmanage/expert-list.jsp</result>
+            <result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!-- 跳转到修改页面 -->
+        <action name="editToExpertmanage" class="ExpertmanageAction" method="initEdit">  
+            <result name="success">/page/expertmanage/expert-edit.jsp</result>
+        </action>
+        <!-- 保存 -->
+        <action name="editExpertmanage" class="ExpertmanageAction" method="modifiExpertmanage" >  
+           <result name="success" type="redirectAction">initSearch</result>
+        </action>       
+        <!-- 删除 -->
+        <action name="deleteExpert" class="ExpertmanageAction" method="deleteExpert" >  
+           <result name="success" type="redirectAction">initSearch</result>
+        </action> 
+	</package>
+</struts>    

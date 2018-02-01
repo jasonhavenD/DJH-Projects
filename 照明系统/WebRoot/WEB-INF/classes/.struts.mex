@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="0,0" size="0,0">
+    <action name="*_*" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="input" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.html" />
+      </result>
+    </action>
+    <action name="IdentifyingCode_getPictureCode" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="error.html" path="/html/error.html" location="0,0" size="0,0" />
+</Struts2Diagram>
+

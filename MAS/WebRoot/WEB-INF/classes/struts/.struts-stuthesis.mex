@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="stut" location="230,10" size="770,420">
+    <action name="initSearch" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="stuthesis-list.jsp" />
+      </result>
+    </action>
+    <action name="findStuthesis" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="stuthesis-list.jsp" />
+      </result>
+    </action>
+    <action name="editToStuthesis" location="310,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="stuthesis-edit.jsp" />
+      </result>
+    </action>
+    <action name="editStuthesis" location="555,337" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteStuthesis" location="555,232" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcel" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="stuthesis-list.jsp" path="/page/stuthesis-list.jsp" location="12,135" size="150,55" />
+  <webResource name="stuthesis-edit.jsp" path="/page/stuthesis-edit.jsp" location="9,310" size="150,55" />
+  <webResource name="stuthesis-list.jsp" path="/page/stuthesis/stuthesis-list.jsp" location="0,0" size="0,0" />
+  <webResource name="stuthesis-edit.jsp" path="/page/stuthesis/stuthesis-edit.jsp" location="0,0" size="0,0" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

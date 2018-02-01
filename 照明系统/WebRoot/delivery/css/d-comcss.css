@@ -1,0 +1,11 @@
+/*user*/
+.bs-example-modal-lg .smallpic{
+    width: 300px;
+    height: 250px;
+    cursor: pointer;
+}
+.table i{
+    cursor: pointer;
+    color: #39ADB4;
+    font-size: 150%;
+}

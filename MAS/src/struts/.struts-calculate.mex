@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="calculate" location="253,10" size="525,595">
+    <action name="calculateAllTarget" location="65,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="mas-list.jsp" />
+      </result>
+    </action>
+    <action name="outPrint" location="65,502" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="masScore-list.jsp" />
+      </result>
+      <result name="errorstring">
+        <resourceEdge source="errorstring" routing="0" target="errorstring.jsp" />
+      </result>
+    </action>
+    <action name="findScore" location="310,512" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="masScore-list.jsp" />
+      </result>
+    </action>
+    <action name="findScoreCountList" location="310,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="masScoreGraph.jsp" />
+      </result>
+    </action>
+    <action name="findScoreCount" location="310,57" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="initShowAssessingResult" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="showAnalyseResult.jsp" />
+      </result>
+    </action>
+    <action name="showAssessingResult" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="initSearchScore" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="score-list.jsp" />
+      </result>
+    </action>
+    <action name="classifyFindScore" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="score-list.jsp" />
+      </result>
+    </action>
+    <action name="majorClassCascade" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="initClassifyGraph" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="classifyScoreGraph.jsp" />
+      </result>
+    </action>
+    <action name="findGraphData" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcel" location="65,57" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportReportPage" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="assessingReport.jsp" />
+      </result>
+    </action>
+    <action name="exportReport" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="exportReportWorld" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="mas-list.jsp" path="/page/mas/mas-list.jsp" location="34,310" size="150,55" />
+  <webResource name="masScore-list.jsp" path="/page/mas/masScore-list.jsp" location="297,660" size="150,55" />
+  <webResource name="errorstring.jsp" path="../errorstring.jsp" location="89,485" size="150,55" />
+  <webResource name="masScoreGraph.jsp" path="/page/mas/masScoreGraph.jsp" location="10,135" size="150,55" />
+  <webResource name="showAnalyseResult.jsp" path="/page/mas/showAnalyseResult.jsp" location="0,0" size="0,0" />
+  <webResource name="score-list.jsp" path="/page/mas/score-list.jsp" location="0,0" size="0,0" />
+  <webResource name="classifyScoreGraph.jsp" path="/page/mas/classifyScoreGraph.jsp" location="0,0" size="0,0" />
+  <webResource name="assessingReport.jsp" path="/page/exportreport/assessingReport.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

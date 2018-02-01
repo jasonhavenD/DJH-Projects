@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<!-- Struts2标签外观设置 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+
+	<!-- struts2委托spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+<include file="struts.xml"></include>
+	<include file="struts-default.xml"></include>
+	
+	<package name="stup5"  extends="struts-default,json-default" namespace="/tui">
+		<!-- 初始化查询页面 -->
+		<action name="initSearch-TUsingInfo" class="traininguseinginformationAction" method="initSearch">
+			<result name="success">/page/lab/TUsingInfo-in-list.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		
+		<action name="findTraininguseinginformation" class="traininguseinginformationAction" method="findTraininguseinginformation">
+			<result name="success">/page/lab/TUsingInfo-in-list.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		
+		<action name="findMajorByDno" class="traininguseinginformationAction" method="findMajorByDno">
+			<result name="success"></result>
+		</action>
+		<!-- 跳转到修改页面 -->
+		<action name="editTotraininguseinginformation" class="traininguseinginformationAction" method="initEdit">
+			<result name="success">/page/lab/TUsingInfo-in-edit.jsp</result>
+		</action>
+
+		<action name="editTraininguseinginformation" class="traininguseinginformationAction" method="modifiTraininguseinginformation">
+			<result name="success" type="redirectAction">findTraininguseinginformation</result>
+		</action>
+		<action name="deleteTraininguseinginformation" class="traininguseinginformationAction" method="deleteTraininguseinginformation">
+			<result name="success" type="redirectAction">initSearch-TUsingInfo</result>
+		</action>
+		<!-- 赛项查询 -->
+		<action name="exportSubContestTExcel" class="exportAction"
+			method="export">
+			<result name="success">initSearch-TUsingInfo</result>
+		</action>
+		  <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+    	<!-- 添加上一年度的所有数据 -->
+    	<action name="addAll" class="traininguseinginformationAction" method="addAll">
+			<result name="success" type="redirectAction">initSearch-TUsingInfo</result>
+		</action>
+		<!-- 计算 -->
+    	<action name="calculate" class="traininguseinginformationAction" method="calculate">
+			<result name="success" type="redirectAction">initSearch-TUsingInfo</result>
+		</action>
+	</package>
+</struts>    

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="LightSystem20161025"
+  id="myeclipse.1452158742155"
+  context-root="/LightSystem20161025"
+  j2ee-spec="5.0"
+  archive="LightSystem20161025.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

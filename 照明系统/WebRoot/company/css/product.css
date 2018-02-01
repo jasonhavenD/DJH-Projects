@@ -1,0 +1,63 @@
+.productmain{
+	display: block;
+	margin-top: 20px;
+	-webkit-background-size:80%;
+	-moz-background-size:80%;
+	-o-background-size:80%;
+	background-size: 80%;
+	background-position: center;
+	min-height: 800px;
+}
+
+.productshow{
+	border: 1px solid #E7E7E7;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+   padding: 1em 0.2em 1em;
+   text-align: center;
+   margin-top:0.5em;
+   margin-bottom:0.5em;
+}
+.productshow:hover{
+	border: 1px solid rgb(189,8,55);
+}
+.productshow {
+	
+	padding: 5px 0;
+	font-size: 14px;
+	margin-bottom: 0.2em;
+	
+}
+.pricepro b{
+	color:rgb(189,8,55);
+}
+.p-price{
+	font-size: 20px;
+	font-family: "微软雅黑";
+	color:rgb(189,8,55);
+	font-family: '黑体';
+	font-weight: 700;
+}
+.productshow span a{
+	font-size: 18px;
+	text-decoration: none;
+	color:#363636;
+}
+.productshow span a:hover,.productshow span a:active{
+	color:rgb(189,8,55);
+	text-decoration: underline;
+}
+/*favorite*/
+.f-pic{
+	width: 200px;
+	height: 350px;
+}
+.f-wrapper{
+	margin: 10px ;
+}
+.f-a{
+	color:red;
+}

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+<!-- Struts2标签外观设置 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+
+	<!-- struts2委托spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+<include file="struts.xml"></include>
+	<include file="struts-default.xml"></include>
+	
+	<package name="teacher" extends="struts-default,json-default" namespace="/teacher">
+		
+		<!-- 初始化查询页面 -->
+		<action name="teacherInitSearch" class="teacherAction" method="initSearch">
+        	<result name="success">/page/teacher/teacher_info-find.jsp</result>
+        	<result name="error">/page/common/doOperationerror.jsp</result>
+        	<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        
+		<!--查询信息  -->
+		<action name="findTeacher" class="teacherAction" method="findTeacher">
+			<result name="success">/page/teacher/teacher_info-find.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		
+		<!-- 跳转到修改页面 -->
+		<action name="editToTeacher" class="teacherAction" method="initEdit">
+			<result name="success">/page/teacher/teacher_info-edit.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+        
+        <action name="scanToTeacher" class="teacherAction" method="initScan">
+			<result name="success">/page/teacher/teacher_info.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+
+		<action name="addToTeacher" class="teacherAction" method="initEdit">
+			<result name="success">/page/teacher/teacher_info-add.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<action name="addTeacher" class="teacherAction" method="insertTeacher">
+			<result name="success" type="redirectAction">teacherInitSearch</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<action name="editTeacher" class="teacherAction" method="modifiTeacher">
+			<result name="success" type="redirectAction">findTeacher</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<action name="deleteTeacher" class="teacherAction" method="deleteTeacher">
+			<result name="success" type="redirectAction">findTeacher</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+		<!-- 导出 -->
+		<action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">teacherInitSearch</result>
+        </action> 
+        
+        
+         <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+	</package>
+	
+	
+	
+	
+</struts>    

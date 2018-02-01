@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+/*表格标题*/
+.t_caption{
+	font-size: 18px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+td{text-align: center;height: 10px;line-height: 10px;}
+
+/*过长数据简略显示*/
+.demo_ellipsis {
+    text-overflow:ellipsis; 
+    overflow:hidden; 
+    white-space:nowrap; 
+    width:150px; 
+}
+.demo_ellipsis_c {
+    text-overflow:ellipsis; 
+    overflow:hidden; 
+    white-space:nowrap; 
+    width:80px; 
+}

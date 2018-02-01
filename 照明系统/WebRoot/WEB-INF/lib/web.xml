@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+   <!-- 过滤器，验证管理员是否登录 -->
+   <filter>
+   		<filter-name>LoginValidate</filter-name>
+   		<filter-class>com.model.filter.LoginValidate</filter-class>
+   </filter>
+   <filter-mapping>
+   		<filter-name>LoginValidate</filter-name>
+   		<url-pattern>*.html</url-pattern>
+   </filter-mapping>
+  
+   <!-- struts2拦截器 -->
+  <filter>
+  	<filter-name>struts2</filter-name>
+  	<filter-class>
+  		org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+  	</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>struts2</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <context-param>
+	   <param-name>contextConfigLocation</param-name>
+	   <param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+	<!-- 对Spring容器进行实例化 -->
+	<listener>
+	   <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+	</listener>
+	
+	<!-- 配置Spring的OpenSessionInViewFilter过滤器，以解决Hibernate的懒加载异常（LazyInitializationException） -->
+   <!-- <filter>
+       <filter-name>OpenSessionInViewFilter</filter-name>
+    <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+    </filter>
+    <filter-mapping>
+       <filter-name>OpenSessionInViewFilter</filter-name>
+       <url-pattern>/*</url-pattern>
+    </filter-mapping> --> 
+  </web-app>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>会员中心</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+  <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <link href="css/aboutperson.css" rel='stylesheet' type='text/css' />
+  <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</head>
+<body >
+  <div class="header">
+    <div class="container">
+      <div class="header_top">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt=""/></a>
+        </div>
+        <!--搜索框-->
+        <form class="search-form domain-search">
+
+          <div class="three-fifth column first">
+            <input type="text" class="text" value="搜索你想要的产品" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}">               
+          </div>
+          <div class="one-fifth column">
+            <input type="submit" value="搜索">
+          </div>
+
+        </form>
+        <div class="cssmenu">
+          <ul>
+            <ul>
+              <li><a href="person.html">会员中心</a></li> 
+              <li><a href="cart.jsp">购物车</a></li>
+              <li id="showname"><!-- <a href="../html/logorreg.html">登录/注册</a> --></li>
+              <li><a  href="javascript:void(0)" id="out">退出</a></li> 
+            </ul> 
+            <input id="cid" type="hidden"></input>
+          </ul>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+      <div class="h_menu4"><!-- start h_menu4 -->
+        <a class="toggleMenu" href="#">Menu</a>
+        <ul class="nav">
+          <li class="active" ><a href="index.jsp">主页</a></li>
+          <li><a href="productType.jsp?producttype=1" >节能灯</a></li>
+          <li><a href="productType.jsp?producttype=2">球泡灯</a></li>
+          <li><a href="productType.jsp?producttype=3">一体化筒灯</a></li>
+          <li><a href="productType.jsp?producttype=4">天花射灯</a></li>
+          <li><a href="productType.jsp?producttype=5">吸顶灯</a></li>
+          <li><a href="productType.jsp?producttype=6">配件</a></li>
+        </ul>
+        <script type="text/javascript" src="js/nav.js"></script>
+      </div><!-- end h_menu4 -->
+    </div>
+  </div>
+  <div class="templatemo-flex-row">
+    <!--left-->
+    <div class="left-sidebar">
+      <nav>
+        <ul>
+          <li>会员中心</li>
+          <li><a href="showperson.html" class="active"><i class="glyphicon glyphicon-user"></i>个人资料</a></li>
+          <li><a href="person.html"><i class="glyphicon glyphicon-user"></i>完善资料</a></li>
+          <li><a href="modifypassword.html"><i class="glyphicon glyphicon-pencil"></i>密码安全</a></li>
+          <li><a href="paypassword.html"><i class="glyphicon glyphicon-lock"></i>支付密码</a></li>
+          <li><a href="companyorder.jsp"><i class="glyphicon glyphicon-duplicate"></i>我的订单</a></li>
+          <li><a href="favorite.html"><i class="glyphicon glyphicon-heart"></i>我的收藏</a></li>
+          <li><a href="wallet.html"><i class="glyphicon glyphicon-yen"></i>我的资金</a></li>
+          <li><a href="address.html"><i class="glyphicon glyphicon-home"></i>收货地址</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container person-container" style="margin-left:30px;">
+      <form class="form-horizontal row">
+
+        <div class="modifyperson">
+<!-- <label for="" class="col-md-2 ">用户名</label>
+  <input type="text" class="col-md-4" id="uname"  placeholder=""> -->
+  <label for="" class="col-md-2 ">真实姓名<span>*</span></label>
+  <input type="text" class="col-md-4"  id="mnameshow"  placeholder="">
+</div>
+<div class="modifyperson">
+  <label for="" class="col-md-2 ">店铺地址<span>*</span></label>
+  <input type="text" class="col-md-8"  id="deddressshow"  placeholder="">
+</div>
+<div class="modifyperson">
+  <label for="" class="col-md-2 ">店铺名称<span>*</span></label>
+  <input type="text" class="col-md-8"  id="cnameshow"  placeholder="">
+</div>
+<div class="modifyperson">
+  <label for="" class="col-md-2">手机号<span>*</span></label>
+  <input type="text" class="col-md-4"  id="mphoneshow"  placeholder="">
+</div>
+
+    <div class="modifyperson">
+      <label for="" class="col-md-2">固定电话</label>
+      <input type="text" class="col-md-4"  id="fixphoneshow"  placeholder="">
+      <label for="" class="col-md-2">邮箱</label>
+      <input type="email" class="col-md-4"  id="emailshow"  placeholder="">
+      <!-- <label for="" class="col-md-2">出生日期</label>
+      <input type="text" class="col-md-4"  id="birthshow"  placeholder=""> -->
+    </div>
+
+      <!-- <div class="modifyperson">
+      <div class="col-sm-offset-2 col-sm-6">
+        <button type="submit" class="btn" onclick="confirm();return false;">确认提交</button>
+      </div>
+    </div> -->
+  </form>
+  
+<!--</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+</div>
+</div>
+</div>
+</div> -->
+<script type="text/javascript" src="js/getUserName.js"></script>
+</div>
+</div>
+
+</body>
+</html>

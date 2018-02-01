@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="qualitystandard" location="373,10" size="770,420">
+    <action name="initSearch" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="qualitystandard-list.jsp" />
+      </result>
+    </action>
+    <action name="find" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="qualitystandard-list.jsp" />
+      </result>
+    </action>
+    <action name="editToQualitystandard" location="65,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="qualitystandard-edit.jsp" />
+      </result>
+    </action>
+    <action name="editQualitystandard" location="555,337" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteQualitystandard" location="555,162" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcel" location="310,162" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+      <result name="majorerror">
+        <resourceEdge source="majorerror" routing="0" target="importmajorerror.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="importerror.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="qualitystandard-list.jsp" path="/page/qualitystandard/qualitystandard-list.jsp" location="18,135" size="150,55" />
+  <webResource name="qualitystandard-edit.jsp" path="/page/qualitystandard/qualitystandard-edit.jsp" location="15,310" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="importmajorerror.jsp" path="/page/common/importmajorerror.jsp" location="0,0" size="0,0" />
+  <webResource name="importerror.jsp" path="/page/common/importerror.jsp" location="0,0" size="0,0" />
+  <include file="struts.xml" location="10,520" size="150,30" />
+  <include file="struts-default.xml" location="255,520" size="150,30" />
+</Struts2Diagram>
+

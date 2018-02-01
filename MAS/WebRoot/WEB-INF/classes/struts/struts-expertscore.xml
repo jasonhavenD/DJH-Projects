@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+
+	<package name="Expertscore" extends="commons"  namespace="/Expertscore">
+	   <!-- 初始化专家评分 -->
+		<action name="initSearch" class="ExpertscoreAction" method="initSearch">
+        	<result name="success">/page/expertscore/expertscore.jsp</result>
+        	<result name="error">/page/common/doOperationerror.jsp</result>
+        	<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <action name="initSearchpert" class="ExpertscoreAction" method="initSearch">
+        	<result name="success">/page/expertscore/expertscore-list.jsp</result>
+        	<result name="error">/page/common/doOperationerror.jsp</result>
+        	<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!-- 条件查询专家评分 -->
+		<action name="findexpertscore" class="ExpertscoreAction" method="findexpertscore">
+        	<result name="success">/page/expertscore/expertscore-list.jsp</result>
+        	<result name="error">/page/common/doOperationerror.jsp</result>
+        	<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <action name="findexpertscorepert" class="ExpertscoreAction" method="findexpertscore">
+        	<result name="success">/page/expertscore/expertscore.jsp</result>
+        	<result name="error">/page/common/doOperationerror.jsp</result>
+        	<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!-- 跳转到修改页面 -->
+		<action name="editToexpertscore" class="ExpertscoreAction" method="initEdit">
+			<result name="success">/page/expertscore/expertscore-edit.jsp</result>
+			<result name="error">/page/common/doOperationerror.jsp</result>
+		</action>
+         <!-- 专家条件查询专家评分 -->
+		<action name="expfindexpertscore" class="ExpertscoreAction" method="findexpertscore">
+        	<result name="success">/page/expertscore/expertscore-list.jsp</result>
+        	<result name="error">/page/common/doOperationerror.jsp</result>
+        </action>
+         <!-- 保存专家评分 -->
+        <action name="saveExpertscore" class="ExpertscoreAction" method="saveExpertscore" >  
+           <result name="success" type="redirectAction">initSearchpert</result>
+           <result name="error">/page/common/doOperationerror.jsp</result>
+        </action>
+        <!-- ajax实现保存 -->
+		<action name="ajaxsaveExpertscore" class="ExpertscoreAction" method="saveExpertscore">
+			<result type="json">
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">map</param>  
+            </result> 
+		</action>
+		<action name="helpExpertscore">
+			<result>/page/common/help.jsp</result>
+		</action>
+       <!-- 文件上传下载 -->
+		 <!-- 弹出上传提示框 -->
+		<action name="attachFileList" class="fileinfoAction" method="attachFileList">
+			<result name="success">/page/expertscore/attachment.jsp</result>
+		</action>
+		<!-- 上传下载附件 -->
+		<action name="upDown_*" class="updownfileAction" method="{1}">
+    		<result name="success">/page/common/success.jsp</result>
+    		<result name="error">/page/common/error.jsp</result>
+    	</action>
+	</package>
+</struts>    

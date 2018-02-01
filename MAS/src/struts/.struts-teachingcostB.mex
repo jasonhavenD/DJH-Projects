@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="stup2" location="50,50" size="170,813">
+    <action name="initSearchtea" location="10,20" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="TeachingFund-in-list.jsp" />
+      </result>
+    </action>
+    <action name="findTeachingcost" location="10,120" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="TeachingFund-in-list.jsp" />
+      </result>
+    </action>
+    <action name="findMajorByDno" location="10,220" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="editToTeachingcost" location="10,320" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="TeachingFund-in-edit.jsp" />
+      </result>
+    </action>
+    <action name="editTeachingcost" location="10,420" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteTeachingcost" location="10,520" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcel" location="10,620" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="upDown_uploadFile" location="10,720" size="150,83">
+      <result name="success" />
+      <result name="majorerror" />
+      <result name="error" />
+    </action>
+  </package>
+  <webResource name="teacher_info-find.jsp" path="/page/teacher/teacher_info-find.jsp" location="14,290" size="150,55" />
+  <webResource name="teacher_info-edit.jsp" path="/page/teacher/teacher_info-edit.jsp" location="14,465" size="150,55" />
+  <webResource name="teacher_info.jsp" path="/page/teacher/teacher_info.jsp" location="588,10" size="150,55" />
+  <webResource name="TeachingFund-in-list.jsp" path="/page/lab/TeachingFund-in-list.jsp" location="200,200" size="150,55" />
+  <webResource name="TeachingFund-in-edit.jsp" path="/page/lab/TeachingFund-in-edit.jsp" location="500,200" size="150,55" />
+</Struts2Diagram>
+

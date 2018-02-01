@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="tplan" location="776,10" size="910,735">
+    <action name="initSearch" location="695,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="teachingplanchange-list.jsp" />
+      </result>
+    </action>
+    <action name="findTplan" location="555,652" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="teachingplanchange-list.jsp" />
+      </result>
+    </action>
+    <action name="editToTplan" location="555,547" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="teachingplanchange-edit.jsp" />
+      </result>
+    </action>
+    <action name="editTplan" location="555,442" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteTplan" location="310,442" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcel" location="65,442" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="65,337" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="teachingplanchange-list.jsp" path="/page/teachingplanchange/teachingplanchange-list.jsp" location="10,625" size="150,55" />
+  <webResource name="teachingplanchange-edit.jsp" path="/page/teachingplanchange/teachingplanchange-edit.jsp" location="392,520" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="546,310" size="150,55" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="489,135" size="150,55" />
+</Struts2Diagram>
+

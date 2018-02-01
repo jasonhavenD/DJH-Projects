@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>会员中心</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+  <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <link href="css/aboutperson.css" rel='stylesheet' type='text/css' />
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-form.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=826e806b86676d155282de3d37188137"></script>
+  <script type="text/javascript" src="../js/MarkerTool_min.js"></script>
+  <script type="text/javascript" src="../js/CityList_min.js"></script>
+    <script type="text/javascript" src="../js/md5.js"></script><!-- 加密算法 -->
+</head>
+<body onload="getName()">
+
+  <div class="header">
+    <div class="container">
+      <div class="header_top">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt=""/></a>
+        </div>
+        <!--搜索框-->
+        <form class="search-form domain-search">
+
+          <div class="three-fifth column first">
+            <input type="text" class="text" value="搜索你想要的产品" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}">               
+          </div>
+          <div class="one-fifth column">
+            <input type="submit" value="搜索">
+          </div>
+
+        </form>
+        <div class="cssmenu">
+          <ul>
+            <li><a href="person.html">会员中心</a></li> 
+            <li><a href="cart.jsp">购物车</a></li>
+            <li id="showname"><!-- <a href="../html/logorreg.html">登录/注册</a> --></li>
+            <li><a  href="javascript:void(0)" id="out">退出</a></li> 
+            <input id="memtype" type="hidden"></input>
+            <!-- <input id="state" type="hidden"></input> -->
+            <input id="cid" type="hidden"></input>
+            <!-- 最后隐藏 -->
+          </ul>
+          
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+      <div class="h_menu4"><!-- start h_menu4 -->
+        <a class="toggleMenu" href="#">Menu</a>
+        <ul class="nav">
+          <li class="active" ><a href="index.jsp">主页</a></li>
+          <li><a href="productType.jsp?producttype=1" >节能灯</a></li>
+          <li><a href="productType.jsp?producttype=2">球泡灯</a></li>
+          <li><a href="productType.jsp?producttype=3">一体化筒灯</a></li>
+          <li><a href="productType.jsp?producttype=4">天花射灯</a></li>
+          <li><a href="productType.jsp?producttype=5">吸顶灯</a></li>
+          <li><a href="productType.jsp?producttype=6">配件</a></li>
+        </ul>
+        <script type="text/javascript" src="js/nav.js"></script>
+      </div><!-- end h_menu4 -->
+    </div>
+  </div>
+  <div class="templatemo-flex-row">
+    <!--left-->
+    <div class="left-sidebar">
+      <nav>
+        <ul>
+          <li>会员中心</li>
+          <li><a href="showperson.html"><i class="glyphicon glyphicon-user"></i>个人资料</a></li>
+          <li><a href="person.html" class="active"><i class="glyphicon glyphicon-user"></i>完善资料</a></li>
+          <li><a href="modifypassword.html"><i class="glyphicon glyphicon-pencil"></i>密码安全</a></li>
+          <li><a href="paypassword.html"><i class="glyphicon glyphicon-lock"></i>支付密码</a></li>
+          <li><a href="companyorder.jsp"><i class="glyphicon glyphicon-duplicate"></i>我的订单</a></li>
+          <li><a href="favorite.html"><i class="glyphicon glyphicon-heart"></i>我的收藏</a></li>
+          <li><a href="wallet.html"><i class="glyphicon glyphicon-yen"></i>我的资金</a></li>
+          <li><a href="address.html"><i class="glyphicon glyphicon-home"></i>收货地址</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container person-container" style="margin-left:20px;">
+                <form class="form-horizontal row" id="infoform">
+                  <p>红色<span>*</span>表示必填项，其他选填即可。完善会员信息可获取积分哦！</p>
+
+                  <div class="modifyperson">
+                    <!-- <label for="" class="col-md-2 ">用户名</label>
+                      <input type="text" class="col-md-4" id="uname"  placeholder=""> -->
+                    <label for="" class="col-md-2 ">真实姓名<span>*</span></label>
+                      <input type="text" class="col-md-4"  id="managername"  placeholder="">
+                  </div>
+                  <div class="modifyperson">
+                    <label for="" class="col-md-2 ">店铺地址<span>*</span></label>
+                      <input type="text" class="col-md-8"  id="detailaddress"  placeholder="">
+                  </div>
+                  <div class="modifyperson">
+                    <label for="" class="col-md-2 ">店铺名称<span>*</span></label>
+                      <input type="text" class="col-md-8"  id="companyname"  placeholder="">
+                  </div>
+                  <div class="modifyperson">
+                    <label for="" class="col-md-2">手机号<span>*</span></label>
+                      <input type="text" class="col-md-4"  id="managerphone"  placeholder="">
+                 
+                    
+                  </div>
+                 
+                  <div class="modifyperson">
+                    <!-- <label for="" class="col-md-2">邮编</label>
+                      <input type="text" class="col-md-4"  id="codeshow"  placeholder=""> -->
+                      <label for="paypassword" class="col-md-2">支付密码<span>*</span></label>
+                      <input type="password" class="col-md-4"  id="paypassword"  placeholder="">
+                  </div>
+                   <div class="modifyperson">
+                    <label for="" class="col-md-2">固定电话</label>
+                      <input type="text" class="col-md-4"  id="fixphone"  placeholder="">
+                    <label for="" class="col-md-2">邮箱</label>
+                      <input type="email" class="col-md-4"  id="email">
+                    <!-- <label for="" class="col-md-2">出生日期</label>
+                      <input type="text" class="col-md-4"  id="birthshow"  placeholder=""> -->
+                  </div>
+                  <div class="modifyperson">
+                    <div class="col-sm-offset-2 col-sm-6">
+                      <input type="button" value="提交" onclick="confirm()"></input>
+                    </div>
+                  </div>
+                </form>
+              <!--</div>
+               <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- 地图-->
+        <div class="modal fade" id="modifybaseinfo" tabindex="-1" role="dialog" aria-labelledby="baseInf">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="truxe">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">选择地址</h4>
+              </div>
+              <div class="modal-body">
+                <div>
+                  <h4>1.选择位置>2.标注位置(出现红色坐标表示已经标记)>3.保存位置</h4>
+
+                  <div class="content">
+                    <div id="f_container">
+                      <div id="container"></div>
+                    </div>
+                    <div id="allmap" style="width:790px;height:500px;"></div>
+                    <div style="margin-top: 15px;text-align: right">
+                      <!-- 经度纬度 -->
+                      <input type="hidden" id="lat"/><input type="hidden" id="lng"/>
+                      <!-- 省市县街道 -->
+                      <input  id="province" type="hidden"/>
+                      <input  id="city" type="hidden"/>
+                      <input  id="borough" type="hidden"/>
+                      <input  id="road" type="hidden"/>
+                      <button  onclick="saveAddress()" class="btn">保存</button>
+                      <button  onclick="dhide()" class="btn">取消</button>
+                    </div>
+                  </div>
+                </div>
+              <script type="text/javascript">
+              var province;
+              var city;
+              var district;
+              var detailaddress;
+              var marker;
+
+                // 百度地图API功能
+                var map = new BMap.Map("allmap");            // 创建Map实例
+                map.centerAndZoom('北京',12);                   // 初始化地图,设置城市和地图级别。
+                map.enableScrollWheelZoom(true);
+                map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT}));    // 右下比例尺
+                map.setDefaultCursor("Crosshair");//鼠标样式
+
+                var cityList = new BMapLib.CityList({
+                  container: 'container',
+                  map: map
+                });
+
+                map.addEventListener("click", showInfo);
+
+                function showInfo(e){
+                  map.clearOverlays();
+                  marker = new BMap.Marker(new BMap.Point(e.point.lng, e.point.lat));  // 创建标注
+                  map.addOverlay(marker);
+                  //获取经纬度
+                  document.getElementById("lng").value = e.point.lng;
+                  document.getElementById("lat").value = e.point.lat;
+                  //alert(e.point.lng + "," + e.point.lat);
+                }
+                function savaAddress(){
+
+                }
+
+                </script>
+              </div>
+               <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <!-- end -->
+      <div class="col-lg-12 col-md-12 size">
+        <span class="">账号状态：</span>
+        <!-- 根据状态的不同判断 显示一个label  隐藏一个lebel-->
+        <label id="ordinary" style="background: #ff8261;padding:6px;">
+        </label>
+       <!--  <label id="certified" style="background: #ff8261">
+          认证代理商
+        </label> -->
+        <!-- 如果是认证经销商 隐藏 id=ordinaryper的div,让用户去修改信息。
+        如果不是认证经销商，那么就隐藏id=modifycertified的div,让用户去申请-->
+        <div id="ordinaryper">
+          <a data-toggle="modal" data-target="#apply" class="btn btn-primary">申请成为认证经销商 </a>
+          <!-- 根据状态 使字体呈现不同的颜色 -->
+         <!--  <span id="unapply">未申请</span>
+          <span id="applying">正在申请</span>
+          <span id="applied">已申请</span>   -->
+          <span id="applystate" style="background: #ff8261;padding:6px;"></span>
+        </div>
+        <!-- 模态框 -->
+        <div class="modal fade" id="apply" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                  <form id="myform" method="post"  enctype="multipart/form-data" action="../AuthenticateImg_idcardpictureUpload">
+                  选择身份证图片上传:&nbsp;
+                      <input name="image" type="file" id="image"/><br/>
+                      <span  id="typeCheckOut" style="display:none;color:red">图片格式不正确</span>
+                      <input type="button" value="上传" onclick="uploadImage();"/>
+                   </form><br/>
+                  <form id="myform1" method="post"  enctype="multipart/form-data" action="../AuthenticateImg_companylicensepictureUpload">
+                  选择营业执照图片上传图片:&nbsp;
+                      <input name="image" type="file"/><br/>
+                      <input type="button" value="上传" onclick="uploadImage1();"/>
+                   </form><br/>
+                   
+                  <form id="myform2" method="post"  enctype="multipart/form-data" action="../AuthenticateImg_companypictureUpload">
+                  选择门店图片上传:&nbsp;
+                      <input name="image" type="file"/><br/>
+                      <input type="button" value="上传" onclick="uploadImage2();"/>
+                   </form><br/>
+                </div>
+                <div class="modal-footer">
+                  <input type="submit" class="btn btn-default" data-dismiss="modal" onclick="authenticate();return false;"/>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--  -->
+        <div>
+          <p>普通经销商和认证经销商的区别：除了会赠送积分之外，购买时价格不一样</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/aboutperson.js"></script>
+</body>
+</html>

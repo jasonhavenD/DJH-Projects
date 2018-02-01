@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="tplan" extends="struts-default" namespace="/Tplan">
+
+		<!-- 初始化查询页面 -->
+		<action name="initSearch" class="tplanAction" method="initSearch">
+			<result name="success">/page/teachingplanchange/teachingplanchange-list.jsp
+			</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--查询论文信息  -->
+		<action name="findTplan" class="tplanAction" method="findTplan">
+			<result name="success">/page/teachingplanchange/teachingplanchange-list.jsp
+			</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!-- 跳转到修改页面 -->
+		<action name="editToTplan" class="tplanAction" method="initEdit">
+			<result name="success">/page/teachingplanchange/teachingplanchange-edit.jsp
+			</result>
+		</action>
+		<!-- 保存 -->
+		<action name="editTplan" class="tplanAction" method="modifiTplan">
+			<result name="success" type="redirectAction">findTplan</result>
+		</action>
+		<!-- 删除 -->
+		<action name="deleteTplan" class="tplanAction" method="deleteTplan">
+			<result name="success" type="redirectAction">initSearch</result>
+		</action>
+		<!-- 清空 -->
+        <action name="clearTplan" class="tplanAction" method="clearTplan" >  
+            <result name="success" type="redirectAction">initSearch</result>
+        </action>
+		<!-- 导出 -->
+		<action name="exportSubContestTExcel" class="exportAction"
+			method="export">
+			<result name="success" type="redirectAction">initSearch</result>
+		</action>
+		<!-- 导入 -->
+       
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+	</package>
+</struts>    

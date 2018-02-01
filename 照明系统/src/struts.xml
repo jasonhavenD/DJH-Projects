@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="default" namespace="/" extends="struts-default,json-default">
+		<action name="*_*" class="com.model.action.{1}Action" method="{2}">
+			<result name="success" type="json">
+				<param name="root">hashmap</param>
+			</result>
+			<result name="input" type="json">
+				<param name="root">hashmap</param>
+			</result>
+			<result name="error">
+				/html/error.html
+			</result>
+			<result name="success2">
+				/newpages/{1}.jsp
+			</result>
+			<result name="input2">
+				/newpages/{2}.jsp
+			</result>
+		</action>
+		<!-- 获取图片验证码 -->
+		<action name="IdentifyingCode_getPictureCode" class="com.model.action.IdentifyingCodeAction"
+			method="getPictureCode">
+			<result type="stream">
+				<param name="inputName">is</param>
+				<param name="contentType">image/jpeg</param>
+			</result>
+		</action>
+
+		<action name="Product_purchaseProduct" class="com.model.action.ProductAction"
+			method="purchaseProduct">
+			<result name="success">
+				/company/buynow.jsp
+			</result>
+		</action>
+		<action name="Cart_purchaseProduct" class="com.model.action.CartAction"
+			method="purchaseProduct">
+			<result name="success">
+				/company/buynow.jsp
+			</result>
+			<result name="input">
+				/company/buynow.jsp
+			</result>
+		</action>
+		<action name="Order_createOrder" class="com.model.action.OrderAction"
+			method="createOrder">
+			<result name="success">
+				/company/pay.jsp
+			</result>
+			<result name="input">
+				/company/pay.jsp
+			</result>
+		</action>
+		<action name="Order_payment" class="com.model.action.OrderAction"
+			method="payment">
+			<result name="success">
+				/company/pay.jsp
+			</result>
+			<result name="input">
+				/company/pay.jsp
+			</result>
+		</action>
+
+
+		<!-- 新增的配置：开始 -->
+		<action name="LoginForm">
+			<result name="success">/newpages/login.jsp</result>
+		</action>
+		<action name="LoginAction" class="com.model.action.NewUserAction"
+			method="login">
+			<result name="success" type="redirectAction">HomePage_retreiveAll.action
+			</result>
+			<result name="input" type="redirectAction">LoginForm</result>
+		</action>
+		<action name="LoginOffAction" class="com.model.action.NewUserAction"
+			method="loginoff">
+			<result name="success" type="redirectAction">HomePage_retreiveAll.action
+			</result>
+		</action>
+		<action name="RegisterForm">
+			<result name="success">/newpages/register.jsp</result>
+		</action>
+		<action name="RegisterAction" class="com.model.action.NewUserAction"
+			method="registerByPhone">
+			<result name="success" type="redirectAction">LoginForm</result>
+			<result name="input" type="redirectAction">RegisterForm</result>
+		</action>
+
+		<action name="ProductShowAction" class="com.model.newaction.ProductShowAction"
+			method="getOneProductdetail">
+			<result name="success">/newpages/ProductShow.jsp
+			</result>
+		</action>
+
+		<action name="CartShowAction">
+			<result name="success">/newpages/CartShow.jsp
+			</result>
+		</action>
+
+		<action name="CartDetailListAction" class="com.model.newaction.NewCartAction"
+			method="getProductList">
+			<result name="success" type="json">
+				<param name="root">hashmap</param>
+			</result>
+		</action>
+
+		<action name="AddOneProeuctCartAction" class="com.model.newaction.NewCartAction"
+			method="addOneProductSync">
+			<result name="success">
+			</result>
+		</action>
+
+		<!-- 管理页面admin -->
+		<action name="UpdateProductType" class="com.model.action.ProducttypeAction"
+			method="updateProductType">
+			<result type="redirect" name="success">/admin/showproduct.html</result>
+		</action>
+		<action name="deleteProducttype" class="com.model.action.ProducttypeAction"
+			method="deleteProducttype">
+			<result type="redirect" name="success">/admin/showproduct.html</result>
+		</action>
+
+		<action name="QQvalidate" class="com.model.newaction.ThirdLoginAction"
+			method="QQvalidate">
+			<result name="success" type="json">
+				<param name="root">hashmap</param>
+			</result>
+		</action>
+		<action name="QQlogin" class="com.model.newaction.ThirdLoginAction"
+			method="QQLogin">
+			<result name="success" type="json">
+				<param name="root">hashmap</param>
+			</result>
+			<result name="fail" type="json">
+				<param name="fail">hashmap</param>
+			</result>
+		</action>
+
+		<!-- Info 配置 -->
+		<action name="InfoListAction" class="com.model.newaction.InfoAction" method="getInformationList">
+			<result name="success">/newpages/InfoList.jsp</result>
+		</action>
+		<action name="InfoDetailAction" class="com.model.newaction.InfoAction" method="getInformationDetail">
+			<result name="success">/newpages/InfoDetail.jsp</result>
+		</action>
+		<action name="InfoDetail1stAction" class="com.model.newaction.InfoAction" method="getInfoDetail1stByTypename">
+			<result name="success">/newpages/InfoDetail.jsp</result>
+		</action>
+		<!-- 新增的配置：结束 -->
+
+	</package>
+
+</struts>    

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="tBooks" extends="commons" namespace="/tBooks">
+		<action name="tBooks_*" class="teachBooksAction" method="{1}">
+			<result name="initSearch">/page/Teaching/Teaching-materials.jsp</result>
+			<result name="find">/page/Teaching/Teaching-materials.jsp</result>	
+			<result name="initSee">/page/Teaching/teaching-find.jsp</result>
+			<result name="see">/page/Teaching/teaching-find.jsp</result>			
+			<result name="edit">/page/Teaching/teaching-edit.jsp</result>
+			<result name="modifi" type="redirectAction">tBooks_find.action</result>
+			<result name="editTB">/page/Teaching/teaching-author-edit.jsp</result>
+			<result name="edit1">/page/Teaching/teaching-author-edit.jsp</result>
+			<result name="modifiTB" type="redirectAction">tBooks_initSee.action</result>
+			<result name="add" type="redirectAction">tBooks_initSearch.action</result>
+			<result name="addTB" type="redirectAction">tBooks_initSee</result>
+			<result name="delete" type="redirectAction">tBooks_initSearch.action</result>
+			<result name="deleteTB" type="redirectAction">tBooks_initSee</result>
+			<result name="error">../error.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--清空所有教材作者信息-->
+		<action name="clearTB" class="teachBooksAction"
+			method="clearTB">
+			<result name="success" type="redirectAction">tBooks_initSee</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		<!--清空当前页教材作者信息 -->
+		<action name="clearListTB" class="teachBooksAction"
+			method="clearListTB">
+			<result name="success" type="redirectAction">tBooks_initSee</result>
+			<result name="error">../error.jsp</result>
+		</action>
+		 <!-- 导出 -->
+        <action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">tBooks_find.action</result>
+        </action>
+       
+		 <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+	</package>
+</struts>    

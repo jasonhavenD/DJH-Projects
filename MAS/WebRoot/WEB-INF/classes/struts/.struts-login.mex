@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="course" location="0,0" size="0,0">
+    <action name="courseInitSearch" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="course-list.jsp" />
+      </result>
+    </action>
+    <action name="findCourse" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="course-list.jsp" />
+      </result>
+    </action>
+    <action name="findMajorByDno" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="editToCourse" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="course-edit.jsp" />
+      </result>
+    </action>
+    <action name="editCourse" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="deleteCourse" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="exportExcel" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="importExcel" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="index.jsp" path="../index.jsp" location="100,205" size="150,55" />
+  <webResource name="error.jsp" path="../error.jsp" location="345,30" size="150,55" />
+  <webResource name="course-list.jsp" path="/page/course/course-list.jsp" location="0,0" size="0,0" />
+  <webResource name="course-edit.jsp" path="/page/course/course-edit.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

@@ -1,0 +1,662 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>产品中心</title>
+<meta name="description" content="">
+<link href="css/templatemo-style.css" rel="stylesheet">
+<link href="../css/bootstrap-datetimepicker.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../uui/css/u.min.css" rel='stylesheet' type='text/css' />
+<script src="../js/jquery-1.11.1.min.js">
+	
+</script>
+<script src="../js/bootstrap.min.js">
+	
+</script>
+<script src="../js/bootstrap-filestyle.min.js">
+	
+</script>
+<script src="../js/bootstrap-datetimepicker.js">
+	
+</script>
+<script src="../ueditor/ueditor.config.js">
+	
+</script>
+<script src="../js/map.js">
+	
+</script>
+<script src="../ueditor/ueditor.all.min.js">
+	
+</script>
+<script type="text/javascript" src="../js/jquery-form.js">
+	
+</script>
+<script type="text/javascript" charset="utf-8"
+	src="../ueditor/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+	<!-- Left column -->
+
+	<!-- Main content -->
+	<div class="templatemo-content col-1 light-gray-bg">
+		<div class="templatemo-content-container">
+			<div class="templatemo-content-widget white-bg">
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active"><a href="#addtype" data-toggle="tab">
+							添加产品类别 </a></li>
+					<li><a href="#add" data-toggle="tab"> 添加产品 </a></li>
+					<li class="dropdown"><a href="#" id="myTabDrop2"
+						class="dropdown-toggle" data-toggle="dropdown"> 查看商品<b
+							class="caret"></b>
+					</a>
+						<ul class="dropdown-menu" id="menu" role="menu"
+							aria-labelledby="myTabDrop2">
+						</ul></li>
+				</ul>
+				<div class="modal fade" id="change" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="myModalLabel">产品类型</h4>
+							</div>
+							<div class="modal-body">
+								<form action="/LightSystem20161016/FileUpload_uploadTypeP"
+									enctype="multipart/form-data" method="post" id="uploadTp">
+									<input type="file" id="file" name="file" style="display:none"
+										onchange="tijiao()" /> <img id="tp" src=""
+										style="height:120px;width:120px;"></img>
+									<button type="button" class="btn blue" onclick="imgChange()">
+										<i class="icon-ok"></i> 修改封面图片
+									</button>
+								</form>
+
+								<form class="templatemo-login-form" method="post"
+									action="../UpdateProductType">
+									<div class="row form-group">
+										<input type="hidden" id="producttypeid"
+											name="ptype.producttypeid"> <input type="hidden"
+											id="producttypepicturepath"
+											name="ptype.producttypepicturepath">
+										<div class="col-lg-6 col-md-6  form-group">
+											<label for="crowfundingstartquantity"> 类型名称: <span
+												id="crowfundingstartquantitywarn" style="color: red"></span>
+											</label> <input id="producttypename" type="text" class="form-control"
+												name="ptype.producttypename">
+										</div>
+										<div class="col-lg-6 col-md-6  form-group">
+											<label for="crowfundingstartquantity">
+												父类型名称（若没有填写-1）: <span id="crowfundingstartquantitywarn"
+												style="color: red"></span>
+											</label> <input type="text" class="form-control"
+												name="parenttypename">
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default cancel"
+												id="cancel2" data-dismiss="modal">取消</button>
+											<button type="submit" class="btn btn-primary save">保存</button>
+										</div>
+
+									</div>
+								</form>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- 新增产品 -->
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade in active" id="addtype">
+						<div class="col-lg-12 col-md-12 form-group bg-white">
+							<label for="proname"> 产品类别 </label>
+							<button type="button" class="btn btn-info btn-xs"
+								data-toggle='modal' data-target="#change">
+								<span class="glyphicon glyphicon-pencil"></span> 增加类别
+							</button>
+							<table class="table table-hover" id="producttype">
+								<thead>
+									<tr>
+										<th>序号</th>
+										<th>分类名称</th>
+										<th>图片</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody id="tbody">
+
+								</tbody>
+							</table>
+							<span id="protypewarn"></span> <br /> <input type="button"
+								value="保存" class="templatemo-blue-button"
+								data-bind="click:function(data,event){addType(protype.value)}">
+							</input>
+						</div>
+					</div>
+					<div class="tab-pane fade in" id="add">
+						<div class="templatemo-content-widget white-bg">
+							<div class="row form-group">
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="proname"> 产品名称: <span id="pronamewarn"
+										style="color: red"></span>
+									</label> <input type="text" class="form-control" id="proname" />
+								</div>
+								<div class="col-lg-3 col-md-3 form-group">
+									<label for="proname"> 产品类别 </label> <select id="typeshow"
+										class="form-control">
+									</select>
+								</div>
+								<div class="col-lg-3">
+									<form action="/LightSystem20161016/FileUpload_uploadProductImg"
+										enctype="multipart/form-data" method="post" id="uploadTp1">
+										<input type="file" id="file1" name="file" style="display:none"
+											onchange="uploadPImg()" /> <img id="productTp" src=""
+											style="height:60px;width:80px;"></img>
+										<button type="button" class="btn blue" onclick="PImgChange()">
+											<i class="icon-ok"></i> 修改小图
+										</button>
+									</form>
+									<!--  <p>最大不超过</p>-->
+								</div>
+								<input type="hidden" id="proimg">
+								<div class="col-lg-12 col-md-12  form-group" id="morepic">
+									<form id="productimage" method="post"
+										enctype="multipart/form-data" action="../ProductImg_upload" style="width:300px;">
+										<label class="control-label templatemo-block"> 更多图片（用于详情页）: <span
+											id="smallPicture" style="color: red"></span>
+										</label> <input type="file" id="image" name="image" multiple
+											class="filestyle" onChange="uploadImage()"> <input
+											type="text" style="display: none" id="imagename">
+									</form>
+									<!--  <p>最大不超过</p>-->
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="price"> 价格: <span id="pricewarn"
+										style="color: red"></span>
+									</label> <input type="text" class="form-control num" id="price" />
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="certifiedprice"> 认证经销商价格: <span
+										id="certifiedpricewarn" style="color: red"></span>
+									</label> <input type="text" class="form-control num"
+										id="certifiedprice" />
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="logisticsprice"> 物流中心价格: <span
+										id="logisticspricewarn" style="color: red"></span>
+									</label> <input type="text" class="form-control num"
+										id="logisticsprice" />
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="inventoryquantity"> 库存 </label> <select
+										class="form-control" id="inventoryquantity">
+										<option value="1">有</option>
+										<option value="0">无</option>
+									</select>
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="power"> 功率 </label> <input type="text"
+										class="form-control" id="power">
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="lampholder"> 灯头 </label> <input type="text"
+										class="form-control" id="lampholder" />
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="colortemp"> 色温 </label> <input type="text"
+										class="form-control" id="colortemp" />
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="voltage"> 电压 </label> <input type="text"
+										class="form-control" id="voltage" />
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="luminousflux"> 光通量 </label> <input type="text"
+										class="form-control" id="luminousflux" />
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="lightefficiency"> 光效 </label> <input type="text"
+										class="form-control" id="lightefficiency" />
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="colorrendering"> 显色指数 </label> <input type="text"
+										class="form-control" id="colorrendering" />
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="beamangle"> 光束角 </label> <input type="text"
+										class="form-control" id="beamangle" />
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="isemc"> 是否符合EMC </label> <select
+										class="form-control" id="isemc">
+										<option value="是">是</option>
+										<option value="否">否</option>
+									</select>
+								</div>
+								<div class="col-lg-3 col-md-3  form-group">
+									<label for="sendpoints"> 赠送积分数: <span
+										id="sendpointswarn" style="color: red"></span>
+									</label> <input type="text" class="form-control num" id="sendpoints" />
+								</div>
+								<div class="col-lg-10 form-group">
+									<label class="control-label" for="productdiscribe">
+										自定义产品参数: <span id="productdiscribewarn" style="color: red"></span>
+									</label> 
+									<button type="button" class="btn btn-info btn-xs"
+										id="setamount" onClick="setamount()" data-dismiss="modal">
+										增加</button>
+									<div id="custom"></div>
+								</div>
+								<div class="col-lg-12 form-group">
+									<label class="control-label" for="productdiscribe">
+										产品简介: <span id="productdiscribewarn" style="color: red"></span>
+									</label>
+									<div id="productdiscribe" style="width:1024px;height:500px;">
+									</div>
+								</div>
+								<div class="col-lg-12 form-group">
+									<div class="margin-right-15 templatemo-inline-block">
+										<input type="checkbox" name="issale" id="issale" value="0" />
+										<label for="issale" class="font-weight-400"> <span></span>是否上架
+										</label>
+									</div>
+									<div class="margin-right-15 templatemo-inline-block">
+										<input type="checkbox" name="ishot" id="ishot" value="0" /> <label
+											for="ishot" class="font-weight-400"> <span></span>是否热卖
+										</label>
+									</div>
+									<div class="margin-right-15 templatemo-inline-block">
+										<input type="checkbox" name="xinpin" id="isnew" value="0" />
+										<label for="isnew" class="font-weight-400"> <span></span>是否新品
+										</label>
+									</div>
+									<div class="margin-right-15 templatemo-inline-block">
+										<input type="checkbox" name="expired" id="isrecommend"
+											value="0" /> <label for="isrecommend"
+											class="font-weight-400"> <span></span>是否推荐
+										</label>
+									</div>
+								</div>
+								<div class="col-lg-12 form-group">
+									<div class="margin-right-15 templatemo-inline-block">
+										参与限时抢购 <input type="radio" value="0" id="issnapup0"
+											name="active" class="btn btn-primary" data-toggle="modal"
+											data-target="#issnapup"> </input>
+									</div>
+									<!-- 限时抢购的模态框 -->
+									<div class="modal fade" id="issnapup" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+													<h4 class="modal-title" id="myModalLabel">限时抢购</h4>
+												</div>
+												<div class="modal-body">
+													<form action="" method="post" id="form">
+														<div class="row form-group">
+															<div class="col-lg-6 col-md-6  form-group">
+																<label for="snapupstarttime"> 活动开始时间： <span
+																	id="snapupstarttimewarn" style="color: red"></span>
+																</label>
+																<div class="input-append date form_datetime ">
+																	<input size="30" type="text" id="snapupstarttime"
+																		readonly /> <span class="add-on"><i
+																		class="icon-th"></i> </span>
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-6  form-group">
+																<label for="snapupendtime"> 活动结束时间： <span
+																	id="snapupendtimewarn" style="color: red"></span>
+																</label>
+																<div class="input-append date form_datetime ">
+																	<input size="30" type="text" id="snapupendtime"
+																		readonly /> <span class="add-on"><i
+																		class="icon-th"></i> </span>
+																</div>
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="snapupprice"> 促销价格： <span
+																	id="snapuppricewarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="snapupprice" />
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="snapupcertifiedprice"> 促销认证经销商价格： <span
+																	id="snapupcertifiedpricewarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="snapupcertifiedprice" />
+															</div>
+															<div class="col-lg-4 col-md-4 form-group">
+																<label for="snapuplogisticsprice"> 促销物流中心价格： <span
+																	id="snapuplogisticspricewarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="snapuplogisticsprice" />
+															</div>
+															<div class="col-lg-4 col-md-4 form-group">
+																<label for="snapupquantity"> 促销数量： <span
+																	id="snapupquantitywarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="snapupquantity" />
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="grouponstartquantity0"> 促销起订数量： <span
+																	id="grouponstartquantity0warn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="grouponstartquantity0" />
+															</div>
+															<!-- <div class="col-lg-12 form-group text-right">
+                                <button type="submit" class="templatemo-blue-button">添加</button>
+                                <button type="reset" class="templatemo-white-button">重置</button>
+                              </div>
+                            -->
+														</div>
+													</form>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" id="cancel"
+														data-dismiss="modal">取消</button>
+													<button type="button" class="btn btn-primary save">
+														保存</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="margin-right-15 templatemo-inline-block">
+										参与团购 <input type="radio" value="0" id="isgroupon0"
+											name="active" class="btn btn-primary" data-toggle="modal"
+											data-target="#isgroupon"> </input>
+									</div>
+									<!-- 团购的模态框 -->
+									<div class="modal fade" id="isgroupon" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+													<h4 class="modal-title" id="myModalLabel">团购</h4>
+												</div>
+												<div class="modal-body">
+													<form id="form1" class="templatemo-login-form"
+														method="post">
+														<div class="row form-group">
+															<div class="col-lg-6 col-md-6  form-group">
+																<label for="grouponstarttime"> 活动开始时间： <span
+																	id="grouponstarttimewarn" style="color: red"></span>
+																</label>
+																<div class="input-append date form_datetime ">
+																	<input size="30" type="text" value=""
+																		id="grouponstarttime" readonly> <span
+																		class="add-on"><i class="icon-th"></i> </span>
+																</div>
+															</div>
+															<div class="col-lg-6 col-md-6  form-group">
+																<label for="grouponendtime"> 活动结束时间: <span
+																	id="grouponendtimewarn" style="color: red"></span>
+																</label>
+																<div class="input-append date form_datetime ">
+																	<input size="30" type="text" value=""
+																		id="grouponendtime" readonly> <span
+																		class="add-on"><i class="icon-th"></i> </span>
+																</div>
+															</div>
+															<div class="col-lg-3 col-md-3  form-group">
+																<label for="grouponprice"> 团购价格: <span
+																	id="grouponpricewarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="grouponprice">
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="grouponcertifiedprice"> 团购经销商价格: <span
+																	id="grouponcertifiedpricewarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="grouponcertifiedprice">
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="grouponlogisticsprice"> 团购物流中心价格: <span
+																	id="grouponlogisticspricewarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="grouponlogisticsprice">
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="grouponquantity"> 团购数量: <span
+																	id="grouponquantitywarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="grouponquantity">
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="grouponstartquantity"> 团购起订数量: <span
+																	id="grouponstartquantitywarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="grouponstartquantity">
+															</div>
+
+														</div>
+													</form>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default cancel"
+														id="cancel1" data-dismiss="modal">取消</button>
+													<button type="button" class="btn btn-primary save">
+														保存</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="margin-right-15 templatemo-inline-block">
+										参与众筹预售 <input type="radio" value="0" name="active"
+											id="iscrowdfunding0" class="btn btn-primary"
+											data-toggle="modal" data-target="#iscrowfunding"> </input>
+									</div>
+									<!-- 众筹预售 -->
+									<div class="modal fade" id="iscrowfunding" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+													<h4 class="modal-title" id="myModalLabel">众筹预售</h4>
+												</div>
+												<div class="modal-body">
+													<form id="form2" class="templatemo-login-form"
+														method="post">
+														<div class="row form-group">
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="crowfundingstarttime"> 活动开始时间: <span
+																	id="crowfundingstarttimewarn" style="color: red"></span>
+																</label>
+																<div class="input-append date form_datetime ">
+																	<input size="30" type="text" value=""
+																		id="crowfundingstarttime" readonly> <span
+																		class="add-on"><i class="icon-th"></i> </span>
+																</div>
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="crowfundingendtime"> 活动结束时间: <span
+																	id="crowfundingendtimewarn" style="color: red"></span>
+																</label>
+																<div class="input-append date form_datetime ">
+																	<input size="30" type="text" value=""
+																		id="crowfundingendtime" readonly> <span
+																		class="add-on"><i class="icon-th"></i> </span>
+																</div>
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="crowfundingdepositrate"> 众筹定金: <span
+																	id="crowfundingdepositratewarn" style="color: red"></span>
+																</label> <input type="text" class="form-control"
+																	id="crowfundingdepositrate">
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="crowfundingprice"> 众筹产品价格: <span
+																	id="crowfundingpricewarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="crowfundingprice">
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="crowfundingcertifiedprice">
+																	众筹认证经销商价格: <span id="crowfundingcertifiedpricewarn"
+																	style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="crowfundingcertifiedprice">
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="crowfundinglogisticsprice">
+																	众筹物流中心价格: <span id="crowfundinglogisticspricewarn"
+																	style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="crowfundinglogisticsprice">
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="crowfundingstartquantity"> 众筹起订数量: <span
+																	id="crowfundingstartquantitywarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="crowfundingstartquantity">
+															</div>
+															<div class="col-lg-4 col-md-4  form-group">
+																<label for="crowfundingquantity"> 众筹数量: <span
+																	id="crowfundingquantitywarn" style="color: red"></span>
+																</label> <input type="text" class="form-control num"
+																	id="crowfundingquantity">
+															</div>
+															<!-- <div class="col-lg-12 form-group text-right">
+                                <button type="submit" class="templatemo-blue-button">添加</button>
+                                <button type="reset" class="templatemo-white-button">重置</button>
+                                
+                              </div> -->
+														</div>
+													</form>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default cancel"
+														id="cancel2" data-dismiss="modal">取消</button>
+													<button type="button" class="btn btn-primary save">
+														保存</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12 form-group text-right">
+									<button type="button" onClick="test()">测试</button>
+									<button type="submit" class="templatemo-blue-button"
+										data-bind="click:function(data,event){addProduct()}">
+										添加</button>
+									<button type="reset" class="templatemo-white-button">
+										重置</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 查看商品 -->
+					<div class="tab-pane fade" id="productenergybulbes">
+						<div class="templatemo-content-widget no-padding">
+							<div class="panel panel-default table-responsive">
+								<table
+									class="table table-striped table-bordered templatemo-user-table">
+									<thead>
+										<tr>
+											<td><a href="javascript:void(0)"
+												class="white-text templatemo-sort-by">编号</a></td>
+											<td><a href="javascript:void(0)"
+												class="white-text templatemo-sort-by">产品名称</a></td>
+											<td><a href="javascript:void(0)"
+												class="white-text templatemo-sort-by">产品类型</a></td>
+											<td><a href="javascript:void(0)"
+												class="white-text templatemo-sort-by">产品价格</a></td>
+											<td><a href="javascript:void(0)"
+												class="white-text templatemo-sort-by">产品认证经销商价格 </a></td>
+											<td><a href="javascript:void(0)"
+												class="white-text templatemo-sort-by">产品物流中心价格</a></td>
+											<td><a href="javascript:void(0)"
+												class="white-text templatemo-sort-by">是否有库存</a></td>
+											<td><a href="javascript:void(0)"
+												class="white-text templatemo-sort-by">是否特价促销</a></td>
+											<td><a href="javascript:void(0)"
+												class="white-text templatemo-sort-by">是否参与团购</a></td>
+											<td><a href="javascript:void(0)"
+												class="white-text templatemo-sort-by">是否众筹预售</a></td>
+											<td>详情查看</td>
+											<td>编辑</td>
+											<td>删除</td>
+										</tr>
+									<tbody data-bind="foreach:{data:product.rows(),as:'row'}">
+										<tr>
+											<td data-bind="text:row.ref('productid')"></td>
+											<td data-bind="text:row.ref('productname')"></td>
+											<td data-bind="text:row.ref('producttypename')"></td>
+											<td data-bind="text:row.ref('price')"></td>
+											<td data-bind="text:row.ref('certifiedprice')"></td>
+											<td data-bind="text:row.ref('logisticsprice')"></td>
+											<td data-bind="text:row.ref('inventoryquantity')"></td>
+											<td data-bind="text:row.ref('issnapup')"></td>
+											<td data-bind="text:row.ref('isgroupon')"></td>
+											<td data-bind="text:row.ref('iscrowdfunding')"></td>
+											<td><a href="javascript:void(0)"
+												class="templatemo-edit-btn"
+												data-bind="click:$parent.getProductDetail.bind($data, $index())">详情</a></td>
+											<td><a href="javascript:void(0)"
+												class="templatemo-edit-btn"
+												data-bind="click:$parent.modifyproduct.bind($data,$index())">修改</a></td>
+											<td><a href="javascript:void(0)" class="templatemo-link"
+												data-bind="click:$parent.deleteproduct.bind($data,$index())">删除</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(".form_datetime").datetimepicker({
+			format : "yyyy-mm-dd hh:ii:ss",
+			autoclose : true,
+			todayBtn : true,
+			pickerPosition : "bottom-left"
+		});
+	</script>
+	<script type="text/javascript">
+		$(".form_datetime").datetimepicker({
+			format : "yyyy-mm-dd hh:ii:ss",
+			autoclose : true,
+			todayBtn : true,
+			pickerPosition : "bottom-left"
+		});
+	</script>
+	<script type="text/javascript">
+		//实例化编辑器
+		//建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+		var ue = UE.getEditor('productdiscribe');
+	</script>
+	<script src="../js/knockout-3.2.0.debug.js">
+		
+	</script>
+	<script src="../uui/js/u.js">
+		
+	</script>
+	<script src="./js/showproduct.js">
+		
+	</script>
+	<script src="js/templatemo-script.js">
+		
+	</script>
+</body>
+</html>

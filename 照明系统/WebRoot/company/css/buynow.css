@@ -1,0 +1,63 @@
+
+.buyaddress{
+	font: 12px 'Open Sans';
+
+}
+.buyaddress p{
+	margin: 15px 10px;
+}
+.buyaddress h5{
+	margin: 20px 0;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #D4D4D4;
+	font-weight: bold;
+}
+.buyaddress a{
+	float: right;
+}
+.buyyes h5{
+	margin: 30px 0;
+	font-weight: bold;
+
+}
+.buyyes table{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.buyyes thead{
+	border-bottom: 2px solid #00BFFF;
+	padding-bottom: 10px;
+}
+.buyyes th{
+	font-size: 12px;
+	font-weight: normal;
+}
+.words{
+	padding: 15px 5px;
+	background-color: #F0FFFF;
+}
+.words input{
+	display: block;
+	width: 50%;
+	font: 12px 'Open Sans';
+	margin-bottom: 5px;
+	padding: 5px;
+}
+#suborder{
+	float: right;
+	margin:10px;
+	background: #00BFFF;
+    display: inline-block;
+    color: #FFF;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 0.85em;
+    padding: 10px 20px;
+    font-weight: 600;
+    margin-top: 25px;
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- Struts2标签外观设置 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+
+	<!-- struts2委托spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+
+	<!-- struts2缺省配置 -->
+	<include file="struts.xml"></include>
+	<include file="struts-default.xml"></include>
+
+	<package name="Expertmajor" extends="struts-default,json-default" namespace="/Expertmajor">
+		<!-- 取消所有分配 -->
+		<action name="deleteAll" class="ExpertmajorAction" method="deleteAllExpertmajor">
+			<result name="success" type="chain">findExperts</result>
+		</action>
+		
+		<!-- 分配方式 -->
+		<action name="addType" class="ExpertmajorAction" method="addType">
+        	<result name="success">/page/expertmajor/addtype.jsp</result>
+        </action>
+        <!-- 按组分配专业列表初始化 -->
+        <action name="groupInitSearch" class="ExpertmajorAction" method="groupInitSearch">
+        	<result name="success">/page/expertmajor/group-major-list.jsp</result>
+        	<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!--按组分配专业查询信息  -->
+         <action name="groupfind" class="ExpertmajorAction" method="groupfind">  
+            <result name="success">/page/expertmajor/group-major-list.jsp</result>
+            <result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!-- 按组分配添加专业到组-->
+        <action name="groupAddMajor" class="ExpertmajorAction" method="groupAddMajor" >  
+           <result type="json">
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">map</param>  
+           </result>
+        </action>
+         <!-- 按组分配专家专业列表 -->
+        <action name="groupAddExpert" class="ExpertmajorAction" method="groupAddExpert" >  
+            <result name="success">/page/expertmajor/group-major-addexpert.jsp</result>
+        </action>
+        <!-- 按组分配查询专家列表 -->
+        <action name="groupFindExpert" class="ExpertmajorAction" method="groupFindExpert" >  
+            <result name="success">/page/expertmajor/group-major-addexpert.jsp</result>
+        </action>
+        <!-- 按组分配添加专家到组-->
+        <action name="addExpertToGroup" class="ExpertmajorAction" method="addExpertToGroup" >  
+           <result type="json">
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">mapexpert</param>  
+            </result>
+        </action>
+        <!-- 按组分配专家专业关联-->
+        <action name="groupMajorToExpert" class="ExpertmajorAction" method="groupMajorToExpert" >  
+            <result name="success">/page/expertmajor/success.jsp</result>
+            <result name="error">../errorstring.jsp</result>
+        </action>
+        <!-- 单个分配专业列表初始化 -->
+		<action name="initSearch" class="ExpertmajorAction" method="initSearch">
+        	<result name="success">/page/expertmajor/major-list.jsp</result>
+        	<result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!--单个分配专业查询信息  -->
+         <action name="find" class="ExpertmajorAction" method="find">  
+            <result name="success">/page/expertmajor/major-list.jsp</result>
+            <result name="errorstring">../errorstring.jsp</result>
+        </action>
+        <!-- 单个分配专家专业列表 -->
+        <action name="addExpert" class="ExpertmajorAction" method="addExpert" >  
+            <result name="success">/page/expertmajor/major-addexpert.jsp</result>
+        </action>
+        <!-- 单个分配查询专家列表 -->
+        <action name="findExpert" class="ExpertmajorAction" method="findExpert" >  
+            <result name="success">/page/expertmajor/major-addexpert.jsp</result>
+        </action>
+         <!-- 单个分配添加专家 -->
+        <action name="editExpertmajor" class="ExpertmajorAction" method="modifiExpertmajor" >  
+           <result name="success" type="chain">addExpert</result>
+        </action>
+        <!-- 单个分配删除专家 -->
+        <action name="deleteExpertmajor" class="ExpertmajorAction" method="deleteExpertmajor" >  
+            <result name="success" type="chain">addExpert</result>
+        </action>
+        <!-- 初始化页面取消分配专家 -->
+        <action name="deleteExpertmajors" class="ExpertmajorAction" method="deleteExpertmajor" >  
+            <result name="success" type="chain">findExperts</result>
+        </action>
+       <!-- 初始化页面查找分配信息 -->
+        <action name="findExperts" class="ExpertmajorAction" method="findExperts" >  
+            <result name="success">/page/expertmajor/addtype.jsp</result>
+        </action>
+	</package>
+</struts>    

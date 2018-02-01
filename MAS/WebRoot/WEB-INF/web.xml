@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<welcome-file-list>
+		<welcome-file>welcome/welcome.jsp</welcome-file>
+	</welcome-file-list>
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>
+			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<!-- 配置Spring的用于初始化容器对象的监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:applicationContext*.xml</param-value>
+	</context-param>
+
+
+	<!-- 配置Spring的用于解决懒加载问题的过滤器 -->
+	<filter>
+		<filter-name>OpenSessionInViewFilter</filter-name>
+		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>OpenSessionInViewFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+
+	<!-- encodingFilter是过滤器名 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+
+		<filter-class>cn.edu.nwsuaf.Filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<!-- 注册过滤器-->
+	<filter>
+		<filter-name>protect</filter-name>
+		<filter-class>cn.edu.nwsuaf.Filter.ProtectFilter</filter-class>
+	</filter>
+
+	<!-- 过滤器映射-->
+	<filter-mapping>
+		<filter-name>protect</filter-name>
+		<url-pattern>/user_login.action</url-pattern> <!--被保护URL-->
+	</filter-mapping>
+
+	<!-- 过滤器映射-->
+	<filter-mapping>
+		<filter-name>protect</filter-name>
+		<url-pattern>/protect/*</url-pattern> <!--被保护URL-->
+	</filter-mapping>
+	<!-- 过滤器映射-->
+	<filter-mapping>
+		<filter-name>protect</filter-name>
+		<url-pattern>/page/*</url-pattern> <!--被保护URL-->
+	</filter-mapping>
+	<!-- 过滤器映射-->
+	<filter-mapping>
+		<filter-name>protect</filter-name>
+		<url-pattern>/MAS1.2/*</url-pattern> <!--被保护URL-->
+	</filter-mapping>
+
+
+	<!-- Session isExpired Config -->
+	<filter>
+		<filter-name>SessionFilter</filter-name>
+		<filter-class>cn.edu.nwsuaf.Filter.SessionFilter</filter-class>
+		<init-param><!--初始第一个参数-->
+			<param-name>noFilter</param-name><!--参数名称，在过滤类中获得-->
+			<param-value>user_init.action,login.jsp</param-value>
+		</init-param>
+		<init-param><!--初始第二个参数-->
+			<param-name>past</param-name><!--参数名称，在过滤类中获得-->
+			<param-value>sessionPast.jsp</param-value><!--参数值为过期跳转的页面-->
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+
+
+
+	<!-- servlet 实现级联查询 -->
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>AJAXtest</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.ajaxtest</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AJAXtest</servlet-name>
+		<url-pattern>/ajaxtest</url-pattern>
+	</servlet-mapping>
+	<!-- 学生专利 -->
+	<servlet>
+		<servlet-name>STUnumber</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.stunumber</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>STUnumber</servlet-name>
+		<url-pattern>/stunumber</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>patentNumber_uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.patentNumber_uniqueness</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>patentNumber_uniqueness</servlet-name>
+		<url-pattern>/patentNumber_uniqueness</url-pattern>
+	</servlet-mapping>
+	<!-- 学生 -->
+	<servlet>
+		<servlet-name>stuNumber_uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.stuNumber_uniqueness</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>stuNumber_uniqueness</servlet-name>
+		<url-pattern>/stuNumber_uniqueness</url-pattern>
+	</servlet-mapping>
+	<!-- 专业 -->
+	<servlet>
+		<servlet-name>mno_uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.mno_uniqueness</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>mno_uniqueness</servlet-name>
+		<url-pattern>/mno_uniqueness</url-pattern>
+	</servlet-mapping>
+	<!-- 教学信息 -->
+
+	<servlet>
+		<servlet-name>Tpuniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.tpuniqueness</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Tpuniqueness</servlet-name>
+		<url-pattern>/tpuniqueness</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Buniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.buniqueness</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Buniqueness</servlet-name>
+		<url-pattern>/buniqueness</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Trinuniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.trinuniqueness</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Trinuniqueness</servlet-name>
+		<url-pattern>/trinuniqueness</url-pattern>
+	</servlet-mapping>
+
+	<!-- 根据教师编号获取教师姓名 -->
+	<servlet>
+		<servlet-name>ajaxTnoToTname</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.ajaxTnoToTname</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ajaxTnoToTname</servlet-name>
+		<url-pattern>/ajaxTnoToTname</url-pattern>
+	</servlet-mapping>
+	<!-- 根据学院编号获取学院名称 -->
+	<servlet>
+		<servlet-name>ajaxDnoToDname</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.ajaxDnoToDname</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ajaxDnoToDname</servlet-name>
+		<url-pattern>/ajaxDnoToDname</url-pattern>
+	</servlet-mapping>
+
+	<!-- 主键唯一性判断 -->
+	<servlet>
+		<servlet-name>PreScient_uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.PreScient_uniqueness</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PreScient_uniqueness</servlet-name>
+		<url-pattern>/PreScient_uniqueness</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>PreRevolut_uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.PreRevolut_uniqueness</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PreRevolut_uniqueness</servlet-name>
+		<url-pattern>/PreRevolut_uniqueness</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Course_uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.Course_uniqueness</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Course_uniqueness</servlet-name>
+		<url-pattern>/course_uniqueness</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.TA_uniqueness</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Uniqueness</servlet-name>
+		<url-pattern>/TA_uniqueness</url-pattern>
+	</servlet-mapping>
+	<!-- 国内外交流情况 -->
+	<servlet>
+		<servlet-name>Communicationsitu_uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.Communicationsitu_uniqueness</servlet-class>
+	</servlet>
+	<!-- 学号唯一性验证 -->
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>Student_uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.Student_uniqueness</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Student_uniqueness</servlet-name>
+		<url-pattern>/Student_uniqueness</url-pattern>
+	</servlet-mapping>
+	<!-- 教师编号唯一性验证 -->
+	<servlet>
+		<servlet-name>tno_uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.tno_uniqueness</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tno_uniqueness</servlet-name>
+		<url-pattern>/tno_uniqueness</url-pattern>
+	</servlet-mapping>
+	<!-- 国内外交流情况唯一性验证 -->
+	<servlet-mapping>
+		<servlet-name>Communicationsitu_uniqueness</servlet-name>
+		<url-pattern>/Communicationsitu_uniqueness</url-pattern>
+	</servlet-mapping>
+	<!-- 指标编号唯一性验证 -->
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>Target_uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.Target_uniqueness</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Target_uniqueness</servlet-name>
+		<url-pattern>/Target_uniqueness</url-pattern>
+	</servlet-mapping>
+	<!-- 书号唯一性验证 -->
+	<servlet>
+		<display-name>Tisbn_uniqueness</display-name>
+		<servlet-name>Tisbn_uniqueness</servlet-name>
+		<servlet-class>cn.edu.nwsuaf.ajax.Tisbn_uniqueness</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Tisbn_uniqueness</servlet-name>
+		<url-pattern>/Tisbn_uniqueness</url-pattern>
+	</servlet-mapping>
+	<!-- 配置会话bean的有效时长,单位为分钟 -->
+	<session-config>
+		<session-timeout>180</session-timeout>
+	</session-config>
+	<!-- openoffice -->
+	<!--
+		<context-param> <param-name>fileupload.fileSizeMax</param-name>
+		<param-value>5242880</param-value> </context-param> <context-param>
+		<param-name>office.port</param-name> <param-value>8100</param-value>
+		</context-param> <context-param> <param-name>office.home</param-name>
+		<param-value>/opt/openoffice4/</param-value> </context-param>
+		<listener>
+		<listener-class>org.artofsolving.jodconverter.sample.web.WebappContextListener</listener-class>
+		</listener>
+	-->
+</web-app>

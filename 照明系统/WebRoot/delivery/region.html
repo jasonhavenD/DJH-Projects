@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <title>地区分布管理</title>
+  <link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+  <link href="../admin/css/templatemo-style.css" rel="stylesheet">
+  <script src="../js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=826e806b86676d155282de3d37188137"></script>
+  <style type="text/css">
+    #allmap{
+      margin: 15px;
+      width: 100%;
+      height: 1000px;
+    }
+  </style>
+</head>
+<body>  
+  <!-- Left column -->
+  <div class="templatemo-flex-row">
+    <div class="templatemo-sidebar">
+      <header class="templatemo-site-header">
+        <div class="square"></div>
+        <h1>后台管理</h1>
+      </header>
+      <div class="profile-photo-container">
+        <img src="images/lightlogo.png" alt="Profile Photo" class="img-responsive">  
+        <div class="profile-photo-overlay"></div>
+      </div>      
+      <!-- Search box -->
+      <form class="templatemo-search-form" role="search">
+        <div class="input-group">
+
+          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">    
+          <button type="submit" class="fa fa-search"></button>       
+        </div>
+      </form>
+      <div class="mobile-menu-icon">
+        <i class="fa fa-bars"></i>
+      </div>
+      <nav class="templatemo-left-nav">          
+        <ul>
+            <li><a href="index.html"><i class="glyphicon glyphicon-tasks"></i>主页</a></li>
+            <li><a href="order.html" ><i class="glyphicon glyphicon-duplicate"></i>订单管理</a></li>
+            <li><a href="user.html"><i class="glyphicon glyphicon-user"></i>会员管理</a></li>
+            <li><a href="inventory.html" ><i class="glyphicon glyphicon-inbox"></i>库存</a></li>
+            <li><a href="region.html"><i class="glyphicon glyphicon-globe"></i>地区分布</a></li>
+            <li><a href="javascript:void(0)" id ="out"><i class="glyphicon glyphicon-log-out"></i>退出登录</a></li>
+          </ul>   
+    </nav>
+  </div>
+  <!-- Main content --> 
+
+  <div class="templatemo-content col-1 light-gray-bg">
+    
+      <div id="allmap"></div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="js/region.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

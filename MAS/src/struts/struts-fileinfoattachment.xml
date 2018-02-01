@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="fia" extends="struts-default" namespace="/fia">
+		<!-- 初始化查询页面 -->
+		<action name="initSearch" class="fileinfoAction" method="initSearch">
+			<result name="success">/page/updownload/updownload.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--查询信息  -->
+		<action name="findFia" class="fileinfoAction" method="findFia">
+			<result name="success">/page/updownload/updownload.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		
+		<!-- 导出 -->
+        <action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">initSearch</result>
+        </action> 
+        <!-- 弹出上传提示框 -->
+		<action name="attachFileList" class="fileinfoAction" method="attachFileList">
+			<result name="success">/page/updownload/attachment.jsp</result>
+		</action>
+		<!-- 上传下载附件 -->
+		<action name="upDown_*" class="updownfileAction" method="{1}">
+    		<result name="success">/page/common/success.jsp</result>
+    		<result name="error">/page/common/error.jsp</result>
+    	</action>
+    	 <!-- 导入 -->
+		<action name="attachFileLis" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+		</action>
+		<!--<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    	</action>
+	--></package>
+</struts>    

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="prer" extends="commons" namespace="/presidedRevolution">
+		<!-- 初始化查询页面 -->
+		<action name="prerInitSearch" class="prerAction" method="initSearch">
+			<result name="success">/page/presidedRevolut/presidedRevolut-list.jsp</result>
+		</action>
+		<!--查询高层次人才信息  -->
+		<action name="findPrer" class="prerAction" method="findPrer">
+			<result name="success">/page/presidedRevolut/presidedRevolut-list.jsp</result>
+		</action>
+		<!-- 跳转到修改页面 -->
+		<action name="editToPrer" class="prerAction" method="initEdit">
+			<result name="success">/page/presidedRevolut/presidedRevolut-edit.jsp</result>
+		</action>
+		<action name="addPrer" class="prerAction" method="initEdit">
+			<result name="success">/page/presidedRevolut/presidedRevolut-add.jsp</result>
+		</action>
+		<!--保存修改信息  -->
+		<action name="editPrer" class="prerAction" method="modifiPrer">
+			<result name="success" type="redirectAction">findPrer</result>
+		</action>
+		<!-- 删除记录 -->
+		<action name="deletePrer" class="prerAction" method="deletePrer">
+			<result name="success" type="redirectAction">prerInitSearch</result>
+		</action>
+		<!-- 导出 -->
+		<action name="exportExcel" class="exportAction" method="export">
+			<result name="success" type="redirectAction">prerInitSearch</result>
+		</action>
+		 <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+	</package>
+</struts>

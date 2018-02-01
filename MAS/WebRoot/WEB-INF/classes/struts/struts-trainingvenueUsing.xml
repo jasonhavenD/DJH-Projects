@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+	
+	<package name="TrainingvenueUsing"  extends="struts-default" namespace="/trainingvenueUsing">
+		<!-- 初始化查询页面 -->
+		<action name="initSearch" class="TrainingvenueUsingAction" method="initSearch">
+			<result name="success">/page/TrainingvenueUsing/TrainingvenueUsing-list.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--查询使用信息  -->
+		<action name="findTrainingvenueuse" class="TrainingvenueUsingAction" method="findTrainingvenueuse">
+			<result name="success">/page/TrainingvenueUsing/TrainingvenueUsing-list.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--跳转到修改页面-->
+		<action name="editToTrainingvenueuse" class="TrainingvenueUsingAction" method="initEdit">
+			<result name="success">/page/TrainingvenueUsing/TrainingvenueUsing-edit.jsp</result>
+		</action>
+		<!--修改-->
+		<action name="editTrainingvenueuse" class="TrainingvenueUsingAction" method="modifiTrainingvenueuse">
+			<result name="success" type="redirectAction">findTrainingvenueuse</result>
+		</action>
+
+		<!--删除-->
+		<action name="deleteTrainingvenueuse" class="TrainingvenueUsingAction" method="deleteTrainingvenueuse">
+			<result name="success" type="redirectAction">initSearch</result>
+		</action>
+		<!-- 清空 -->
+        <action name="clearTrainingvenueuse" class="TrainingvenueUsingAction" method="clearTrainingvenueuse" >  
+            <result name="success" type="redirectAction">initSearch</result>
+        </action>
+		 <!-- 导出 -->
+        <action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">findTrainingvenue.action</result>
+        </action> 
+         <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+	</package>
+</struts>    

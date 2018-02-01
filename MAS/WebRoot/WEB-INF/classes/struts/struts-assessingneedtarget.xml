@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+<package name="assneed" extends="commons" namespace="/Assneed">
+	
+	<!-- 初始化查询页面 -->
+		<action name="initSearch" class="assneedAction" method="initSearch">
+        	<result name="success">/page/assessingneedtarget/assessingneedtarget-list.jsp</result>
+        </action>
+        <!--查询信息  -->
+         <action name="findassneed" class="assneedAction" method="findassneed">  
+            <result name="success">/page/assessingneedtarget/assessingneedtarget-list.jsp</result>
+        </action>
+        <!-- 跳转到修改页面 -->
+        <action name="editToAssneed" class="assneedAction" method="initEdit">  
+            <result name="success">/page/assessingneedtarget/assessingneedtarget-edit.jsp</result>
+        </action>
+        <!-- 保存 -->
+        <action name="editAssneed" class="assneedAction" method=" modifiassneed" >  
+           <result name="success" type="redirectAction">initSearch</result>
+        </action>
+        <!-- 删除 -->
+        <action name="deleteassneed" class="assneedAction" method="deleteassneed" >  
+            <result name="success" type="redirectAction">initSearch</result>
+            <result name="error">../error.jsp</result>
+        </action>
+        <!-- 一键添加所有指标 -->
+        <action name="addAllAssNeedTarget" class="assneedAction" method="addAllAssessingNeedTarget" >  
+            <result name="success" type="redirectAction">initSearch</result>
+        </action>
+        <!-- 查看思维导图 -->
+		<action name="initTargetMind">
+			<result>/page/assessingneedtarget/targetmind.jsp</result>
+		</action>
+		<action name="showTargetMind" class="assneedAction" method="showTarget">
+			<result name="success" type="json"><param name="root">json</param></result>
+		</action>
+	</package>
+</struts>    

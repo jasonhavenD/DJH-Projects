@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<!-- Struts2标签外观设置 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+
+	<!-- struts2委托spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+<include file="struts.xml"></include>
+	<include file="struts-default.xml"></include>
+	
+	<package name="stup6"  extends="struts-default,json-default" namespace="/lab">
+		<!-- 初始化查询页面 -->
+		<action name="initSearch-Com" class="communicationsituAction" method="initSearch">
+			<result name="success">/page/lab/International-in-list.jsp</result>
+			<result name="errorstring">../errorstring.jsp</result>
+		</action>
+		<!--查询专利信息  -->
+		<action name="findCommunicationsitu" class="communicationsituAction" method="findCommunicationsitu">
+			<result name="success">/page/lab/International-in-list.jsp</result>
+		</action>
+		<!-- 查询专利页面初始化-下拉列表级联-->
+		<action name="findMajorByDno" class="communicationsituAction" method="findMajorByDno">
+			<result name="success"></result>
+		</action>
+		<!-- 跳转到修改页面 -->
+		<action name="editToCommunicationsitu" class="communicationsituAction" method="initEdit">
+			<result name="success">/page/lab/International-in-edit.jsp</result>
+		</action>
+
+		<action name="editCommunicationsitu" class="communicationsituAction" method="modifiCommunicationsitu">
+			<result name="success" type="redirectAction">findCommunicationsitu</result>
+			<result name="adderror" type="redirectAction">editToCommunicationsitu</result>
+		</action>
+		<action name="deleteCommunicationsitu" class="communicationsituAction" method="deleteCommunicationsitu">
+			<result name="success" type="redirectAction">initSearch-Com</result>
+		</action>
+		<!-- 赛项查询 -->
+		<action name="exportSubContestTExcel" class="exportAction" method="export">
+        	<result name="success" type="redirectAction">initSearch-Com</result>
+        </action> 
+		 <!-- 导入 -->
+		<action name="attachFileList" class="importAction" method="attachFileList">
+			<result name="success">/page/common/import.jsp</result>
+			<result name="error">/page/common/importerror.jsp</result>
+		</action>
+		<action name="upDown_uploadFile" class="importAction" method="importExcel">
+    		<result name="success">/page/common/importsuccess.jsp</result>
+    		<result name="majorerror">/page/common/importmajorerror.jsp</result>
+    		<result name="majorStyleerror">/page/common/importStyleerror.jsp</result>
+    		<result name="error">/page/common/importerror.jsp</result>
+    	</action>
+	</package>
+</struts>    

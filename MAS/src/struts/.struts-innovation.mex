@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="innovation" location="0,0" size="0,0">
+    <action name="innovation_*" location="0,0" size="0,0">
+      <result name="initSearch">
+        <resourceEdge source="initSearch" routing="0" target="branch-list.jsp" />
+      </result>
+      <result name="find">
+        <resourceEdge source="find" routing="0" target="branch-list.jsp" />
+      </result>
+      <result name="initSee">
+        <resourceEdge source="initSee" routing="0" target="branch-people-find.jsp" />
+      </result>
+      <result name="see">
+        <resourceEdge source="see" routing="0" target="branch-people-find.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="branch-edit.jsp" />
+      </result>
+      <result name="edit1">
+        <resourceEdge source="edit1" routing="0" target="branch-people-edit.jsp" />
+      </result>
+      <result name="modifi" />
+      <result name="editM">
+        <resourceEdge source="editM" routing="0" target="branch-people-edit.jsp" />
+      </result>
+      <result name="modifiM" />
+      <result name="add" />
+      <result name="addM" />
+      <result name="delete" />
+      <result name="deleteM" />
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="error.jsp" />
+      </result>
+    </action>
+    <action name="exportSubContestTExcel" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcel1" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="branch-list.jsp" path="/page/Branch/branch-list.jsp" location="0,0" size="0,0" />
+  <webResource name="branch-people-find.jsp" path="/page/Branch/branch-people-find.jsp" location="0,0" size="0,0" />
+  <webResource name="branch-edit.jsp" path="/page/Branch/branch-edit.jsp" location="0,0" size="0,0" />
+  <webResource name="branch-people-edit.jsp" path="/page/Branch/branch-people-edit.jsp" location="0,0" size="0,0" />
+  <webResource name="error.jsp" path="../error.jsp" location="0,0" size="0,0" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

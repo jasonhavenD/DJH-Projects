@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="major" location="484,10" size="1155,840">
+    <action name="initSearch" location="940,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="major-list.jsp" />
+      </result>
+    </action>
+    <action name="findMajor" location="800,757" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="major-list.jsp" />
+      </result>
+    </action>
+    <action name="initInfo" location="800,652" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="major-info.jsp" />
+      </result>
+    </action>
+    <action name="editToMajor" location="800,477" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="major-edit.jsp" />
+      </result>
+    </action>
+    <action name="editMajor" location="800,302" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="addToMajor" location="555,302" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="major-add.jsp" />
+      </result>
+    </action>
+    <action name="addMajor" location="555,127" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteMajor" location="65,127" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="exportExcel" location="65,232" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+      <result name="majorerror">
+        <resourceEdge source="majorerror" routing="0" target="importmajorerror.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="importerror.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="major-list.jsp" path="/page/major/major-list.jsp" location="10,730" size="150,55" />
+  <webResource name="major-info.jsp" path="/page/major/major-info.jsp" location="252,625" size="150,55" />
+  <webResource name="major-edit.jsp" path="/page/major/major-edit.jsp" location="252,450" size="150,55" />
+  <webResource name="major-add.jsp" path="/page/major/major-add.jsp" location="251,275" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+  <webResource name="importmajorerror.jsp" path="/page/common/importmajorerror.jsp" location="0,0" size="0,0" />
+  <webResource name="importerror.jsp" path="/page/common/importerror.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

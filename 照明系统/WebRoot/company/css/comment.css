@@ -1,0 +1,18 @@
+ul{list-style-type:none;}
+#star{position:relative;width:600px;margin:10px auto;}
+#star ul,#star span{float:left;display:inline;}
+#star ul{margin:0 10px;}
+#star li{float:left;width:24px;cursor:pointer;text-indent:-9999px;background:url(http://a.tbcdn.cn/app/rc/img/star_v2.png); no-repeat;}
+#star strong{color:#f60;padding-left:10px;}
+#star li.on{background-position:0 -28px;}
+#star p{position:absolute;top:20px;width:159px;height:60px;display:none;background:url() no-repeat;padding:7px 10px 0;}
+#star p em{color:#f60;display:block;font-style:normal;}
+
+#star2{position:relative;width:600px;margin:10px auto;}
+#star2 ul,#star span{float:left;display:inline;}
+#star2 ul{margin:0 10px;}
+#star2 li{float:left;width:24px;cursor:pointer;text-indent:-9999px;background:url(http://a.tbcdn.cn/app/rc/img/star_v2.png); no-repeat;}
+#star2 strong{color:#f60;padding-left:10px;}
+#star2 li.on{background-position:0 -28px;}
+#star2 p{position:absolute;top:20px;width:159px;height:60px;display:none;background:url() no-repeat;padding:7px 10px 0;}
+#star2 p em{color:#f60;display:block;font-style:normal;}

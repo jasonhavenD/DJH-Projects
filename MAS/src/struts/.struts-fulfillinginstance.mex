@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="ful" location="0,0" size="0,0">
+    <action name="initSearchful" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="Practice-in-list.jsp" />
+      </result>
+    </action>
+    <action name="findFulfillinginstance" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="Practice-in-list.jsp" />
+      </result>
+    </action>
+    <action name="findMajorByDno" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="editToFulfillinginstance" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="Practice-in-edit.jsp" />
+      </result>
+    </action>
+    <action name="editFulfillinginstance" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="deleteFulfillinginstance" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="exportSubContestTExcel" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="attachFileList" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="import.jsp" />
+      </result>
+    </action>
+    <action name="upDown_uploadFile" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="importsuccess.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="Practice-in-list.jsp" path="/page/lab/Practice-in-list.jsp" location="18,135" size="150,55" />
+  <webResource name="Practice-in-edit.jsp" path="/page/lab/Practice-in-edit.jsp" location="15,310" size="150,55" />
+  <webResource name="import.jsp" path="/page/common/import.jsp" location="0,0" size="0,0" />
+  <webResource name="importsuccess.jsp" path="/page/common/importsuccess.jsp" location="0,0" size="0,0" />
+  <include file="struts.xml" location="10,520" size="150,30" />
+  <include file="struts-default.xml" location="255,520" size="150,30" />
+</Struts2Diagram>
+

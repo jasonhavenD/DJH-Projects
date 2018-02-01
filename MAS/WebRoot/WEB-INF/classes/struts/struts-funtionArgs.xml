@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="funtionArgs" extends="commons" namespace="/fun">
+		<!-- 初始化查询页面 -->
+		<action name="funtionArgsInitSearch" class="funtionargsAction" method="initSearch">
+			<result name="success">/page/funtionArgs/funtionArgs-list.jsp</result>
+		</action>
+		<!--查询F信息  -->
+		<action name="findfuntionArgs" class="funtionargsAction" method="findfuntionArgs">
+			<result name="success">/page/funtionArgs/funtionArgs-list.jsp</result>
+		</action>
+		
+		<!--获得F信息  -->
+		<action name="getFvalueById" class="funtionargsAction" method="getFvalueById">
+			<result name="success">/page/funtionArgs/funtionArgs-list.jsp</result>
+		</action>
+			<!--获得F信息  -->
+		<action name="getFvalueByName" class="funtionargsAction" method="getFvalueByName">
+			<result name="success">/page/funtionArgs/funtionArgs-list.jsp</result>
+		</action>
+		
+	
+		<!-- 跳转到修改页面 -->
+		<action name="editToFuntionargs" class="funtionargsAction" method="initEdit">
+			<result name="success">/page/funtionArgs/funtionArgs-edit.jsp</result>
+		</action>
+		<!--保存修改信息  -->
+		<action name="editFuntionargs" class="funtionargsAction" method="modifiFuntionargs">
+			<result name="success" type="redirectAction">funtionArgsInitSearch</result>
+		</action>
+		<!-- 删除记录 -->
+		<action name="deleteFuntionargs" class="funtionargsAction" method="deleteFuntionargs">
+			<result name="success" type="redirectAction">funtionArgsInitSearch</result>
+		</action>
+	</package>
+</struts>

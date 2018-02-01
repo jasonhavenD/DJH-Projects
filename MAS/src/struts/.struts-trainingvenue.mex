@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="stup3" location="316,10" size="1505,455">
+    <action name="initSearchtra" location="1290,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="UndergraduateLab-in-list.jsp" />
+      </result>
+    </action>
+    <action name="findTrainingvenue" location="1290,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="UndergraduateLab-in-list.jsp" />
+      </result>
+    </action>
+    <action name="findMajorByDno" location="1045,162" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="editToTrainingvenue" location="1045,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="UndergraduateLab-in-edit.jsp" />
+      </result>
+    </action>
+    <action name="editTrainingvenue" location="800,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="UndergraduateLabUsing.jsp" />
+      </result>
+    </action>
+    <action name="deleteTrainingvenue" location="800,372" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="editToE" location="555,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="Equipment.jsp" />
+      </result>
+    </action>
+    <action name="editE" location="310,372" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="searchContestToTCO" location="65,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="UndergraduateLab-in-list.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="UndergraduateLab-in-list.jsp" path="/page/lab/UndergraduateLab-in-list.jsp" location="14,345" size="150,55" />
+  <webResource name="UndergraduateLab-in-edit.jsp" path="/page/lab/UndergraduateLab-in-edit.jsp" location="1306,520" size="150,55" />
+  <webResource name="Equipment.jsp" path="/page/lab/Equipment.jsp" location="861,520" size="150,55" />
+  <webResource name="UndergraduateLabUsing.jsp" path="/page/lab/UndergraduateLabUsing.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

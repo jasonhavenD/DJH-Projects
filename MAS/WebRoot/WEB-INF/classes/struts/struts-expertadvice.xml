@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- Struts2标签外观设置 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+
+	<!-- struts2委托spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+
+	<!-- struts2缺省配置 -->
+	<include file="struts.xml"></include>
+	<include file="struts-default.xml"></include>
+
+	<package name="Expertadvice" extends="struts-default,json-default" namespace="/Expertadvice">
+		<!-- 初始化 -->
+		<action name="initSearch" class="ExpertAdviceAction" method="initSearch">
+        	<result name="expertsuccess" type="chain">findAdvice</result>
+        	<result name="expertnull">/page/expertadvice/advice3.jsp</result>
+        	<result name="success">/page/expertadvice/advice2.jsp</result>
+        </action>
+        <!-- 保存建议 -->
+		<action name="saveAdvice" class="ExpertAdviceAction" method="saveAdvice">
+        	<result name="success">/page/expertadvice/advice.jsp</result>
+        </action>
+         <!-- 初始化建议 -->
+		<action name="findAdvice" class="ExpertAdviceAction" method="findAdvice">
+        	<result name="success">/page/expertadvice/advice.jsp</result>
+        </action>
+        <!-- 初始化建议 -->
+		<action name="findAdvice" class="ExpertAdviceAction" method="findAdvice">
+        	<result name="success">/page/expertadvice/advice.jsp</result>
+        </action>
+        <!-- 多条件查找建议 -->
+        <action name="searchAdvice" class="ExpertAdviceAction" method="searchAdvice">
+        	<result name="success">/page/expertadvice/advice2.jsp</result>
+        </action>
+        <!-- 导出 -->
+        <action name = "exportExpertAdvice" class = "exportAction" method = "export">
+        	<result name = "success">/page/expertadvice/advice2.jsp</result>
+        </action>
+	</package>
+</struts>    
