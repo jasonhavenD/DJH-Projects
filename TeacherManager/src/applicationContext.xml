@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd"
+	xmlns:tx="http://www.springframework.org/schema/tx">
+
+	<!-- 打开自动装配 -->
+	<context:annotation-config></context:annotation-config>
+	<!-- 开启扫描 -->
+	<context:component-scan base-package="cn.edu" />
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl"
+			value="jdbc:mysql://localhost:3306/teachermanager?characterEncoding=UTF-8" />
+		<property name="user" value="root" />
+		<property name="password" value="root" />
+		<!-- MySQL登录名与密码根据自己环境设置 -->
+		<property name="minPoolSize" value="5" />
+		<property name="maxPoolSize" value="20" />
+		<property name="maxIdleTime" value="1800" />
+		<property name="acquireIncrement" value="3" />
+		<property name="maxStatements" value="1000" />
+		<property name="initialPoolSize" value="10" />
+		<property name="idleConnectionTestPeriod" value="60" />
+		<property name="acquireRetryAttempts" value="30" />
+		<property name="acquireRetryDelay" value="100" />
+		<property name="breakAfterAcquireFailure" value="false" />
+		<property name="testConnectionOnCheckin" value="true" />
+		<property name="testConnectionOnCheckout" value="true" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="packagesToScan">
+			<value>cn.edu</value>
+		</property>
+		<property name="hibernateProperties">
+			<!-- <props> <prop key="hibernate.dialect"> org.hibernate.dialect.MySQLDialect 
+				</prop> </props> -->
+			<value>
+				javax.persistence.validation.mode=none
+				hibernate.dialect=org.hibernate.dialect.MySQLDialect
+				hibernate.hbm2ddl.auto=update
+				hibernate.show_sql=false
+				hibernate.format_sql=false
+				hibernate.autoReconnect=true
+			</value>
+		</property>
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- DAO start -->
+	<bean id="OnlinetrainDAO" class="cn.edu.hib.dao.OnlinetrainDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TonlinetrainDAO" class="cn.edu.hib.dao.TonlinetrainDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="TteachingevaluationDAO" class="cn.edu.hib.dao.TteachingevaluationDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TeacherinfoDAO" class="cn.edu.hib.dao.TeacherinfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="PromotetrainDAO" class="cn.edu.hib.dao.PromotetrainDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="InductiontrainDAO" class="cn.edu.hib.dao.InductiontrainDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SinglestudyDAO" class="cn.edu.hib.dao.SinglestudyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ShorttermtrainDAO" class="cn.edu.hib.dao.ShorttermtrainDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TeachingevaluationDAO" class="cn.edu.hib.dao.TeachingevaluationDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TsinglestudyDAO" class="cn.edu.hib.dao.TsinglestudyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TpromotetrainDAO" class="cn.edu.hib.dao.TpromotetrainDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- DAO end -->
+
+	<!-- Service start -->
+	<bean id="TeacherInfoService" class="cn.edu.hib.service.TeacherinfoService">
+		<property name="teacherinfoDAO">
+			<ref bean="TeacherinfoDAO" />
+		</property>
+	</bean>
+
+	<bean id="OnlinetrainService" class="cn.edu.hib.service.OnlinetrainService">
+		<property name="onlinetrainDAO">
+			<ref bean="OnlinetrainDAO" />
+		</property>
+	</bean>
+
+	<bean id="TonlinetrainService" class="cn.edu.hib.service.TonlinetrainService">
+		<property name="tonlinetrainDAO">
+			<ref bean="TonlinetrainDAO" />
+		</property>
+	</bean>
+
+
+	<bean id="ShorttermtrainService" class="cn.edu.hib.service.ShorttermtrainService">
+		<property name="shorttermtrainDAO">
+			<ref bean="ShorttermtrainDAO" />
+		</property>
+	</bean>
+
+	<!-- Service end -->
+
+	<!-- Action start -->
+	<bean id="TeacherInfoAction" class="cn.edu.action.TeacherInfoAction">
+		<property name="teacherinfoService">
+			<ref bean="TeacherInfoService" />
+		</property>
+	</bean>
+	<bean id="OnlinetrainAction" class="cn.edu.action.OnlinetrainAction">
+		<property name="onlineTrainService">
+			<ref bean="OnlinetrainService" />
+		</property>
+	</bean>
+
+	<bean id="TonlinetrainAction" class="cn.edu.action.TonlinetrainAction">
+		<property name="tonlinetrainService">
+			<ref bean="TonlinetrainService" />
+		</property>
+	</bean>
+
+	<bean id="ShorttermtrainAction" class="cn.edu.action.ShorttermtrainAction">
+		<property name="shorttermtrainService">
+			<ref bean="ShorttermtrainService" />
+		</property>
+	</bean>
+	<!-- Action end -->
+</beans>

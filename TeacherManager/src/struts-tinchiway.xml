@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="Shorttermtrain" extends="struts-default,json-default">
+		<action name="ShorttermtrainAction_*" class="cn.edu.action.ShorttermtrainAction"
+			method="{1}">
+			<result name="success1" type="json">
+				<param name="root">hashmap</param>
+			</result>
+			<result name="findById" type="json">
+				<param name="root">shorttermtrainJson</param>
+			</result>
+			<result name="look">
+				/pages/normal/shorttermtrain.jsp
+			</result>
+			<result name="sign_look">
+				/pages/sign/shorttermtrain.jsp
+			</result>
+		</action>
+	</package>
+</struts>

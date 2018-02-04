@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../../libs/js/jquery.js"></script>
+<script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+<script type="text/javascript" src="../../libs/js/framework.js"></script>
+<link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" id="skin" prePath="../../" scrollerY="false"/>
+<link rel="stylesheet" type="text/css" id="customSkin"/>
+<!--框架必需end-->
+
+<!-- 树型抽屉导航start-->
+<script type="text/javascript" src="../../libs/js/tree/ztree/ztree.js"></script>
+<link href="../../libs/js/tree/ztree/ztree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../libs/js/nav/treeAccordion_normal.js"></script>
+<!-- 树型抽屉导航end -->
+<script type="text/javascript">
+	var zNodes =[
+		{ id:3001, parentId:0, name:"我的管理",icon:"skin/click.gif"},
+		{ id:101, parentId:3001, name:"个人信息",url:"TeacherInfoAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:102, parentId:3001, name:"在线培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:103, parentId:3001, name:"校内培训",url:"CampustrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:104, parentId:3001, name:"短期培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:105, parentId:3001, name:"提升培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:106, parentId:3001, name:"入职培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:107, parentId:3001, name:"单科进修培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:108, parentId:3001, name:"上传文件",url:"../../pages/upload/upload.jsp", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		
+		{ id:3002, parentId:0, name:"常规培训",icon:"skin/click.gif"},
+		{ id:201, parentId:3002, name:"在线培训报名",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:202, parentId:3002, name:"单科进修报名",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:203, parentId:3002, name:"短期培训报名",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		
+		{ id:3003, parentId:0, name:"提升培训",icon:"skin/click.gif"},
+		{ id:301, parentId:3003, name:"提升培训报名",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		
+		{ id:3004, parentId:0, name:"入职培训",icon:"skin/click.gif"},
+		{ id:401, parentId:3004, name:"入职培训报名",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		
+		{ id:3005, parentId:0, name:"教学评价",icon:"skin/click.gif"},
+		{ id:501, parentId:3005, name:"教师评价报名",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		
+		{ id:3007, parentId:0, name:"table表格*"},
+		{ id:701, parentId:3007, name:"特性举例",url:"../../sample/table/guide.jsp", target:"frmright"},
+		{ id:702, parentId:3007, name:"基本表格模板*",url:"../../sample/table/basic.jsp", target:"frmright"},
+		{ id:703, parentId:3007, name:"弹窗中的表格",url:"../../sample/table/basic-pop.jsp", target:"frmright"},
+		{ id:704, parentId:3007, name:"表格动态操作",url:"../../sample/table/dynamic.jsp", target:"frmright"},
+		{ id:705, parentId:3007, name:"测试onlinetrain-content",url:"../../pages/unit/onlinetrain-content.jsp", target:"frmright"}
+	];
+	var fixedObj=60;
+	function customHeightSet(contentHeight){
+		$("#scrollContent").height(contentHeight-fixedObj);
+	}
+</script>
+</head>
+
+<body leftFrame="true">
+<div class="padding_top5 ali02" style="height:55px;">
+<table width="100%">
+	<tr>
+		<td width="85%" class="ali03"><input type="text" id="searchKey" value=""></td>
+		<td><span class="img_find hand" title="点击查找节点" keepDefaultStyle="true" onclick="findNode()"></span></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="ali02"><a onclick="showAll()">全部展开</a>&nbsp;&nbsp;<a onclick="hideAll()">全部收缩</a></td>
+	</tr>
+</table>
+</div>
+<div id="scrollContent" style="overflow-x:hidden;">
+	<div>
+		<ul id="treeDemo" class="ztree ztree_accordition"></ul>
+	</div>
+</div>				
+</body>
+</html>

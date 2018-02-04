@@ -1,0 +1,8 @@
+<chart  baseFontSize='12'  rotateYAxisName='0'>
+<set label='一月' value='462'  />
+<set label='二月' value='857' />
+<set label='三月' value='671' />
+<set label='四月' value='494' />
+<set label='五月' value='761' isSliced="1" />
+<set label='六月' value='960' isSliced="1"/>
+</chart>

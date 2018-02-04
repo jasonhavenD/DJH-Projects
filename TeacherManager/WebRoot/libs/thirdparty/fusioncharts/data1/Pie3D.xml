@@ -1,0 +1,9 @@
+<chart palette='4' baseFontSize='12' decimals='0' enableSmartLabels='1' enableRotation='1'  rotateYAxisName='0'
+bgColor='99CCFF,FFFFFF' bgAlpha='40,100' bgRatio='0,100' bgAngle='360' showBorder='1' startingAngle='70' >
+<set label='一月' value='462'  />
+<set label='二月' value='857' />
+<set label='三月' value='671' />
+<set label='四月' value='494' />
+<set label='五月' value='761' isSliced="1" />
+<set label='六月' value='960' isSliced="1"/>
+</chart>

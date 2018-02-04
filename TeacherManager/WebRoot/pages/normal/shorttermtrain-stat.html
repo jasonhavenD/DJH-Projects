@@ -1,0 +1,234 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>校外短期培训</title>
+<!--框架必需start-->
+<script type="text/javascript" src="../../libs/js/jquery.js"></script>
+<script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+<script type="text/javascript" src="../../libs/js/framework.js"></script>
+<link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" id="skin" prePath="../../" scrollerY="false"/>
+<link rel="stylesheet" type="text/css" id="customSkin"/>
+<!--框架必需end-->
+
+<!--数据表格start-->
+<script src="../../libs/js/table/quiGrid.js" type="text/javascript"></script>
+<!--数据表格end-->
+
+<!--表单异步提交start-->
+<script src="../../libs/js/form/form.js" type="text/javascript"></script>
+<!--表单异步提交end-->
+
+<!-- 日期控件start -->
+<script type="text/javascript" src="../../libs/js/form/datePicker/WdatePicker.js"></script>
+<!-- 日期控件end -->
+<%-- <script type="text/javascript" src="<%=path%>/libs/js/nav/pageNumber.js"></script> --%>
+
+</head>
+<body>
+	<%-- 查询模块
+	<div class="box2" panelTitle="查询用户" id="searchPanel">
+		<form action="../../fullform/listUsers.do" id="queryForm" method="post">
+		<table>
+			<tr>
+				<td>姓名：</td>
+				<td><input type="text" name="form.name"  clearable="true"/></td>
+				<td>入职时间：</td>
+				<td><input type="text" class="date"/></td>
+				<td>性别:</td>
+				<td><select name="form.sex">
+					<option value="">请选择</option>
+					<option value="男">男</option>
+					<option value="女">女</option>
+				</select></td>
+				<td><button type="button" onclick="searchHandler()"><span class="icon_find">查询</span></button></td>
+				<td><button type="button" onclick="resetHandler()"><span class="icon_clear">全部</span></button></td>
+			</tr>
+		</table>
+		</form>
+	</div> 
+	--%>
+
+	<div class="padding_right5">
+		<div id="maingrid"></div>
+		<!--  <div class="pageNumber" total="200" id="page-1"></div>-->
+    </div>
+    
+<script type="text/javascript">
+	    //定义本地数据
+	  
+	    
+	    
+    var g;
+	function initComplete(){
+		/* $.ajax({
+			type : "post",
+			url : "/shorttermtrain/Shorttermtrain_findItems",//需要用来处理ajax请求的action,add为处理的方法名，TeacherInfo为action名
+			data : gridData,
+			success : function(data) {//回调
+				g = data;
+				alert("findall");
+			},
+			error : function(XMLHttpRequest, textStatus, errorThrown) {
+				alert("findall-error");
+			}
+		}); */
+			 g = $("#maingrid").quiGrid({
+		       columns: [ 
+			                { display: '培训编号', name: 'trainno', align: 'left', width: "7%"},
+			                { display: '工号', name: 'tno', align: 'left', width: "7%"},
+			                { display: '姓名', name: 'tname', align: 'left', width: "7%"},
+			                { display: '工作单位', name: 'tunit', align: 'left', width: "7%" },
+			                { display: '年龄', name: 'age', align: 'left', width: "5%"},
+			                { display: '职称', name: 'rank', align: 'left', width: "6%"},
+			                { display: '学历', name: 'education', align: 'left', width: "7%" },
+			                { display: '学位', name: 'degree', align: 'left', width: "7%" },
+			                { display: '主题', name: ' traintopic', align: 'left', width: "7%" },
+			                { display: '地点', name: 'trainaddr', align: 'left', width: "7%"},
+			                { display: '学时', name: 'period', align: 'left', width: "7%" },
+			                { display: '起始时间', name: 'startime', align: 'left', width: "7%" },
+			                { display: '结束时间', name: 'endtime', align: 'left', width: "7%" }, 			                
+			                { display: '备注', name: 'note', align: 'left', width: "6%"},
+		              	  	{ display: '操作', isAllowHide: false, align: 'left', width: "6%",
+								  //操作列渲染为图标
+								 render: function (rowdata, rowindex, value, column){
+			                 	    return '<div class="padding_top4 padding_left5">'
+			                                 + '<span class="img_view hand" title="查看" onclick="onView(' + rowdata.tno + ')"></span>'
+			                                 + '<span class="img_edit hand" title="修改" onclick="onEdit(' + rowdata.tno + ')"></span>' 
+			                                 + '<span class="img_delete hand" title="删除" onclick="onDelete(' + rowdata.tno+','+rowindex + ')"></span>'
+			                             + '</div>';
+				            		}
+		              	  	}
+				            	
+		                	
+		         		], 
+		        url:'../../shorttermtrain/Shorttermtrain_findItems.action', pageSize: 10, sortName: 'tno',rownumbers:true,checkbox:true,
+		        height: '100%', width:"100%",percentWidthMode:true,
+		        //顶部图标按钮栏
+				toolbar: 
+					{ 
+					items: [
+		                { text: '新增', click: addUser, iconClass: 'icon_add' },
+		                { line: true },
+		                { text: '批量删除', click: deleteUser, iconClass: 'icon_delete' },
+		                { line: true },
+		                { text: '导入', click: importUser, iconClass: 'icon_import' },
+		                { line: true },
+		                { text: '导出当前页', click: exportUser, iconClass: 'icon_export' },
+		                { line: true },
+		                { text: '导出所有', click: exportUser2, iconClass: 'icon_export' }
+		            ]
+		        }
+         	});
+			
+			 $("#searchPanel").bind("stateChange",function(e,state){
+				g.resetHeight();
+			});
+	}
+		
+	
+	//查询
+	function searchHandler() {
+		top.Dialog.alert("searchHandler");
+		
+		//得到查询参数
+		var query = $("#queryForm").formToArray();
+		//将查询参数传给grid表格
+		g.setOptions({
+			params : query
+		});
+		//页号重置为1
+		g.setNewPage(1);
+		//重新加载数据
+		g.loadData();
+	}
+
+	//重置
+	function resetHandler() {
+		top.Dialog.alert("resetHandler");
+		//表单常规元素还原
+		$("#queryForm")[0].reset();
+		//下拉框还原
+		$("#queryForm").find("select").render();
+		//重新查询
+		searchHandler();
+	}
+
+	//添加
+	function addUser() {
+		top.Dialog.alert("addUser");
+		top.Dialog.open({
+			URL : "../../sample_skin/normal/user-management-content.html",
+			Title : "新增",
+			Width : 500,
+			Height : 330
+		});
+	}
+
+	//批量删除
+	function deleteUser() {
+		top.Dialog.alert("向后台发送ajax请求来批量删除。见JAVA版或.NET版演示。");
+		
+	}
+
+	//导入
+	function importUser() {
+		top.Dialog.alert("见JAVA版或.NET版演示。");
+	}
+	//导出
+	function exportUser() {
+		top.Dialog.alert("见JAVA版或.NET版演示。");
+	}
+
+	//导出所有
+	function exportUser2() {
+		top.Dialog.alert("见JAVA版或.NET版演示。");
+	}
+
+	//查看
+	function onView(rowid) {
+		top.Dialog.alert("rowid");
+		alert("选择的记录Id是:" + rowid);
+		top.Dialog.open({
+			URL : "../../sample_skin/normal/user-management-content2.html",
+			Title : "查看",
+			Width : 500,
+			Height : 330
+		});
+	}
+
+	//修改
+	function onEdit(rowid) {
+		top.Dialog.alert("见JAVA版或.NET版演示。");
+	}
+
+	//删除
+	function onDelete(rowid, rowidx) {
+		top.Dialog.confirm("确定要删除该记录吗？", function() {
+			//删除记录
+			$.post("../../shorttermtrain/Shorttermtrain_onDelete.action",
+	                {"tno":rowid},
+	                function(result){
+	                	alert(result.status);
+	                    handleResult(result.status);
+	                },"json");
+	        //刷新表格
+	        grid.loadData();
+			top.Dialog.alert("已删除");
+		});
+	}
+
+	//刷新表格 表单提交的回调
+	function afterFormSubmit() {
+		top.Dialog.alert("afterFormSubmit");
+		totalPages = totalPages - 1;
+		alert(totalPages);
+		g.loadData();
+	}
+</script>	
+</body>
+</html>

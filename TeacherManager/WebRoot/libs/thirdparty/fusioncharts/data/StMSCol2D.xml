@@ -1,0 +1,49 @@
+<chart palette='2' baseFontSize='12'  shownames='1' showvalues='0' decimals='0' 
+numberPrefix='$' useRoundEdges='1' legendBorderAlpha='0' rotateYAxisName='0'>
+	<categories>
+<category label='澳大利亚' />
+<category label='瑞典' />
+<category label='法国' />
+<category label='德国'/>
+<category label='美国' />
+</categories>
+	<dataset>
+		<dataSet seriesName='产品A' color='AFD8F8' showValues='0'>
+			<set value='30' />
+			<set value='26' />
+			<set value='29' />
+			<set value='31' />
+			<set value='34' />
+		</dataSet>
+		<dataSet seriesName='产品B' color='F6BD0F' showValues='0'>
+			<set value='21' />
+			<set value='28' />
+			<set value='39' />
+			<set value='41' />
+			<set value='24' />
+		</dataSet>	
+	</dataset>	
+	<dataSet>
+		<dataset seriesname='服务A' color='8BBA00'  showValues='0'>
+			<set value='27' />
+			<set value='25' />
+			<set value='28' />
+			<set value='26' />
+			<set value='10' />
+		</dataset>
+		<dataset seriesname='服务B' color='A66EDD'  showValues='0'>
+			<set value='17' />
+			<set value='15' />
+			<set value='18' />
+			<set value='16' />
+			<set value='10' />
+		</dataset>
+		<dataset seriesname='服务C' color='F984A1' showValues='0'>
+			<set value='12' />
+			<set value='17' />
+			<set value='16' />
+			<set value='15' />
+			<set value='12' />
+		</dataset>		
+	</dataSet>
+</chart>

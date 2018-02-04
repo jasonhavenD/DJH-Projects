@@ -1,0 +1,24 @@
+<chart  baseFontSize='12' caption='国民产值' shownames='1' showvalues='0' decimals='0' 
+hovercapbg='FFFFFF'  numberPrefix='$' legendBorderAlpha='0' rotateYAxisName='0'>
+<categories>
+<category label='澳大利亚' />
+<category label='瑞典' />
+<category label='法国' />
+<category label='德国'/>
+<category label='美国' />
+</categories>
+<dataset seriesName='2008' color='AFD8F8' showValues='0'>
+<set value='25601.34' />
+<set value='20148.82' />
+<set value='17372.76' />
+<set value='35407.15' />
+<set value='38105.68' />
+</dataset>
+<dataset seriesName='2009' color='F6BD0F' showValues='0'>
+<set value='57401.85' />
+<set value='41941.19' />
+<set value='45263.37' />
+<set value='117320.16' />
+<set value='114845.27' />
+</dataset>
+</chart>

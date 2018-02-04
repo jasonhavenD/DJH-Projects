@@ -1,0 +1,12 @@
+<chart palette='2' caption='中国居民平衡膳食宝塔' baseFontSize='12' numberSuffix='g' showValues='1' >
+<set label='油' value='25' />
+<set label='盐' value='6' />
+<set label='大豆类及坚果' value='30' />
+<set label='奶类及奶制品' value='300' />
+<set label='畜禽肉类' value='50' />
+<set label='鱼虾类' value='50' />
+<set label='蛋类' value='25' />
+<set label='蔬菜类' value='300' />
+<set label='水果类' value='200' />
+<set label='谷类薯类及杂豆' value='250' />
+</chart> 

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- struts2委托spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 在这修改总文件的的大小 -->
+	<constant name="struts.multipart.maxSize" value="86170804" />
+
+
+	<include file="struts-djh.xml"></include>
+	<include file="struts-tinchiway.xml"></include>
+
+	<package name="default" namespace="/" extends="struts-default,json-default">
+		<action name="login" class="cn.edu.action.TeacherInfoAction"
+			method="login">
+			<result name="login" type="json">
+				<param name="includeProperties">status,message,userType</param>
+			</result>
+		</action>
+
+		<action name="logout" class="cn.edu.action.TeacherInfoAction"
+			method="logout">
+			<result name="logout" type="redirect">/system/login/login.jsp</result>
+		</action>
+
+		<action name="lockScreen" class="cn.edu.action.UserInfoAction"
+			method="lockScreen">
+			<result name="lockScreen" type="json">
+			</result>
+		</action>
+		<action name="unlockScreen" class="cn.edu.action.UserInfoAction"
+			method="unlockScreen">
+			<result name="unlockScreen" type="json">
+				<param name="includeProperties">isPass</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="UpDownFileAction" extends="struts-default,json-default">
+		<!-- 单文件上传 -->
+		<action name="UpDownFileAction_*" class="cn.edu.fileaciton.UpDownFileAction"
+			method="{1}">
+			<!-- 定义上传成功要转向的页面 -->
+			<result name="success1">/pages/upload/upload_success.jsp</result>
+			<!-- 定义上传出错要转向的页面 -->
+			<result name="input">/pages/upload/error.jsp</result>
+			<!-- 配置fileUpload拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<!-- 配置允许上传文件大小最大值 -->
+				<param name="maximumSize">11048576</param>
+				<!-- 允许上传的文件类型 -->
+				<param name="allowedTypes">text/plain,application/pdf,application/msword,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.wordprocessingml.document</param>
+				<!-- 配置允许上传文件类型 -->
+				<param name="allowedExtensions">.doc,.docx,.pdf,.xls</param><!-- 配置允许上传文件类型 -->
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+
+			<!-- 下载文件的result -->
+			<result name="success2" type="stream">
+				<param name="contentType">text/plain,application/pdf,application/msword,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.wordprocessingml.document</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">inputStream</param>
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+	</package>
+
+
+</struts>

@@ -1,0 +1,52 @@
+<chart bgColor='E9E9E9' baseFontSize='12' outCnvBaseFontColor='666666'  xAxisName='月份'  numberPrefix='￥' rotateYAxisName='0'
+ showNames='1' showValues='0' plotFillAlpha='50' numVDivLines='10' showAlternateVGridColor='1' AlternateVGridColor='e1f5ff'
+ divLineColor='e1f5ff' vdivLineColor='e1f5ff'  canvasBorderThickness='1' showPlotBorder='1' plotBorderThickness='0'>
+<categories>
+	<category label='一月' />
+	<category label='二月' />
+	<category label='三月' />
+	<category label='四月' />
+	<category label='五月' />
+	<category label='六月' />
+	<category label='七月' />
+	<category label='八月' />
+	<category label='九月' />
+	<category label='十月' />
+	<category label='十一月' />
+	<category label='十二月' />
+</categories>
+<dataset seriesName='2005' color='B1D1DC' plotBorderColor='B1D1DC'>
+	<set value='27400' />
+	<set value='29800'/>
+	<set value='25800' />
+	<set value='26800' />
+	<set value='29600' />
+	<set value='32600' />
+	<set value='31800' />
+	<set value='36700' />
+	<set value='29700' />
+	<set value='31900' />
+	<set value='32900' />
+	<set value='34800' />
+</dataset>
+<dataset seriesName='2006' color='C8A1D1' plotBorderColor='C8A1D1'>
+	<set value='2740' />
+	<set value='2980'/>
+	<set value='2580' />
+	<set value='2680' />
+	<set value='29600' />
+	<set value='32600' />
+	<set value='31800' />
+	<set value='36700' />
+	<set value='29700' />
+	<set value='31900' />
+	<set value='32900' />
+	<set value='34800' />
+	
+</dataset>
+<trendlines>
+	<line startValue='22000' endValue='58000' color='999999' displayValue='目标值' dashed='1' 
+	thickness='2' dashGap='6' alpha='100' showOnTop='1'/>
+</trendlines>
+
+</chart> 

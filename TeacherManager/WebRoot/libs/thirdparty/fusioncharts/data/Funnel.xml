@@ -1,0 +1,6 @@
+<chart isSliced='1' slicingDistance='4' decimalPrecision='0' baseFontSize='12'>
+	<set name='项目一' value='41' color='99CC00' alpha='85'/>
+	<set name='项目二' value='84' color='333333' alpha='85'/>
+	<set name='项目三' value='126' color='99CC00'  alpha='85'/>
+	<set name='项目四' value='180' color='333333' alpha='85'/>
+</chart>

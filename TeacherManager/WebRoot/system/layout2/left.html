@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../../libs/js/jquery.js"></script>
+<script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+<script type="text/javascript" src="../../libs/js/framework.js"></script>
+<link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" id="skin" prePath="../../" scrollerY="false"/>
+<link rel="stylesheet" type="text/css" id="customSkin"/>
+<!--框架必需end-->
+
+<!-- 树型抽屉导航start-->
+<script type="text/javascript" src="../../libs/js/tree/ztree/ztree.js"></script>
+<link href="../../libs/js/tree/ztree/ztree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../libs/js/nav/treeAccordion_normal.js"></script>
+<!-- 树型抽屉导航end -->
+<script type="text/javascript">
+	var zNodes =[
+		{ id:3001, parentId:0, name:"我的信息",icon:"skin/click.gif"},
+		{ id:101, parentId:3001, name:"个人信息",url:"TeacherInfoAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		
+		/*
+		{ id:3002, parentId:0, name:"我的培训",icon:"skin/click.gif"},
+		{ id:201, parentId:3002, name:"在线培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:202, parentId:3002, name:"短期培训",url:"../../pages/normal/shorttermtrain.jsp", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:203, parentId:3002, name:"提升培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:204, parentId:3002, name:"入职培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:205, parentId:3002, name:"单科进修培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		*/
+		
+		{ id:3003, parentId:0, name:"培训报名",icon:"skin/click.gif"},
+		{ id:301, parentId:3003, name:"在线培训",url:"OnlinetrainAction_sign_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:302, parentId:3003, name:"短期培训",url:"ShorttermtrainAction_sign_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:303, parentId:3003, name:"提升培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:304, parentId:3003, name:"入职培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		{ id:305, parentId:3003, name:"单科进修培训",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		
+		{ id:3004, parentId:0, name:"教学评价报名",icon:"skin/click.gif"},
+		{ id:401, parentId:3004, name:"教师评价",url:"OnlinetrainAction_look", target:"frmright",iconOpen:"../../libs/icons/tree_close.gif",iconClose:"../../libs/icons/tree_open.gif",icon:"skin/titlebar_arrow.gif"},
+		
+	];
+	var fixedObj=60;
+	function customHeightSet(contentHeight){
+		$("#scrollContent").height(contentHeight-fixedObj);
+	}
+</script>
+</head>
+
+<body leftFrame="true">
+<div class="padding_top5 ali02" style="height:55px;">
+<table width="100%">
+	<tr>
+		<td width="85%" class="ali03"><input type="text" id="searchKey" value=""></td>
+		<td><span class="img_find hand" title="点击查找节点" keepDefaultStyle="true" onclick="findNode()"></span></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="ali02"><a onclick="showAll()">全部展开</a>&nbsp;&nbsp;<a onclick="hideAll()">全部收缩</a></td>
+	</tr>
+</table>
+</div>
+<div id="scrollContent" style="overflow-x:hidden;">
+	<div>
+		<ul id="treeDemo" class="ztree ztree_accordition"></ul>
+	</div>
+</div>				
+</body>
+</html>

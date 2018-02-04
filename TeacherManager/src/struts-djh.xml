@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="TeacherInfoAction" extends="struts-default,json-default">
+		<action name="TeacherInfoAction_*" class="cn.edu.action.TeacherInfoAction"
+			method="{1}">
+			<result name="look">
+				/pages/normal/userinfo.jsp
+			</result>
+			<result name="lookAll">
+				/pages/normal/teacherinfo.jsp
+			</result>
+			<result name="getLoginUser" type="json">
+				<param name="root">teacherinfoJson</param>
+			</result>
+			<result name="getUser" type="json">
+				<param name="root">results</param>
+			</result>
+			<result name="getUsersOfPager" type="json">
+				<param name="root">results</param>
+			</result>
+			<result name="getOne" type="json">
+				<param name="root">editJson</param>
+			</result>
+			<result name="delRows">/pages/normal/teacherinfo.jsp</result>
+			<result name="addRow">/pages/normal/teacherinfo.jsp</result>
+			<result name="editRow">/pages/normal/teacherinfo.jsp</result>
+		</action>
+	</package>
+
+	<package name="Onlinetrain" extends="struts-default,json-default">
+		<action name="OnlinetrainAction_*" class="cn.edu.action.OnlinetrainAction"
+			method="{1}">
+			<result name="look">/pages/normal/onlinetrain.jsp</result>
+			<result name="getUser" type="json">
+				<param name="root">results</param>
+			</result>
+			<result name="getUsersOfPager" type="json">
+				<param name="root">results</param>
+			</result>
+			<result name="delRows">/pages/normal/onlinetrain.jsp</result>
+			<result name="addRow">/pages/normal/onlinetrain.jsp</result>
+			<result name="getOne" type="json">
+				<param name="root">editJson</param>
+			</result>
+			<result name="editRow">/pages/normal/onlinetrain.jsp</result>
+			<result name="sign_look">/pages/sign/onlinetrain.jsp</result>
+			<result name="enroll">/pages/sign/onlinetrain.jsp</result>
+			<result name="cancel">/pages/sign/onlinetrain.jsp</result>
+		</action>
+	</package>
+
+	<package name="Tonlinetrain" extends="struts-default,json-default">
+		<action name="TonlinetrainAction_*" class="cn.edu.action.TonlinetrainAction"
+			method="{1}">
+			<result name="look">/pages/normal/tonlinetrain.jsp</result>
+			<result name="getUser" type="json">
+				<param name="root">results</param>
+			</result>
+			<result name="getUsersOfPager" type="json">
+				<param name="root">results</param>
+			</result>
+			<result name="delRows">/pages/normal/tonlinetrain.jsp</result>
+			<result name="getOne" type="json">
+				<param name="root">editJson</param>
+			</result>
+			<result name="getUser2" type="json">
+				<param name="root">results2</param>
+			</result>
+			<result name="getUsersOfPager2" type="json">
+				<param name="root">results2</param>
+			</result>
+			<result name="editRow">/pages/normal/tonlinetrain.jsp</result>
+			<result name="addRow"></result>
+			<result name="editRow2"></result>
+		</action>
+	</package>
+
+</struts>

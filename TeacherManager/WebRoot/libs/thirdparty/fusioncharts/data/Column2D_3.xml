@@ -1,0 +1,9 @@
+<chart palette='2' caption='半年度销售统计' baseFontSize='12' rotateNames='3' xAxisName='月份' 
+yAxisName='销售额' showValues='0' decimals='0' formatNumberScale='0' useRoundEdges='1' rotateYAxisName='0'>
+<set label='一月' value='462' link='JavaScript:myJS("1");'/>
+<set label='二月' value='857' link='JavaScript:myJS("2");'/> 
+<set label='三月' value='671' link='JavaScript:myJS("3");'/> 
+<set label='四月' value='494' link='JavaScript:myJS("4");'/> 
+<set label='五月' value='761' link='JavaScript:myJS("5");'/> 
+<set label='六月' value='960' link='JavaScript:myJS("6");'/>
+</chart>
